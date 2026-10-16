@@ -114,7 +114,7 @@
         }
     </style>
 </head>
-<body class="bg-brandLight text-brandCharcoal font-sans antialiased selection:bg-brandAmberLight selection:text-brandCharcoal overflow-x-hidden">
+<body class="bg-brandLight text-brandCharcoal font-sans antialiased selection:bg-brandAmberLight selection:text-brandCharcoal overflow-x-hidden pb-16 md:pb-0">
 
     <!-- TOP ANNOUNCEMENT BAR -->
     <div class="relative z-50 bg-brandDarker text-white font-bold text-xs uppercase tracking-wider py-2 px-4 text-center flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
@@ -268,14 +268,28 @@
 
                     <!-- Primary conversion action: the one unmistakable CTA in this section -->
                     <div class="mt-8 flex flex-col items-center sm:items-start gap-3">
-                        <button onclick="openBookingModal('Hero Primary')" class="hero-cta-pulse bg-gradient-to-br from-brandAmber to-brandAmberDeep hover:from-brandAmberDeep hover:to-brandAmber text-brandDark font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_25px_-8px_rgba(245,158,11,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brandDark w-full sm:w-auto">
-                            <span>Book A Lesson</span>
+                        <button onclick="openBookingModal('Hero Trial Lesson ($35)')" class="hero-cta-pulse bg-gradient-to-br from-brandAmber to-brandAmberDeep hover:from-brandAmberDeep hover:to-brandAmber text-brandDark font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_25px_-8px_rgba(245,158,11,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brandDark w-full sm:w-auto">
+                            <span>Book Your $35 Trial Lesson</span>
                             <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </button>
+                        <p class="text-[11px] text-slate-400 font-semibold">No commitments &mdash; single 30-minute lesson, pay as you go.</p>
                         <a href="#pricing" class="group relative inline-block text-xs font-bold text-slate-400 hover:text-brandAmber transition-colors">
-                            <span>Or view pricing packages &darr;</span>
+                            <span>Claim $100 Off The 10-Lesson Pack &darr;</span>
                             <span class="absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
+                    </div>
+
+                    <!-- Trust badges: confirmed facts only -->
+                    <div class="mt-5 flex flex-wrap items-center gap-2">
+                        <span class="inline-flex items-center gap-1.5 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-[11px] font-bold px-3 py-1.5 rounded-full">
+                            <i class="fa-solid fa-award text-brandAmber"></i> 10+ Years Teaching
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-[11px] font-bold px-3 py-1.5 rounded-full">
+                            <i class="fa-solid fa-star text-brandAmber"></i> 5.0&#9733; Student Rating
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-[11px] font-bold px-3 py-1.5 rounded-full">
+                            <i class="fa-solid fa-handshake text-brandAmber"></i> No Lock-In Contracts
+                        </span>
                     </div>
 
                     <!-- Trust stats -->
@@ -303,6 +317,32 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ABOUT YOUR INSTRUCTOR (LIGHT) -->
+    <!-- Structural only: name and bio copy are placeholders pending real content from the client. -->
+    <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-5 gap-10 items-center bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
+                <div class="md:col-span-2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/5] max-w-xs mx-auto md:mx-0">
+                        <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+                <div class="md:col-span-3">
+                    <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">About Your Instructor</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">[Instructor name to come]</h2>
+                    <ul class="mt-4 space-y-2 text-sm text-brandCharcoal font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep"></i> 10+ years teaching guitar locally</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep"></i> Teaches across Penrith &amp; the Blue Mountains</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep"></i> Acoustic &amp; electric, all ages 6 to 80+</li>
+                    </ul>
+                    <p class="mt-4 text-sm text-brandMuted italic border-l-2 border-brandBorder pl-4">
+                        A short personal bio and teaching philosophy from the instructor will go here once supplied &mdash; this section is placeholder structure only, not filled-in copy.
+                    </p>
                 </div>
             </div>
         </div>
@@ -594,83 +634,169 @@
         </div>
     </section>
 
-    <!-- SECTION 5: STUDENT REVIEWS (LIGHT) -->
-    <section id="reviews" class="py-20 bg-brandLight overflow-hidden">
+    <!-- SECTION: PRACTICE TOOLS TEASER (LIGHT) -->
+    <section id="practice-tools" class="py-20 bg-brandLight border-t border-brandBorder">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
+                <div>
+                    <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Free Practice Tools</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Practice between lessons</h2>
+                    <p class="mt-3 text-sm text-brandMuted leading-relaxed">
+                        An interactive fretboard &amp; scale visualizer with built-in sound, free to use between lessons &mdash; no sign-up required.
+                    </p>
+                    <a href="practice/" class="mt-6 inline-flex items-center gap-2 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-widest uppercase transition-all">
+                        <span>Open Practice Tools</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="w-full aspect-video rounded-2xl bg-brandDark border border-brandDarkLine flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-guitar text-5xl text-brandAmber"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: STUDENT REVIEWS (DARK) -->
+    <section id="reviews" class="py-20 bg-brandDarker overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Student Testimonials</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Loved by local musicians</h2>
+                <span class="text-brandAmber font-black tracking-widest text-xs uppercase">Student Testimonials</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 font-display tracking-tight">Loved by local musicians</h2>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 lg:items-end">
                 <!-- Review 1 -->
-                <div class="lg:mb-10 bg-brandCard border border-brandBorder p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
-                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmberLight/60 leading-none select-none">&ldquo;</span>
+                <div class="lg:mb-10 bg-brandDarkCard border border-brandDarkLine p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
+                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmber/15 leading-none select-none">&ldquo;</span>
                     <div class="relative">
                         <div class="flex text-brandAmber gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brandCharcoal text-xs sm:text-sm leading-relaxed">
+                        <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
                             As an adult beginner, I was nervous about starting guitar. Within 4 weeks I was playing my favourite classic rock riffs! Patient teacher and very encouraging environment.
                         </p>
                     </div>
-                    <div class="relative mt-6 pt-6 border-t border-brandBorder flex items-center gap-3">
+                    <div class="relative mt-6 pt-6 border-t border-brandDarkLine flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-brandDark text-brandAmber font-black flex items-center justify-center text-xs">
                             JD
                         </div>
                         <div>
-                            <h3 class="text-brandCharcoal font-bold text-sm">James D.</h3>
-                            <p class="text-brandMuted text-xs">Penrith Student</p>
+                            <h3 class="text-white font-bold text-sm">James D.</h3>
+                            <p class="text-slate-400 text-xs">Penrith Student</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Review 2 (Featured) -->
-                <div class="bg-brandCard border-2 border-brandAmber p-8 sm:p-10 rounded-3xl shadow-xl relative flex flex-col justify-between overflow-hidden z-10">
-                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmberLight/70 leading-none select-none">&ldquo;</span>
+                <div class="bg-brandDarkCard border-2 border-brandAmber p-8 sm:p-10 rounded-3xl shadow-xl relative flex flex-col justify-between overflow-hidden z-10">
+                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmber/20 leading-none select-none">&ldquo;</span>
                     <div class="relative">
                         <div class="flex text-brandAmber gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brandCharcoal text-sm leading-relaxed font-medium">
+                        <p class="text-white text-sm leading-relaxed font-medium">
                             The 10-lesson bundle is worth every cent! My daughter has progressed immensely and looks forward to her guitar lesson every Tuesday afternoon.
                         </p>
                     </div>
-                    <div class="relative mt-6 pt-6 border-t border-brandBorder flex items-center gap-3">
+                    <div class="relative mt-6 pt-6 border-t border-brandDarkLine flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-brandAmber text-brandDark font-black flex items-center justify-center text-xs">
                             MC
                         </div>
                         <div>
-                            <h3 class="text-brandCharcoal font-bold text-sm">Michelle C.</h3>
-                            <p class="text-brandMuted text-xs">Springwood / Blue Mountains</p>
+                            <h3 class="text-white font-bold text-sm">Michelle C.</h3>
+                            <p class="text-slate-400 text-xs">Springwood / Blue Mountains</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Review 3 -->
-                <div class="lg:mb-10 bg-brandCard border border-brandBorder p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
-                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmberLight/60 leading-none select-none">&ldquo;</span>
+                <div class="lg:mb-10 bg-brandDarkCard border border-brandDarkLine p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
+                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmber/15 leading-none select-none">&ldquo;</span>
                     <div class="relative">
                         <div class="flex text-brandAmber gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brandCharcoal text-xs sm:text-sm leading-relaxed">
+                        <p class="text-slate-200 text-xs sm:text-sm leading-relaxed">
                             Great focus on technique without getting bogged down in boring drills. I can now play lead solos and understand fretboard scales comfortably.
                         </p>
                     </div>
-                    <div class="relative mt-6 pt-6 border-t border-brandBorder flex items-center gap-3">
+                    <div class="relative mt-6 pt-6 border-t border-brandDarkLine flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-slate-700 text-white font-black flex items-center justify-center text-xs">
                             BH
                         </div>
                         <div>
-                            <h3 class="text-brandCharcoal font-bold text-sm">Ben H.</h3>
-                            <p class="text-brandMuted text-xs">Emu Plains</p>
+                            <h3 class="text-white font-bold text-sm">Ben H.</h3>
+                            <p class="text-slate-400 text-xs">Emu Plains</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- SECTION: FAQ (LIGHT) -->
+    <section id="faq" class="py-20 bg-brandLight border-t border-brandBorder">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Common Questions</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Frequently asked questions</h2>
+            </div>
+
+            <div class="space-y-3" id="faq-accordion">
+                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                        <span class="font-bold text-brandCharcoal text-sm sm:text-base">What ages do you teach?</span>
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        All ages, from absolute beginners to experienced players refining their skills &mdash; students range from age 6 to 80+.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                        <span class="font-bold text-brandCharcoal text-sm sm:text-base">Do I need my own guitar?</span>
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        The Penrith studio is equipped with acoustic and electric guitars you can use during lessons, or bring your own. For mobile in-home lessons in the Blue Mountains, please have a guitar available.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                        <span class="font-bold text-brandCharcoal text-sm sm:text-base">Is there a lock-in contract?</span>
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        No. Book single $35 lessons week-to-week with no commitment, or choose the 10-lesson package ($250, saving $100) if you'd like a guaranteed recurring timeslot.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                        <span class="font-bold text-brandCharcoal text-sm sm:text-base">How do mobile home lessons in the Blue Mountains work?</span>
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        Lessons travel up the mountain corridor from Glenbrook through to Katoomba and Blackheath, with in-home lesson options available by request alongside flexible timing for school-age students.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+                        <span class="font-bold text-brandCharcoal text-sm sm:text-base">What's the difference between a single lesson and the 10-lesson package?</span>
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        A single 30-minute lesson is $35, booked week-to-week. The 10-lesson package is $250 total ($25/lesson, saving $100) and includes a guaranteed recurring weekly timeslot and a structured 10-week roadmap.
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -702,6 +828,7 @@
                     <a href="#home" class="hover:text-brandAmber transition-colors">Home</a>
                     <a href="#pricing" class="hover:text-brandAmber transition-colors">Pricing</a>
                     <a href="#locations" class="hover:text-brandAmber transition-colors">Locations</a>
+                    <a href="#faq" class="hover:text-brandAmber transition-colors">FAQ</a>
                     <a href="practice/" class="hover:text-brandAmber transition-colors">Practice Tools</a>
                     <a href="technology.html" class="hover:text-brandAmber transition-colors">Technology Partner</a>
                 </nav>
@@ -796,9 +923,33 @@
         </div>
     </div>
 
+    <!-- STICKY MOBILE BOOKING BAR -->
+    <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-brandDark border-t border-brandDarkLine px-4 py-3 flex items-center gap-3 shadow-[0_-4px_12px_rgba(0,0,0,0.2)]">
+        <a href="tel:0400000000" class="flex items-center justify-center w-12 h-12 shrink-0 rounded-full bg-brandDarkCard border border-brandDarkLine text-brandAmber" aria-label="Call Mountain Culture Guitar Lessons">
+            <i class="fa-solid fa-phone text-lg"></i>
+        </a>
+        <button onclick="openBookingModal('Sticky Mobile Bar')" class="flex-1 bg-brandAmber text-brandDark font-black py-3 rounded-full text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+            <span>Book A Lesson</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
     <!-- JAVASCRIPT -->
     <script>
         document.getElementById('year').innerText = new Date().getFullYear();
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const item = trigger.closest('.faq-item');
+                const panel = item.querySelector('.faq-panel');
+                const icon = trigger.querySelector('i');
+                const isOpen = !panel.classList.contains('hidden');
+                panel.classList.toggle('hidden', isOpen);
+                trigger.setAttribute('aria-expanded', String(!isOpen));
+                icon.classList.toggle('rotate-180', !isOpen);
+            });
+        });
 
         // Mobile Menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
