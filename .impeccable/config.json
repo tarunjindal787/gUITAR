@@ -119,6 +119,24 @@
         ],
         "createdAt": "2026-10-16T08:45:55.511Z",
         "reason": "static analysis false positive: source-only parsing cannot resolve Tailwind's responsive text-4xl/6xl utilities, same confirmed false positive already recorded for index.html"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgb(0, 0, 0)",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-16T09:12:50.444Z",
+        "reason": "False positive: the NEW TERM OPEN span has explicit text-white in markup (bg-brandTerracotta text-white ...); detector's color-resolution pass is not picking up the Tailwind utility class correctly, matching the known static-analysis limitation already documented for this detector elsewhere in the project."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgb(0, 0, 0)",
+        "files": [
+          "technology.html"
+        ],
+        "createdAt": "2026-10-16T09:13:40.355Z",
+        "reason": "Same known false positive as index.html: the detector's color-resolution pass fails to pick up inherited/utility text color on nested span inside an anchor (text-white/70 set on the parent a); confirmed via manual code inspection, not an actual unstyled black-text element."
       }
     ]
   }

@@ -1,20 +1,16 @@
 ---
 name: Mountain Culture Guitar Lessons
-description: A dark/light alternating editorial landing page for a guitar-lesson business, built for trust and clarity.
+description: A warm, rustic-modern landing page for a guitar-lesson business — cream canvas, forest green primary accent, terracotta secondary accent.
 colors:
-  dark: "#0F172A"
-  darker: "#020617"
-  dark-card: "#1E293B"
-  dark-line: "#334155"
-  light: "#F8FAFC"
+  cream: "#F5F2EB"
+  forest: "#2C4A3E"
+  forest-deep: "#1E342B"
+  terracotta: "#C87D65"
+  terracotta-deep: "#B36850"
+  slate: "#1E2C25"
+  muted: "#5C6B63"
+  border: "#E0D9C9"
   card-white: "#FFFFFF"
-  border-light: "#E2E8F0"
-  charcoal: "#0F172A"
-  muted: "#64748B"
-  muted-light: "#94A3B8"
-  amber: "#F59E0B"
-  amber-deep: "#D97706"
-  amber-light: "#FDE68A"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -59,133 +55,119 @@ spacing:
   xl: "80px"
 components:
   button-primary:
-    backgroundColor: "{colors.amber}"
-    textColor: "{colors.dark}"
+    backgroundColor: "{colors.forest}"
+    textColor: "#ffffff"
     rounded: "{rounded.full}"
     padding: "16px 36px"
   card-light:
     backgroundColor: "{colors.card-white}"
-    textColor: "{colors.charcoal}"
+    textColor: "{colors.slate}"
     rounded: "{rounded.2xl}"
     padding: "32px"
-  card-dark:
-    backgroundColor: "{colors.dark-card}"
-    textColor: "#ffffff"
-    rounded: "{rounded.3xl}"
-    padding: "40px"
 ---
 
 # Design System: Mountain Culture Guitar Lessons
 
 ## Overview
 
-**Creative North Star: "The Night Studio, Lit by One Warm Lamp"**
+**Creative North Star: "Cedar & Clay"**
 
-*(This is the system's third identity, replacing "The Botanical Studio" (cream/sage/mauve/slate) on 2026-10-16, per explicit, repeated client direction for a dark/light alternating structure with amber accents. The prior light identity is retired; treat it as evidence, not lineage.)*
+*(This is the system's fourth identity, replacing "The Night Studio" (dark-slate/amber) on 2026-10-16, per explicit, repeated client direction for a warm rustic-modern palette. The prior dark/light identity is retired; treat it as evidence, not lineage. This is also the fourth time a forest-green/terracotta direction was proposed in this engagement — the first three times it was explicitly declined in favor of keeping the identity then in place; this time it was explicitly confirmed via direct question before implementation.)*
 
-The page alternates dark and light sections like a studio at night: the hero and pricing sections go dark-slate with a single warm amber accent doing all the signaling, while "Why Us," Locations, and testimonials stay crisp and bright for readability and relief. The rhythm itself communicates something: dark sections hold the decisions that matter most (the offer, the price), light sections hold the proof and explanation — Locations moved to light on 2026-10-16 per explicit client request, since the map and trust banner read as proof, not decision. Trust is built through specificity — a real map, real stats, real testimonials — not through decoration.
+The page runs on a single warm cream canvas (`#F5F2EB`) with white card surfaces for contrast zones (pricing, features, testimonials), instead of the prior dark/light alternation. Two accent colors do the signaling, each with a distinct job: **forest green** is the primary-action color — every CTA button, every checkmark, every "this converts" signal; **terracotta** is the secondary/decorative accent — stars, badges, trust-banner icons, the brush-word swatch, ribbon badges. The two closing sections (Footer CTA band and Footer) are the one deliberate dark anchor on the page, rendered in solid forest green, giving the page a bold brand-color bookend without resurrecting full dark/light alternation.
 
 **Key Characteristics:**
-- Section-level alternation: Hero (dark) → Why Us (light) → Pricing (dark) → Locations (light, high-trust, 2026-10-16) → Reviews (light) → Footer CTA/Footer (dark). Locations was moved from dark to light per explicit client request, giving two consecutive light sections before the dark closing CTA — a deliberate exception to strict alternation, not an error.
-- One accent color (amber) carries every call-to-action and highlight across both dark and light sections — never diluted with a second competing hue
-- Dark sections use `brandDarkCard` surfaces with thin `brandDarkLine` borders, never pure black-on-black
-- Light sections use true white cards on an off-white (`#F8FAFC`) ground with a visible but quiet `#E2E8F0` border
-- Hero carries a small set of confirmed, deliberate glow/motion accents (ambient amber backlight, a gradient-ring status badge with a one-time-justified pulse, sparkle flourishes) — see Elevation & Depth
+- Single cream canvas (`#F5F2EB`) for every content section; white cards carry contrast where needed (features, pricing, reviews, locations)
+- Two-accent system: forest green (`#2C4A3E`) for primary actions and trust/confirmation signals (buttons, checkmarks); terracotta (`#C87D65`) for decorative/informational accents (stars, badges, ribbons, the hand-brushed word swatch)
+- Footer CTA band and Footer are solid forest green — the page's one deliberate dark, brand-color anchor
+- Live-status pulse uses Tailwind's `emerald-500` (`#10B981`), independent of the two brand accents, since it signals a real system state rather than brand decoration
+- Typography unchanged across identities: Montserrat (display), Inter (body), Caveat (the one brush/script word in the hero)
 
 ## Colors
 
-Two neutral families (dark slate, off-white) plus exactly one accent (amber) that never competes with a second hue for attention.
+One warm neutral canvas, one text-ink color, and two accents with distinct jobs.
 
-### Primary Accent
-- **Amber** (#F59E0B, deep #D97706, light tint #FDE68A): Every CTA, every highlighted price, every "this is the one" signal, on both dark and light backgrounds. This is a deliberate one-accent system — resist adding a second accent hue.
+### Canvas & Ink
+- **Cream** (#F5F2EB): The page's one background color across every section except the forest-green footer bookend.
+- **Card White** (#FFFFFF): Every card surface (pricing, features, reviews, locations tab panels).
+- **Border** (#E0D9C9): Warm, low-contrast border on cream and white surfaces.
+- **Slate** (#1E2C25): Primary text ink everywhere on the cream/white surfaces.
+- **Muted** (#5C6B63): Secondary/supporting text on cream and white surfaces.
 
-### Dark Neutrals
-- **Dark** (#0F172A): Hero and pricing section background.
-- **Darker** (#020617): Locations and footer background — the "deepest" sections, reserved for trust/closing moments.
-- **Dark Card** (#1E293B): Card surfaces sitting on dark sections.
-- **Dark Line** (#334155): Borders and dividers on dark sections.
+### Primary Accent — Forest Green
+- **Forest** (#2C4A3E) / **Forest Deep** (#1E342B): Every CTA button background, every checkmark icon, the one bold emphasis word in the hero headline, focus rings. This is the "take action / this is confirmed" color.
 
-### Light Neutrals
-- **Light** (#F8FAFC): Features and testimonials section background.
-- **Card White** (#FFFFFF): Every card on a light section.
-- **Border Light** (#E2E8F0): Card borders and dividers on light sections.
-- **Charcoal** (#0F172A): Primary text on light sections (same value as the dark background — this is intentional: it's the system's one "ink," used as background in dark mode and as text in light mode).
-- **Muted / Muted Light**: Secondary text — `#64748B` on light sections, `#94A3B8` (lighter, for sufficient contrast) on dark sections. Never use the light-section muted value on a dark background or vice versa.
+### Secondary Accent — Terracotta
+- **Terracotta** (#C87D65) / **Terracotta Deep** (#B36850): Star ratings, trust-banner icons, badge/ribbon backgrounds, the hero's hand-brushed word swatch, sparkle accents, secondary links. This is the "notice this / decorative" color — it never appears on a primary conversion button.
 
 ### Named Rules
-**The One-Accent Rule.** Amber is the system's only accent color. It appears on both dark and light sections, which is what makes the alternating rhythm read as one coherent system rather than two different sites stitched together.
+**The Two-Accent Split Rule.** Forest green and terracotta each have one job and never swap: forest = primary action and confirmation (buttons, checkmarks), terracotta = decorative and informational (stars, badges, ribbons). A single element should not mix both as competing accents.
+
+**The One Dark Anchor Rule.** The Footer CTA band and Footer are the only sections that depart from the cream canvas — rendered in solid forest green as a deliberate, bounded bookend, not a return to dark/light alternation.
 
 ## Typography
 
 **Display Font:** Montserrat · **Body Font:** Inter · **Brush/Signature Font:** Caveat
 
-**Character:** Montserrat carries headlines in a mixed-case, mixed-weight voice. Inter stays quiet for body copy. Caveat appears exactly once per hero as the system's single handwritten moment (carried over from the prior identity, recolored to charcoal-on-amber-swatch).
-
 ### Hierarchy
-- **Display** (900): Section headlines — white on dark sections, charcoal on light sections.
-- **Display Light** (300): The hero masthead's connective words ("Turn", "Into A") against the heavy emphasis word — see the Weight Contrast Rule.
-- **Brush** (700, cursive): The one hand-marked hero word.
+- **Display** (900): Section headlines — dark slate on cream, white on the forest footer bookend.
+- **Display Light** (300): The hero masthead's connective words ("Turn", "Into A").
+- **Brush** (700, cursive): The one hand-marked hero word ("Music"), set on a terracotta swatch.
 - **Body / Label**: As documented in the frontmatter.
 
 ### Named Rules
-**The Weight Contrast Rule.** The hero masthead mixes a thin (300) connective weight against the system's heavy (900) emphasis weight. Section headings elsewhere stay single-weight 900.
+**The Weight Contrast Rule.** The hero masthead mixes a thin (300) connective weight against the system's heavy (900) emphasis weight.
 
 **The One Brush Rule.** Caveat marks one word in the hero and nowhere else.
 
 ## Layout
 
-A `max-w-7xl` centered container runs the page. Sections alternate dark/light in strict sequence (see Overview); there is no gradient or soft transition between them — the hard cut between a dark and light section is part of the rhythm, not a flaw to soften. Cards never nest a second bordered/backgrounded box for ordinary content.
+A `max-w-7xl` centered container runs the page. Sections are separated by a thin warm border (`border-brandBorder`) rather than a color change, since nearly every section shares the same cream canvas. Cards never nest a second bordered/backgrounded box for ordinary content.
 
 ## Elevation & Depth
 
-Mostly flat with real shadows: cards on both dark and light sections use a thin border plus a soft offset-and-blur shadow for lift, never a colored halo as the *default* depth cue. The hero is a confirmed, bounded exception (2026-10-16): it carries a small set of deliberate glow/motion accents — a soft radial amber backlight behind the headline, a gradient-ring status badge with a pulse on its live-status dot, hand-drawn SVG sparkle flourishes near the brush word and photo, and a gradient CTA with an inset highlight. These were requested twice, explicitly, by the client after an initial decline — they are a confirmed hero-only flourish, not license to add glow elsewhere.
-
-### Shadow Vocabulary
-- **Card rest** (`shadow-sm`, neutral): Default card elevation, dark or light.
-- **Card featured** (`shadow-xl`/`shadow-2xl` + thick amber border): The one featured card per section (pricing's $250 package, the featured testimonial).
-- **Hero ambient accents**: Radial amber/slate glow blobs, gradient-ring badge, sparkle SVGs, inset-highlight CTA — hero only.
+Flat with real shadows: cards use a thin border plus a soft offset-and-blur shadow for lift. The hero carries a confirmed, bounded set of ambient/motion accents (soft radial forest + terracotta backlights behind the headline, a live-status pulse badge, hand-drawn SVG sparkle flourishes, a pulsing primary CTA on load) — these are a hero-only flourish, not a system-wide depth cue.
 
 ### Named Rules
-**The Hero-Only Glow Rule.** Glow, gradient rings, and sparkle accents are a deliberate, confirmed hero flourish. Every other section stays on flat, neutral elevation (border + shadow only).
+**The Hero-Only Glow Rule.** Glow and sparkle accents are a deliberate, confirmed hero flourish. Every other section stays on flat, neutral elevation (border + shadow only).
 
-**The Honest-Pulse Rule.** The hero's status-badge pulse marks a real, currently-true state ("accepting students right now"), never a fabricated live-updating feed. No animation should imply real-time data that isn't actually checked.
+**The Honest-Pulse Rule.** The hero's status-badge pulse (`emerald-500`) marks a real, currently-true state ("accepting students right now"), never a fabricated live-updating feed.
 
 ## Shapes
 
-Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full` pills and buttons. Borders are thin (1px) on both dark and light cards; a featured element gets a thicker (2-4px) amber border instead of a heavier shadow.
+Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full` pills and buttons. Borders are thin (1px); the featured pricing card gets a thick (4px) terracotta border instead of a heavier shadow.
 
 ## Components
 
 ### Buttons
-- **Primary (action):** Solid amber, dark text — every "Book a Lesson" button, on both dark and light sections.
-- **Secondary (on dark):** `bg-white/10` with a `brandDarkLine` border, white text — the casual-tier button on the dark pricing section.
-- **Hover / Focus:** A -2px lift plus a slightly deeper shade; focus-visible gets a visible ring (amber on dark backgrounds, with an explicit ring-offset color so it's never invisible against the page).
+- **Primary (action):** Solid forest green, white text — every "Book a Lesson" button, everywhere on the page.
+- **Secondary (casual-tier):** Cream/outline button with a warm border — the single-lesson pricing card's button, deliberately quieter than the primary.
+- **Footer-CTA exception:** On the solid-forest footer band, the CTA button is terracotta (not forest) so it has contrast against its own background — the one place forest is not the button color.
 
 ### Cards
-- **Light section cards:** White background, `border-light` border, charcoal text.
-- **Dark section cards:** `dark-card` background, `dark-line` border, white/slate-300 text.
-- **Featured card:** Thicker amber border + deeper shadow, regardless of light or dark context.
+- **All cards:** White background, warm border, slate text, soft shadow — used identically across features, pricing, reviews, and locations (no separate "dark card" variant exists in this identity).
+- **Featured card:** Thicker terracotta border + deeper shadow (the $250 pricing package, the center testimonial).
 
 ### Navigation
-- **Style:** The header stays white/translucent at all times (even though the hero beneath it is dark) so it reads consistently whether the page is scrolled to a dark or light section — a deliberate choice to avoid a second "header theme" state.
+- **Style:** The header stays white/translucent at all times, consistent with the cream canvas beneath it.
 
-### Trust Banner (signature component, new)
-A row of pill badges on the dark Locations section stating only confirmed facts (10+ years experience, 5.0★ rating, no locked-in contracts). This component exists specifically to NOT include unconfirmed claims — a Working With Children Check credential was proposed and explicitly declined pending real verification; do not add compliance/safety claims here without the client confirming them as true first.
+### Trust Banner
+A row of pill badges on the Locations section stating only confirmed facts (10+ years experience, 5.0★ rating, no locked-in contracts). A Working With Children Check credential was proposed and explicitly declined pending real verification; do not add compliance/safety claims here without the client confirming them as true first.
 
-### Interactive Map (signature component, new)
-A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent (it's described via its suburb list instead).
+### Interactive Map
+A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent.
 
 ## Do's and Don'ts
 
 ### Do:
-- Do keep amber as the system's only accent color across every section.
-- Do keep the dark/light alternation strict and literal — it's the structural idea of this redesign.
-- Do keep the hero's glow/pulse/sparkle accents bounded to the hero; don't let them creep into other sections.
+- Do keep forest green strictly for primary actions and confirmation signals (buttons, checkmarks).
+- Do keep terracotta strictly for decorative/informational accents (stars, badges, ribbons).
+- Do keep the cream canvas consistent across every section except the forest footer bookend.
 - Do state only confirmed facts in the trust banner; treat any new compliance/certification claim as requiring explicit client confirmation before publishing.
-- Do keep the map embed scoped to the area with a real studio; don't fabricate a pin for a service area that doesn't have one.
+- Do keep the map embed scoped to the area with a real studio.
 
 ### Don't:
-- Don't add a second accent hue competing with amber.
-- Don't soften the hard cut between dark and light sections with a gradient transition — that's a different system, not a refinement of this one.
+- Don't let forest and terracotta compete as interchangeable accents on the same element.
+- Don't add a third accent hue.
 - Don't stack two bordered/backgrounded containers inside each other for ordinary content.
 - Don't animate a status indicator to suggest a live, continuously-updating feed when the underlying fact is just true/false.
