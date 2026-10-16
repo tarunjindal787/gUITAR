@@ -19,10 +19,12 @@
             theme: {
                 extend: {
                     colors: {
-                        brandForest: '#2c4a3e',
-                        brandForestDeep: '#1e342b',
-                        brandTerracotta: '#c87d65',
-                        brandTerracottaDeep: '#b36850',
+                        brandDark: '#0f172a',
+                        brandDarker: '#020617',
+                        brandDarkCard: '#1e293b',
+                        brandDarkLine: '#334155',
+                        brandAmber: '#f59e0b',
+                        brandAmberDeep: '#d97706',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -34,18 +36,18 @@
     </script>
     <style>
         a:focus-visible, button:focus-visible {
-            outline: 2px solid #c87d65;
+            outline: 2px solid #f59e0b;
             outline-offset: 2px;
             border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-brandForest text-white font-sans antialiased">
+<body class="bg-brandDark text-white font-sans antialiased">
 
     <!-- HEADER -->
-    <header class="border-b border-white/10">
+    <header class="border-b border-brandDarkLine">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-white/70 hover:text-brandTerracotta transition-colors">
+            <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-brandAmber transition-colors">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Back to Mountain Culture Guitar Lessons</span>
             </a>
@@ -53,16 +55,16 @@
     </header>
 
     <!-- HERO -->
-    <section class="py-20 sm:py-28 border-b border-white/10">
+    <section class="py-20 sm:py-28 border-b border-brandDarkLine">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-brandTerracotta font-black tracking-widest text-xs uppercase mb-4">Technology Partner</p>
+            <p class="text-brandAmber font-black tracking-widest text-xs uppercase mb-4">Technology Partner</p>
             <h1 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight">JobGen.AI</h1>
-            <p class="mt-6 text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+            <p class="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
                 This website was built and is maintained by JobGen.AI &mdash; the development partner behind
                 Mountain Culture Guitar Lessons' online presence.
             </p>
             <div class="mt-8">
-                <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brandTerracotta hover:bg-brandTerracottaDeep text-white font-black px-8 py-4 rounded-full text-xs tracking-widest uppercase transition-all">
+                <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-8 py-4 rounded-full text-xs tracking-widest uppercase transition-all">
                     <span>Visit JobGen.AI</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                 </a>
@@ -77,44 +79,44 @@
                 What JobGen.AI Built For This Site
             </h2>
             <div class="grid sm:grid-cols-3 gap-6">
-                <div class="bg-brandForestDeep border border-white/10 rounded-2xl p-6">
-                    <div class="w-12 h-12 rounded-xl bg-brandTerracotta/15 text-brandTerracotta flex items-center justify-center text-xl mb-4">
+                <div class="bg-brandDarkCard border border-brandDarkLine rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-brandAmber/15 text-brandAmber flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-palette"></i>
                     </div>
                     <h3 class="font-display font-extrabold text-white mb-2">Visual Design</h3>
-                    <p class="text-white/70 text-sm leading-relaxed">A full brand identity and page design, built around real content and real pricing &mdash; not a generic template.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">A full brand identity and page design, built around real content and real pricing &mdash; not a generic template.</p>
                 </div>
-                <div class="bg-brandForestDeep border border-white/10 rounded-2xl p-6">
-                    <div class="w-12 h-12 rounded-xl bg-brandTerracotta/15 text-brandTerracotta flex items-center justify-center text-xl mb-4">
+                <div class="bg-brandDarkCard border border-brandDarkLine rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-brandAmber/15 text-brandAmber flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-code"></i>
                     </div>
                     <h3 class="font-display font-extrabold text-white mb-2">Frontend Build</h3>
-                    <p class="text-white/70 text-sm leading-relaxed">A responsive, accessible, production-ready page: keyboard-navigable, screen-reader-friendly, and fast to load.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">A responsive, accessible, production-ready page: keyboard-navigable, screen-reader-friendly, and fast to load.</p>
                 </div>
-                <div class="bg-brandForestDeep border border-white/10 rounded-2xl p-6">
-                    <div class="w-12 h-12 rounded-xl bg-brandTerracotta/15 text-brandTerracotta flex items-center justify-center text-xl mb-4">
+                <div class="bg-brandDarkCard border border-brandDarkLine rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-brandAmber/15 text-brandAmber flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
                     <h3 class="font-display font-extrabold text-white mb-2">Ongoing Updates</h3>
-                    <p class="text-white/70 text-sm leading-relaxed">Continued iteration on the site's design and features as the business grows.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Continued iteration on the site's design and features as the business grows.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-16 border-t border-white/10">
+    <section class="py-16 border-t border-brandDarkLine">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-white/70 text-sm mb-4">Looking for a developer to build your own business website?</p>
-            <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-brandTerracotta hover:text-brandTerracottaDeep transition-colors">
+            <p class="text-slate-400 text-sm mb-4">Looking for a developer to build your own business website?</p>
+            <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-brandAmber hover:text-brandAmberDeep transition-colors">
                 Get in touch with JobGen.AI &rarr;
             </a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-brandForestDeep text-white/50 py-10 border-t border-white/10 text-xs text-center">
-        <p>&copy; <span id="year"></span> Mountain Culture Guitar Lessons. Site by <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-white/80 hover:text-brandTerracotta transition-colors">JobGen.AI</a>.</p>
+    <footer class="bg-brandDarker text-slate-500 py-10 border-t border-brandDarkLine text-xs text-center">
+        <p>&copy; <span id="year"></span> Mountain Culture Guitar Lessons. Site by <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-300 hover:text-brandAmber transition-colors">JobGen.AI</a>.</p>
     </footer>
 
     <script>

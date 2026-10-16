@@ -4,24 +4,23 @@
   "title": "Design System: Mountain Culture Guitar Lessons",
   "extensions": {
     "colorMeta": {
-      "forest": { "role": "accent-primary", "displayName": "Forest Green", "canonical": "#2C4A3E", "tonalRamp": ["#0F1A15", "#152620", "#1E342B", "#2C4A3E", "#3D6353", "#5A8471", "#8AAE9D", "#C3D8CD"] },
-      "terracotta": { "role": "accent-secondary", "displayName": "Terracotta", "canonical": "#C87D65", "tonalRamp": ["#5C3327", "#7A4433", "#99543F", "#B36850", "#C87D65", "#D59880", "#E3B8A6", "#F1DAD0"] },
-      "cream": { "role": "neutral", "displayName": "Cream", "canonical": "#F5F2EB", "tonalRamp": ["#5C6B63", "#8A968E", "#B9C0B9", "#D9D4C7", "#E0D9C9", "#EDE8DD", "#F5F2EB", "#FFFFFF"] },
-      "slate": { "role": "ink", "displayName": "Slate", "canonical": "#1E2C25", "tonalRamp": ["#0C120F", "#1E2C25", "#2E4038", "#3F544A", "#5C6B63", "#7E8A82", "#A4AEA7", "#CFD5D0"] }
+      "amber": { "role": "accent", "displayName": "Amber", "canonical": "#F59E0B", "tonalRamp": ["#451A03", "#78350F", "#92400E", "#B45309", "#D97706", "#F59E0B", "#FBBF24", "#FDE68A"] },
+      "dark": { "role": "neutral", "displayName": "Dark", "canonical": "#0F172A", "tonalRamp": ["#020617", "#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1"] },
+      "darker": { "role": "neutral", "displayName": "Darker", "canonical": "#020617", "tonalRamp": ["#000000", "#020617", "#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8"] },
+      "light": { "role": "neutral", "displayName": "Light", "canonical": "#F8FAFC", "tonalRamp": ["#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F1F5F9", "#F8FAFC", "#FAFBFC", "#FFFFFF"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Section headlines, 900 weight, slate on cream / white on the forest footer bookend." },
+      "display": { "displayName": "Display", "purpose": "Section headlines, 900 weight, white on dark / charcoal on light." },
       "display-light": { "displayName": "Display Light", "purpose": "Hero masthead connective words (\"Turn\", \"Into A\"), thin 300 weight against the heavy emphasis word." },
-      "brush": { "displayName": "Brush", "purpose": "One hand-marked hero word only, set on a terracotta swatch." }
+      "brush": { "displayName": "Brush", "purpose": "One hand-marked hero word only, carried over from the prior identity." }
     },
     "shadows": [
-      { "name": "card-rest", "value": "0 1px 2px rgba(0,0,0,0.06)", "purpose": "Default card elevation." },
-      { "name": "card-featured", "value": "0 20px 25px -5px rgba(0,0,0,0.2)", "purpose": "The one featured card per section, paired with a thick terracotta border." },
-      { "name": "hero-ambient-forest", "value": "radial-gradient(circle, rgba(44,74,62,0.18) 0%, rgba(44,74,62,0.05) 45%, transparent 75%)", "purpose": "Hero-only ambient backlight (primary accent), confirmed exception to the No-Glow default." },
-      { "name": "hero-ambient-terracotta", "value": "radial-gradient(circle, rgba(200,125,101,0.22) 0%, rgba(200,125,101,0.06) 45%, transparent 75%)", "purpose": "Hero-only ambient backlight (secondary accent)." }
+      { "name": "card-rest", "value": "0 1px 2px rgba(0,0,0,0.06)", "purpose": "Default card elevation, dark or light." },
+      { "name": "card-featured", "value": "0 20px 25px -5px rgba(0,0,0,0.2)", "purpose": "The one featured card per section, paired with a thick amber border." },
+      { "name": "hero-ambient-amber", "value": "radial-gradient(circle, rgba(245,158,11,0.35) 0%, rgba(245,158,11,0.08) 45%, transparent 75%)", "purpose": "Hero-only ambient backlight, confirmed exception to the No-Glow default." }
     ],
     "motion": [
-      { "name": "status-ping", "value": "scale(2.2) + fade, 2s infinite, emerald-500", "purpose": "Marks a real, currently-true status (accepting students now) -- never a fabricated live feed. Hero only." },
+      { "name": "status-ping", "value": "scale(2.2) + fade, 2s infinite", "purpose": "Marks a real, currently-true status (accepting students now) -- never a fabricated live feed. Hero only." },
       { "name": "sparkle-twinkle", "value": "scale/rotate/opacity pulse, 3s infinite", "purpose": "Decorative hero flourish, SVG not emoji." }
     ],
     "breakpoints": [
@@ -33,56 +32,63 @@
   },
   "components": [
     {
-      "name": "Primary Button (Forest)",
+      "name": "Primary Button (Amber)",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Solid forest-green pill button, white text -- the system's primary-action color, used everywhere except the forest footer bookend (where it switches to terracotta for contrast).",
+      "description": "Solid amber pill button, dark text -- the system's one accent, used on both dark and light sections.",
       "html": "<button class=\"ds-btn-primary\">Book a Lesson</button>",
-      "css": ".ds-btn-primary { background: #2C4A3E; color: #ffffff; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; } .ds-btn-primary:hover { background: #1E342B; transform: translateY(-2px); }"
+      "css": ".ds-btn-primary { background: #F59E0B; color: #0F172A; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; } .ds-btn-primary:hover { background: #D97706; transform: translateY(-2px); }"
     },
     {
-      "name": "Card (White)",
+      "name": "Dark Card",
+      "kind": "card",
+      "refersTo": "card-dark",
+      "description": "Card surface for dark sections (hero, pricing, locations).",
+      "html": "<div class=\"ds-card-dark\"><h3>Card title</h3><p>Body copy.</p></div>",
+      "css": ".ds-card-dark { background: #1E293B; border: 1px solid #334155; border-radius: 24px; padding: 32px; color: #fff; }"
+    },
+    {
+      "name": "Light Card",
       "kind": "card",
       "refersTo": "card-light",
-      "description": "The system's single card surface -- white on cream, used identically across features, pricing, reviews, and locations.",
-      "html": "<div class=\"ds-card\"><h3>Card title</h3><p>Body copy.</p></div>",
-      "css": ".ds-card { background: #FFFFFF; border: 1px solid #E0D9C9; border-radius: 16px; padding: 32px; color: #1E2C25; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }"
+      "description": "Card surface for light sections (features, reviews).",
+      "html": "<div class=\"ds-card-light\"><h3>Card title</h3><p>Body copy.</p></div>",
+      "css": ".ds-card-light { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; color: #0F172A; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }"
     },
     {
       "name": "Trust Banner Pill",
       "kind": "chip",
       "refersTo": "trust-banner",
-      "description": "Confirmed-fact-only trust pill, white on cream.",
+      "description": "Confirmed-fact-only trust pill, dark section.",
       "html": "<span class=\"ds-trust-pill\">10+ Years Local Teaching Experience</span>",
-      "css": ".ds-trust-pill { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #E0D9C9; color: #1E2C25; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 9999px; }"
+      "css": ".ds-trust-pill { display: inline-flex; align-items: center; gap: 8px; background: #1E293B; border: 1px solid #334155; color: #E2E8F0; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 9999px; }"
     }
   ],
   "narrative": {
-    "northStar": "Cedar & Clay",
-    "overview": "The page runs on a single warm cream canvas with white card surfaces for contrast, instead of the prior dark/light alternation. Forest green is the primary-action color -- every button, every checkmark -- while terracotta is the secondary, decorative accent -- stars, badges, ribbons, the hero's hand-brushed word. The Footer CTA band and Footer are the one deliberate dark, brand-color anchor on the page. Trust is still built through specificity -- a real map, real stats, real testimonials -- not decoration.",
+    "northStar": "The Night Studio, Lit by One Warm Lamp",
+    "overview": "The page alternates dark and light sections like a studio at night: the hero, pricing, and locations sections go dark-slate with a single warm amber accent doing all the signaling, while Why Us and testimonials stay crisp and bright for readability and relief. Dark sections hold the decisions that matter most; light sections hold the proof and explanation. Trust is built through specificity -- a real map, real stats, real testimonials -- not decoration.",
     "keyCharacteristics": [
-      "Single cream canvas for every content section; white cards carry contrast where needed",
-      "Two-accent system: forest (primary action/confirmation) vs. terracotta (decorative/informational), never interchangeable",
-      "Footer CTA band and Footer are solid forest green -- the page's one dark bookend",
-      "Live-status pulse uses emerald-500, independent of the two brand accents",
-      "Typography (Montserrat/Inter/Caveat) carried over unchanged from prior identities"
+      "Strict section-level alternation: Hero (dark), Why Us (light), Pricing (dark), Locations (dark), Reviews (light), Footer (dark)",
+      "One accent color (amber) carries every CTA and highlight across both dark and light sections",
+      "Dark sections use dark-card surfaces with thin borders, never pure black-on-black",
+      "Light sections use true white cards on an off-white ground",
+      "The hero carries a confirmed, bounded set of glow/motion accents not used elsewhere"
     ],
     "rules": [
-      { "name": "The Two-Accent Split Rule", "body": "Forest = primary action and confirmation (buttons, checkmarks). Terracotta = decorative and informational (stars, badges, ribbons). Never interchangeable on the same element.", "section": "colors" },
-      { "name": "The One Dark Anchor Rule", "body": "Only the Footer CTA band and Footer depart from the cream canvas, in solid forest green -- a bounded bookend, not a return to dark/light alternation.", "section": "colors" },
-      { "name": "The Hero-Only Glow Rule", "body": "Glow and sparkle accents are a deliberate, confirmed hero flourish, not a system-wide depth cue.", "section": "elevation" },
+      { "name": "The One-Accent Rule", "body": "Amber is the system's only accent color, on both dark and light sections.", "section": "colors" },
+      { "name": "The Hero-Only Glow Rule", "body": "Glow, gradient rings, and sparkle accents are a confirmed hero flourish, not a system-wide depth cue.", "section": "elevation" },
       { "name": "The Honest-Pulse Rule", "body": "The hero's status-badge pulse marks a real, currently-true state, never a fabricated live-updating feed.", "section": "elevation" }
     ],
     "dos": [
-      "Do keep forest strictly for primary actions and confirmation signals.",
-      "Do keep terracotta strictly for decorative/informational accents.",
-      "Do keep the cream canvas consistent across every section except the forest footer bookend.",
+      "Do keep amber as the system's only accent color across every section.",
+      "Do keep the dark/light alternation strict and literal.",
+      "Do keep the hero's glow/pulse/sparkle accents bounded to the hero.",
       "Do state only confirmed facts in the trust banner.",
       "Do keep the map embed scoped to the area with a real studio."
     ],
     "donts": [
-      "Don't let forest and terracotta compete as interchangeable accents on the same element.",
-      "Don't add a third accent hue.",
+      "Don't add a second accent hue competing with amber.",
+      "Don't soften the hard cut between dark and light sections with a gradient transition.",
       "Don't stack two bordered/backgrounded containers inside each other for ordinary content.",
       "Don't animate a status indicator to suggest a live feed when the fact is just true/false."
     ]
