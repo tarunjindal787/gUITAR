@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo, useState, useCallback, useId } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useMemo, useState, useCallback, useId, useRef } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import {
   STANDARD_TUNING,
   INTERVAL_LABELS,
@@ -60,6 +60,28 @@ export default function Fretboard({ rootNote, scaleId, numFrets = 15, className 
   const gradientId = useId();
 
   const [hovered, setHovered] = useState<VisibleNote | null>(null);
+
+  // Mouse-parallax tilt: the board gently rotates toward the cursor within
+  // its own bounds, springing back to flat on leave. Capped at a few
+  // degrees so it reads as "drifting," not as a disorienting 3D flip.
+  const tiltContainerRef = useRef<HTMLDivElement>(null);
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const rotateX = useSpring(useTransform(pointerY, [-0.5, 0.5], [6, -6]), { stiffness: 150, damping: 20 });
+  const rotateY = useSpring(useTransform(pointerX, [-0.5, 0.5], [-6, 6]), { stiffness: 150, damping: 20 });
+
+  const handleBoardMouseMove = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+    const el = tiltContainerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    pointerX.set((event.clientX - rect.left) / rect.width - 0.5);
+    pointerY.set((event.clientY - rect.top) / rect.height - 0.5);
+  }, [pointerX, pointerY]);
+
+  const handleBoardMouseLeave = useCallback(() => {
+    pointerX.set(0);
+    pointerY.set(0);
+  }, [pointerX, pointerY]);
 
   const fretXPositions = useMemo(() => {
     const positions: number[] = [0];
@@ -131,7 +153,14 @@ export default function Fretboard({ rootNote, scaleId, numFrets = 15, className 
 
   return (
     <div className={className}>
-      <div className="overflow-x-auto overflow-y-hidden rounded-2xl border border-slateLine bg-slateSurface/60 p-4 sm:p-6">
+      <div style={{ perspective: '1400px' }}>
+        <motion.div
+          ref={tiltContainerRef}
+          onMouseMove={handleBoardMouseMove}
+          onMouseLeave={handleBoardMouseLeave}
+          style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+          className="glass-panel overflow-x-auto overflow-y-hidden rounded-2xl p-4 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] sm:p-6"
+        >
         <svg
           role="img"
           aria-label={`Guitar fretboard showing the ${rootNote} ${scale.name} scale across ${clampedFrets} frets`}
@@ -246,6 +275,16 @@ export default function Fretboard({ rootNote, scaleId, numFrets = 15, className 
                   aria-label={`${indexToNoteName(note.pitchClass)}, ${INTERVAL_LABELS[note.interval]}, string ${6 - note.stringIndex}, fret ${note.fret}`}
                   style={{ cursor: 'pointer' }}
                 >
+                  {/* Soft contact shadow on the wood, offset below the orb --
+                      the cue that reads as "floating above the surface." */}
+                  <ellipse
+                    cx={note.x}
+                    cy={note.y + (note.isRoot ? 7 : 5)}
+                    rx={note.isRoot ? 9 : 6.5}
+                    ry={note.isRoot ? 3 : 2.2}
+                    fill="rgba(0,0,0,0.45)"
+                    style={{ filter: 'blur(2px)' }}
+                  />
                   <motion.circle
                     cx={note.x}
                     cy={note.y}
@@ -253,8 +292,8 @@ export default function Fretboard({ rootNote, scaleId, numFrets = 15, className 
                     fill={note.isRoot ? `url(#${gradientId}-root)` : `url(#${gradientId}-tone)`}
                     stroke={isHovered ? '#FFFFFF' : 'transparent'}
                     strokeWidth={2}
-                    animate={isHovered ? { scale: 1.25 } : { scale: 1 }}
-                    style={{ filter: note.isRoot ? 'drop-shadow(0 0 6px rgba(255,138,0,0.85))' : 'drop-shadow(0 0 4px rgba(46,143,217,0.7))' }}
+                    animate={isHovered ? { scale: 1.25, y: -2 } : { scale: 1, y: 0 }}
+                    style={{ filter: note.isRoot ? 'drop-shadow(0 0 10px rgba(255,138,0,0.9)) drop-shadow(0 0 20px rgba(255,138,0,0.5))' : 'drop-shadow(0 0 8px rgba(46,143,217,0.8)) drop-shadow(0 0 16px rgba(46,143,217,0.4))' }}
                   />
                   <text
                     x={note.x}
@@ -269,6 +308,7 @@ export default function Fretboard({ rootNote, scaleId, numFrets = 15, className 
             })}
           </AnimatePresence>
         </svg>
+        </motion.div>
       </div>
 
       {/* Hover / focus detail panel */}
