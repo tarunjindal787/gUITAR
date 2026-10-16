@@ -192,9 +192,13 @@ A single word per hero wrapped in Caveat cursive, sitting on a rotated mauve mar
 - **Do** reserve the overlapping decorative circles for photography, not for plain cards or text blocks.
 - **Do** keep Caveat/brush typography to one word, one time, per hero.
 - **Do** keep buttons fully rounded (pill) — this is the system's one consistent button shape.
+- **Do** put status/info pill badges on solid white with charcoal text (plus a small colored accent dot if needed), not colored text on a light tint — a 2026-10-16 audit found `text-brandSage` on `bg-white/90` measuring ~4.3:1, under the AA floor.
+- **Do** style a non-interactive category label as plain text with a thin underline accent (`border-b-2 border-{color}/30`), never as a solid filled pill — a solid rounded-full/rounded-md fill reads as a button and invites misclicks.
+- **Do** give the featured pricing/plan card a real size difference (`lg:scale-105` or larger), not just a heavier border, when it needs to out-anchor a sibling option.
 
 ### Don't:
 - **Don't** reintroduce the old system's zero-offset colored glow shadow; it is explicitly retired by this redesign.
 - **Don't** stack two bordered/backgrounded containers inside each other for ordinary content.
 - **Don't** animate a status badge or indicator unless it represents genuinely live, changing data.
 - **Don't** use the soft/light accent tint anywhere text needs to sit directly on it — contrast fails.
+- **Don't** place secondary actions (social links, etc.) beside a hero's primary CTA — one primary conversion action per above-the-fold view, full stop.
