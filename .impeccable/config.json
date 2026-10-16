@@ -74,6 +74,15 @@
         ],
         "createdAt": "2026-10-14T08:26:25.852Z",
         "reason": "matches the pre-existing sitewide micro-label convention (used for stat captions and badges throughout the page), consistent with DESIGN.md's documented ~0.6875-0.75rem label step"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "4px",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-16T06:49:21.048Z",
+        "reason": "focus-visible outline border-radius for the global keyboard-focus indicator, not a component shape -- intentionally tighter than the documented card/button radius scale"
       }
     ]
   }

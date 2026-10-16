@@ -12,7 +12,7 @@
       "slate-light": { "role": "tertiary-soft", "displayName": "Slate Light", "canonical": "#9BB7C9", "tonalRamp": ["#44586A", "#5E7689", "#7D97AB", "#9BB7C9", "#B5CAD8", "#CEDFE8", "#E3EEF2", "#F2F7F9"] },
       "cream": { "role": "neutral", "displayName": "Cream", "canonical": "#F4EFE4", "tonalRamp": ["#8A8378", "#AEA698", "#C9C1B1", "#E0D9C9", "#EBE5D8", "#F4EFE4", "#F8F4EC", "#FCFAF5"] },
       "charcoal": { "role": "neutral", "displayName": "Charcoal", "canonical": "#2A2A25", "tonalRamp": ["#000000", "#15150F", "#2A2A25", "#3D3D36", "#54544B", "#73706A", "#A3A099", "#D4D2CC"] },
-      "muted-taupe": { "role": "neutral", "displayName": "Muted Taupe", "canonical": "#73706A", "tonalRamp": ["#3A3832", "#4E4C46", "#605E57", "#73706A", "#8C897F", "#A6A399", "#C3C0B6", "#E2DFD6"] }
+      "muted-taupe": { "role": "neutral", "displayName": "Muted Taupe", "canonical": "#5C5952", "tonalRamp": ["#2E2C28", "#3F3D38", "#4E4C46", "#5C5952", "#78756D", "#949089", "#B4B1AA", "#D8D6D1"] }
     },
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "Section headlines, mixed case, 900 weight." },
@@ -59,7 +59,7 @@
       "refersTo": "card-standard",
       "description": "White card with a tinted icon circle, soft shadow, thin border that deepens on hover.",
       "html": "<div class=\"ds-card\"><div class=\"ds-card-icon\">♫</div><h3 class=\"ds-card-title\">Learn Fav Songs</h3><p class=\"ds-card-body\">Learn through the music you love, broken into easy step-by-step riffs.</p></div>",
-      "css": ".ds-card { background: #FFFFFF; border: 1px solid rgba(42,42,37,0.1); border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(42,42,37,0.08); transition: border-color 0.3s ease, transform 0.3s ease; } .ds-card:hover { border-color: #6B8169; transform: translateY(-4px); } .ds-card-icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(174,192,171,0.4); color: #6B8169; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 24px; } .ds-card-title { font-family: Montserrat, sans-serif; font-weight: 800; color: #2A2A25; margin: 0 0 8px; } .ds-card-body { color: #73706A; font-size: 13px; line-height: 1.6; margin: 0; }"
+      "css": ".ds-card { background: #FFFFFF; border: 1px solid rgba(42,42,37,0.1); border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(42,42,37,0.08); transition: border-color 0.3s ease, transform 0.3s ease; } .ds-card:hover { border-color: #6B8169; transform: translateY(-4px); } .ds-card-icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(174,192,171,0.4); color: #6B8169; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 24px; } .ds-card-title { font-family: Montserrat, sans-serif; font-weight: 800; color: #2A2A25; margin: 0 0 8px; } .ds-card-body { color: #5C5952; font-size: 13px; line-height: 1.6; margin: 0; }"
     },
     {
       "name": "Featured Pricing Card",
@@ -75,7 +75,7 @@
       "refersTo": "input-field",
       "description": "Cream form field used throughout the booking modal.",
       "html": "<label class=\"ds-label\">Email Address</label><input class=\"ds-input\" type=\"email\" placeholder=\"email@example.com\">",
-      "css": ".ds-label { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #73706A; margin-bottom: 8px; } .ds-input { width: 100%; background: #F4EFE4; border: 1px solid rgba(42,42,37,0.15); border-radius: 12px; padding: 16px; color: #2A2A25; font-size: 13px; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input:focus { outline: none; border-color: #3F5A72; box-shadow: 0 0 0 2px rgba(63,90,114,0.2); }"
+      "css": ".ds-label { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #5C5952; margin-bottom: 8px; } .ds-input { width: 100%; background: #F4EFE4; border: 1px solid rgba(42,42,37,0.15); border-radius: 12px; padding: 16px; color: #2A2A25; font-size: 13px; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input:focus { outline: none; border-color: #3F5A72; box-shadow: 0 0 0 2px rgba(63,90,114,0.2); }"
     },
     {
       "name": "Decorative Circles",

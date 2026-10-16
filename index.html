@@ -21,7 +21,7 @@
                         brandCream: '#F4EFE4',
                         brandCard: '#FFFFFF',
                         brandCharcoal: '#2A2A25',
-                        brandMuted: '#73706A',
+                        brandMuted: '#5C5952',
                         brandSage: '#6B8169',
                         brandSageLight: '#AEC0AB',
                         brandMauve: '#8B5D53',
@@ -39,6 +39,11 @@
         }
     </script>
     <style>
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 2px solid #3F5A72;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
         .dot-grid-accent {
             background-image: radial-gradient(rgba(42,42,37,0.18) 1.5px, transparent 1.5px);
             background-size: 14px 14px;
@@ -127,7 +132,7 @@
 
             <!-- Mobile Menu Toggle -->
             <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-brandCharcoal p-2">
+                <button id="mobile-menu-btn" class="text-brandCharcoal p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fa-solid fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -628,12 +633,12 @@
 
     <!-- INTERACTIVE BOOKING MODAL -->
     <div id="booking-modal" class="fixed inset-0 z-50 bg-brandCharcoal/60 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="bg-brandCard border border-brandCharcoal/10 w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden relative animate-fade-in">
+        <div class="bg-brandCard border border-brandCharcoal/10 w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden relative animate-fade-in" role="dialog" aria-modal="true" aria-labelledby="modal-title">
 
             <!-- Modal Header -->
             <div class="bg-brandSlate px-6 py-6 flex items-center justify-between">
                 <div>
-                    <h3 class="text-xl font-black text-white font-display">Book Your Guitar Lesson</h3>
+                    <h3 id="modal-title" class="text-xl font-black text-white font-display">Book Your Guitar Lesson</h3>
                     <p class="text-xs text-white/80 font-bold mt-0.5" id="modal-option-text">Selected Option: General</p>
                 </div>
                 <button onclick="closeBookingModal()" class="text-white/70 hover:text-white text-xl p-1 transition-colors" aria-label="Close booking form">
@@ -644,32 +649,32 @@
             <!-- Booking Form -->
             <form id="booking-form" onsubmit="handleFormSubmit(event)" class="p-6 space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-brandMuted uppercase mb-2">Student / Parent Name</label>
-                    <input type="text" required placeholder="Full name" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                    <label for="field-name" class="block text-xs font-bold text-brandMuted uppercase mb-2">Student / Parent Name</label>
+                    <input id="field-name" type="text" required placeholder="Full name" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-brandMuted uppercase mb-2">Email Address</label>
-                        <input type="email" required placeholder="email@example.com" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                        <label for="field-email" class="block text-xs font-bold text-brandMuted uppercase mb-2">Email Address</label>
+                        <input id="field-email" type="email" required placeholder="email@example.com" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-brandMuted uppercase mb-2">Phone Number</label>
-                        <input type="tel" required placeholder="0400 000 000" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                        <label for="field-phone" class="block text-xs font-bold text-brandMuted uppercase mb-2">Phone Number</label>
+                        <input id="field-phone" type="tel" required placeholder="0400 000 000" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Location</label>
-                        <select class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                        <label for="field-location" class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Location</label>
+                        <select id="field-location" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
                             <option>Penrith Studio</option>
                             <option>Blue Mountains Area</option>
                             <option>In-Home Mobile Lesson</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-brandMuted uppercase mb-2">Lesson Package</label>
+                        <label for="modal-select-package" class="block text-xs font-bold text-brandMuted uppercase mb-2">Lesson Package</label>
                         <select id="modal-select-package" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
                             <option value="Single Lesson ($35)">Single Lesson ($35)</option>
                             <option value="10 Lesson Package ($250)">10 Lessons Pack ($250 - Save $100)</option>
@@ -678,8 +683,8 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Day / Time &amp; Music Style</label>
-                    <textarea rows="2" placeholder="e.g. Tuesday afternoons, interested in learning Acoustic Folk/Rock..." class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs"></textarea>
+                    <label for="field-notes" class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Day / Time &amp; Music Style</label>
+                    <textarea id="field-notes" rows="2" placeholder="e.g. Tuesday afternoons, interested in learning Acoustic Folk/Rock..." class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs"></textarea>
                 </div>
 
                 <button type="submit" class="w-full bg-brandSlate hover:bg-[#344A5E] text-white font-black py-4 rounded-xl transition-all duration-150 text-xs tracking-widest uppercase shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandSlate focus-visible:ring-offset-2 mt-2">
@@ -710,11 +715,15 @@
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isOpen = mobileMenu.classList.toggle('hidden') === false;
+            mobileBtn.setAttribute('aria-expanded', String(isOpen));
         });
 
         document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+            });
         });
 
         // Location Tabs Switcher
@@ -740,12 +749,20 @@
 
         // Booking Modal Management
         const modal = document.getElementById('booking-modal');
+        const modalDialog = modal.querySelector('[role="dialog"]');
         const modalOptionText = document.getElementById('modal-option-text');
         const modalSelectPackage = document.getElementById('modal-select-package');
         const bookingForm = document.getElementById('booking-form');
         const bookingSuccess = document.getElementById('booking-success');
+        let modalTriggerEl = null;
+
+        function getFocusableInModal() {
+            return Array.from(modalDialog.querySelectorAll('button, [href], input, select, textarea'))
+                .filter(el => !el.disabled && el.offsetParent !== null);
+        }
 
         function openBookingModal(optionName) {
+            modalTriggerEl = document.activeElement;
             modalOptionText.innerText = "Selected Option: " + optionName;
             if (optionName.includes('$250')) {
                 modalSelectPackage.value = "10 Lesson Package ($250)";
@@ -756,21 +773,46 @@
             bookingSuccess.classList.add('hidden');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            const focusable = getFocusableInModal();
+            if (focusable.length) focusable[0].focus();
         }
 
         function closeBookingModal() {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+            if (modalTriggerEl) modalTriggerEl.focus();
         }
 
         function handleFormSubmit(event) {
             event.preventDefault();
             bookingForm.classList.add('hidden');
             bookingSuccess.classList.remove('hidden');
+            const focusable = getFocusableInModal();
+            if (focusable.length) focusable[0].focus();
         }
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeBookingModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (modal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') {
+                closeBookingModal();
+                return;
+            }
+            if (e.key !== 'Tab') return;
+            const focusable = getFocusableInModal();
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
         });
     </script>
 </body>

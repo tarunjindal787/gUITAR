@@ -5,7 +5,7 @@ colors:
   cream: "#F4EFE4"
   card-white: "#FFFFFF"
   charcoal: "#2A2A25"
-  muted-taupe: "#73706A"
+  muted-taupe: "#5C5952"
   sage: "#6B8169"
   sage-light: "#AEC0AB"
   mauve: "#8B5D53"
@@ -111,7 +111,7 @@ A warm, paper-like neutral ground with three muted accent families doing the wor
 - **Cream** (#F4EFE4): Page background throughout.
 - **Card White** (#FFFFFF): Every card, modal, and input surface.
 - **Charcoal** (#2A2A25): Primary text color.
-- **Muted Taupe** (#73706A): Secondary/caption text, replacing the old system's gray-400.
+- **Muted Taupe** (#5C5952): Secondary/caption text, replacing the old system's gray-400. Darkened during a polish pass (2026-10-16) from an initial #73706A, which measured ~4.3:1 on Cream — just under the 4.5:1 AA floor for normal text. The current value measures ~6:1.
 
 ### Named Rules
 **The Deep/Light Pairing Rule.** Every accent family ships two tones: a deep one for text, borders, and buttons (readable, intentional), and a soft one for decoration — tinted icon backgrounds, hero circles, quote marks. Never use the soft tone where text needs to sit on it directly, and never use the deep tone as a large decorative fill.
