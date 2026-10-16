@@ -83,6 +83,15 @@
         ],
         "createdAt": "2026-10-16T06:49:21.048Z",
         "reason": "focus-visible outline border-radius for the global keyboard-focus indicator, not a component shape -- intentionally tighter than the documented card/button radius scale"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "jetbrains mono",
+        "files": [
+          "fretboard-app/app/globals.css"
+        ],
+        "createdAt": "2026-10-16T07:04:23.492Z",
+        "reason": "user-specified design system for this separate Practice Tools sub-app (dark slate/amber EdTech aesthetic), explicitly distinct from the main site's Botanical Studio identity -- not a drift"
       }
     ]
   }
