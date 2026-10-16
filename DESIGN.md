@@ -138,19 +138,20 @@ A warm, paper-like neutral ground with three muted accent families doing the wor
 
 ## Layout
 
-A `max-w-7xl` centered container runs the page, with horizontal padding stepping `px-4 → sm:px-6 → lg:px-8`. The hero is the one section with a non-rectangular background: a diagonal clip-path splits a sage band (top, ~65% height) from a cream band (bottom), with the photo and content column straddling the seam. Every other section is a flat cream or soft-sage-tinted band, alternating for rhythm. Cards never nest a second bordered/backgrounded box for ordinary content — a divider or spacing separates sub-content instead.
+A `max-w-7xl` centered container runs the page, with horizontal padding stepping `px-4 → sm:px-6 → lg:px-8`. The hero is a flat cream section (a 2026-10-16 revision: the original diagonal sage/cream split background caused text to inherit the wrong color once the layout stacked on mobile — see the mobile-contrast fix below); the sage color now lives only in a rounded panel confined to the photo column, where it can't collide with text color. Every other section is a flat cream or soft-sage-tinted band, alternating for rhythm. Cards never nest a second bordered/backgrounded box for ordinary content — a divider or spacing separates sub-content instead.
 
 ## Elevation & Depth
 
-Soft and natural, not glowing. Cards sit on a thin 1-2px charcoal-tinted border with a soft, true drop shadow (offset + blur) for lift — no colored ambient glow anywhere in this system; that device belonged to the old dark identity and does not survive the redesign. A featured element (the hero CTA, the featured pricing card, the featured testimonial) is marked by a thicker slate border and a deeper shadow, never a halo.
+Mostly soft and natural: cards sit on a thin 1-2px charcoal-tinted border with a true drop shadow (offset + blur) for lift. A featured element (the featured pricing card, the featured testimonial) is marked by a thicker slate border and a deeper shadow. The system also permits a small, deliberate set of ambient accents in the hero specifically — ring gradients, a soft radial backlight, sparkle flourishes, a gradient CTA with an inset highlight, and a one-time pulse on the "Accepting New Students" indicator — confirmed with the client on 2026-10-16 after an earlier pass had retired all glow/pulse as a blanket rule. The distinction that survives: glow is a rare hero accent, not the system's default depth cue, and no animation fakes liveness for data that isn't actually live-checked (the pulse here marks a real, currently-true status, not a fabricated real-time feed).
 
 ### Shadow Vocabulary
 - **Card rest** (`shadow-sm`, neutral): Default card elevation.
 - **Card featured** (`shadow-xl`, neutral): The one featured card per section, paired with a 2-4px slate border.
-- **Modal / CTA** (`shadow-lg` to `shadow-2xl`, neutral): Floating elements above the page plane.
+- **Modal / CTA** (`shadow-lg` to `shadow-2xl`, often with a soft inset highlight on primary buttons): Floating elements above the page plane.
+- **Hero ambient glow** (`radial-gradient` blurred backlight, gradient badge rings, sparkle accents): Reserved for the hero only — never spread to ordinary cards or body sections.
 
 ### Named Rules
-**The No-Glow Rule.** Depth comes from a real offset-and-blur shadow, never a zero-offset colored halo. This is a deliberate reversal of the old system's Spotlight glow, not an oversight.
+**The Hero-Only Glow Rule.** Ambient glow, gradient rings, and sparkle accents are confirmed, deliberate hero flourishes — not a system-wide depth cue. Every other section stays on flat, neutral elevation (shadow + border only).
 
 ## Shapes
 
@@ -188,7 +189,7 @@ A single word per hero wrapped in Caveat cursive, sitting on a rotated mauve mar
 
 ### Do:
 - **Do** pair every accent's deep tone (text/buttons) with its own soft tone (decoration) — never cross them.
-- **Do** keep elevation as a real offset-and-blur shadow; no colored glow anywhere in this system.
+- **Do** keep elevation as a real offset-and-blur shadow outside the hero; glow/gradient-ring accents are a confirmed hero-only flourish, not a system-wide depth cue (see The Hero-Only Glow Rule).
 - **Do** reserve the overlapping decorative circles for photography, not for plain cards or text blocks.
 - **Do** keep Caveat/brush typography to one word, one time, per hero.
 - **Do** keep buttons fully rounded (pill) — this is the system's one consistent button shape.
@@ -197,8 +198,8 @@ A single word per hero wrapped in Caveat cursive, sitting on a rotated mauve mar
 - **Do** give the featured pricing/plan card a real size difference (`lg:scale-105` or larger), not just a heavier border, when it needs to out-anchor a sibling option.
 
 ### Don't:
-- **Don't** reintroduce the old system's zero-offset colored glow shadow; it is explicitly retired by this redesign.
+- **Don't** spread the hero's glow/gradient-ring/sparkle accents to other sections — they stay a deliberate, bounded hero flourish, confirmed with the client, not a precedent for glow everywhere.
 - **Don't** stack two bordered/backgrounded containers inside each other for ordinary content.
-- **Don't** animate a status badge or indicator unless it represents genuinely live, changing data.
+- **Don't** animate a status indicator to suggest a live, continuously-updating feed when the underlying fact is just true/false (the hero's status pulse marks a real, currently-true state — "accepting students right now" — never a fabricated live counter).
 - **Don't** use the soft/light accent tint anywhere text needs to sit directly on it — contrast fails.
 - **Don't** place secondary actions (social links, etc.) beside a hero's primary CTA — one primary conversion action per above-the-fold view, full stop.

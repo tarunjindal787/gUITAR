@@ -84,6 +84,28 @@
         @media (prefers-reduced-motion: reduce) {
             .badge-entrance { animation: none; }
         }
+        @keyframes statusPing {
+            75%, 100% { transform: scale(2.2); opacity: 0; }
+        }
+        .status-ping {
+            animation: statusPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .status-ping { animation: none; }
+        }
+        @keyframes sparkleTwinkle {
+            0%, 100% { opacity: 0.25; transform: scale(0.85) rotate(0deg); }
+            50% { opacity: 0.9; transform: scale(1.1) rotate(8deg); }
+        }
+        .sparkle-accent {
+            animation: sparkleTwinkle 3s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .sparkle-accent { animation: none; opacity: 0.6; }
+        }
+        .ambient-backlight {
+            background: radial-gradient(circle, rgba(211,179,172,0.45) 0%, rgba(174,192,171,0.25) 45%, transparent 75%);
+        }
     </style>
 </head>
 <body class="bg-brandCream text-brandCharcoal font-sans antialiased selection:bg-brandMauveLight selection:text-brandCharcoal overflow-x-hidden">
@@ -167,6 +189,8 @@
             <div class="w-16 h-px bg-brandCharcoal/20"></div>
             <div class="w-3 h-3 rounded-full bg-brandSlate"></div>
         </div>
+        <!-- Ambient backlight behind the headline -->
+        <div class="ambient-backlight hidden lg:block absolute top-1/2 left-[42%] -translate-y-1/2 w-[36rem] h-[36rem] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 pb-24 lg:pt-20 lg:pb-32">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -179,9 +203,13 @@
                         <div class="absolute bottom-0 right-2 w-48 h-48 sm:w-56 sm:h-56 bg-brandSageLight rounded-full"></div>
                         <div class="absolute bottom-10 -right-6 w-16 h-16 bg-brandSlateLight rounded-full hidden sm:block"></div>
 
-                        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-full">
+                        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-full transition-all duration-300 hover:-translate-y-2 hover:rotate-1 hover:shadow-[0_35px_60px_-15px_rgba(42,42,37,0.35)]">
                             <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor playing an acoustic guitar" class="w-full h-full object-cover object-top">
                         </div>
+
+                        <!-- Sparkle accents (hand-drawn SVG, not emoji, so they stay crisp at any size) -->
+                        <svg aria-hidden="true" class="sparkle-accent absolute -top-3 right-10 w-6 h-6 text-brandMauve hidden sm:block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
+                        <svg aria-hidden="true" class="sparkle-accent absolute top-1/3 -left-4 w-4 h-4 text-brandSlate hidden sm:block" style="animation-delay: 1.1s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
 
                         <!-- Decorative chord tag -->
                         <div class="absolute -bottom-5 left-6 bg-brandCard text-brandCharcoal font-display font-black text-sm px-4 py-2 rounded-xl shadow-lg tracking-wide hidden sm:block">
@@ -193,12 +221,18 @@
                 <!-- Content column -->
                 <div class="lg:col-span-7 order-2 lg:pl-6">
 
-                    <div class="badge-entrance inline-flex items-center gap-2 bg-white text-brandCharcoal px-4 py-1.5 rounded-full text-[11px] font-black tracking-widest uppercase shadow-sm mb-5">
-                        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
-                        <span>Accepting New Students</span>
+                    <div class="badge-entrance inline-block p-[1.5px] rounded-full bg-gradient-to-r from-brandSage via-brandMauve to-brandSlate mb-5">
+                        <div class="flex items-center gap-2 bg-white text-brandCharcoal px-4 py-1.5 rounded-full text-[11px] font-black tracking-widest uppercase shadow-sm">
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span class="status-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600"></span>
+                            </span>
+                            <span>Accepting New Students</span>
+                        </div>
                     </div>
 
-                    <h1 class="font-display text-balance text-4xl sm:text-6xl lg:text-[4.5rem] uppercase leading-[0.95] tracking-tight text-brandCharcoal">
+                    <h1 class="relative font-display text-balance text-4xl sm:text-6xl lg:text-[4.5rem] uppercase leading-[0.95] tracking-tight text-brandCharcoal">
+                        <svg aria-hidden="true" class="sparkle-accent absolute -top-4 left-[38%] w-5 h-5 text-brandSage hidden sm:block" style="animation-delay: 0.5s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
                         <span class="font-light">Turn</span> <span class="brush-highlight text-brandCharcoal font-brush font-bold px-2 text-5xl sm:text-7xl lg:text-8xl normal-case">Music</span>
                         <br><span class="font-light">Into A</span> <span class="font-black text-brandSlate">Lifelong Skill</span>
                     </h1>
@@ -227,28 +261,38 @@
 
                     <!-- Primary conversion action: the one unmistakable CTA in this section -->
                     <div class="mt-8 flex flex-col items-center sm:items-start gap-3">
-                        <button onclick="openBookingModal('Hero Primary')" class="hero-cta-pulse bg-brandSlate hover:bg-[#344A5E] text-white font-black px-9 py-4 rounded-full shadow-lg transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 w-full sm:w-auto">
+                        <button onclick="openBookingModal('Hero Primary')" class="hero-cta-pulse bg-gradient-to-br from-brandSlate to-[#2A3F50] hover:from-[#2A3F50] hover:to-brandSlate text-white font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_10px_25px_-8px_rgba(63,90,114,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 w-full sm:w-auto">
                             <span>Book A Lesson</span>
                             <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </button>
-                        <a href="#pricing" class="text-xs font-bold text-brandMuted hover:text-brandSlate transition-colors">
-                            Or view pricing packages &darr;
+                        <a href="#pricing" class="group relative inline-block text-xs font-bold text-brandMuted hover:text-brandSlate transition-colors">
+                            <span>Or view pricing packages &darr;</span>
+                            <span class="absolute left-0 -bottom-0.5 h-px w-full bg-brandSlate scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
                     </div>
 
                     <!-- Trust stats -->
-                    <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
-                        <div>
-                            <p class="text-xl sm:text-2xl font-black text-brandCharcoal font-display">100+</p>
-                            <p class="text-[11px] text-brandMuted font-bold uppercase tracking-wider">Happy Students</p>
+                    <div class="mt-8 flex flex-wrap items-center gap-3">
+                        <div class="flex items-center gap-3 bg-white border border-brandSageLight/50 rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandSageLight/40 text-brandSage"><i class="fa-solid fa-users text-sm"></i></span>
+                            <div>
+                                <p class="text-lg font-black leading-none text-brandCharcoal font-display">100+</p>
+                                <p class="text-[10px] text-brandMuted font-bold uppercase tracking-wider">Happy Students</p>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-xl sm:text-2xl font-black text-brandCharcoal font-display">10+ Yrs</p>
-                            <p class="text-[11px] text-brandMuted font-bold uppercase tracking-wider">Teaching Exp.</p>
+                        <div class="flex items-center gap-3 bg-white border border-brandMauveLight/50 rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandMauveLight/40 text-brandMauve"><i class="fa-solid fa-award text-sm"></i></span>
+                            <div>
+                                <p class="text-lg font-black leading-none text-brandCharcoal font-display">10+ Yrs</p>
+                                <p class="text-[10px] text-brandMuted font-bold uppercase tracking-wider">Teaching Exp.</p>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-xl sm:text-2xl font-black text-brandCharcoal font-display">5.0 &#9733;</p>
-                            <p class="text-[11px] text-brandMuted font-bold uppercase tracking-wider">Student Rating</p>
+                        <div class="flex items-center gap-3 bg-white border border-brandSlateLight/50 rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandSlateLight/40 text-brandSlate"><i class="fa-solid fa-star text-sm"></i></span>
+                            <div>
+                                <p class="text-lg font-black leading-none text-brandCharcoal font-display">5.0 &#9733;</p>
+                                <p class="text-[10px] text-brandMuted font-bold uppercase tracking-wider">Student Rating</p>
+                            </div>
                         </div>
                     </div>
 
