@@ -27,13 +27,16 @@ Single-instructor local service business, built and maintained on behalf of a cl
 - Static, single-file HTML page (Tailwind CDN, Google Fonts, Font Awesome via CDN) — no build pipeline, no backend, no framework.
 - **Booking form does not submit anywhere.** `handleFormSubmit` only swaps the form for a client-side "success" message; no email, backend, or storage is wired up. This is an open constraint — treat as a known gap, not a working submission pipeline, until future work wires it to a real destination.
 - **The hero now carries the instructor photo directly.** The original `image_4c0d25.jpg` reference was missing from the repo; a real photo was later supplied and is now placed in the hero (two-column: photo + decorative circles on the left, content on the right), per the full rebrand on 2026-10-14. The earlier standalone "Meet Your Instructor" section was folded into the hero and no longer exists as a separate section.
-- Visual identity was fully redesigned on 2026-10-14 from a dark mountain/sun yellow-orange "Golden Hour Stage" system to a light cream/sage/mauve/slate "Botanical Studio" system, per the client's pinned reference and explicit confirmation to rebrand the whole site (not just the hero). The old dark identity is retired; see DESIGN.md for the current system.
+- Visual identity history: "Golden Hour Stage" (dark/amber) → "Botanical Studio" (cream/sage/mauve/slate, 2026-10-14) → current dark/light alternating "Night Studio" system (amber accent, 2026-10-16), each a full confirmed rebrand per explicit client direction. See DESIGN.md for the current system; prior identities are retired, not a lineage to preserve.
+- **New `technology.html` page** (added 2026-10-16): a simple "Technology Partner" page attributing site development to JobGen.AI, linked from the main footer. Written as original content, not modeled on any specific third-party company's page design.
+- **Google Maps embed** in the Locations section (added 2026-10-16): a no-API-key iframe centered on "Penrith NSW Australia" — the area with the real, confirmed dedicated studio. Deliberately not extended to Blue Mountains, which has no fixed studio address to honestly pin.
 
 ## Brand Commitments
 
 - Business name: **Mountain Culture Guitar Lessons**.
 - Service area name split: "Penrith" and "Blue Mountains" regions, referenced individually in nav/copy.
 - Existing voice: direct, confident, no-nonsense local-business marketing tone ("No lock-in contracts or surprise costs").
+- Footer credit "Powered by JobGen.AI" (linking to jobgen.ai): confirmed by the client as the dev agency/tool that built this site — standard "built by" attribution, not a claimed business partnership.
 
 ## Evidence on Hand
 
@@ -44,7 +47,7 @@ Confirmed real by the client and to be preserved as-is in future work:
 - Testimonials: James D. (Penrith), Michelle C. (Springwood/Blue Mountains), Ben H. (Emu Plains) — each with a 5-star rating and quoted review, as currently written on the page.
 - Service area lists for Penrith and Blue Mountains regions, as currently written on the page.
 
-Absent evidence (do not fabricate): a verified "#1" or ranking/award claim for the business (explicitly declined by the client — do not reintroduce); a live booking submission destination (email address, CRM, or backend endpoint); real social links (Facebook/Instagram/YouTube icons currently point to `#`); a real contact phone number (currently a placeholder `0400000000`).
+Absent evidence (do not fabricate): a verified "#1" or ranking/award claim for the business (explicitly declined by the client — do not reintroduce); a **WWCC (Working With Children Check) certification claim** (explicitly declined 2026-10-16 — this is a real, legally significant credential in Australia and must not be published without the client confirming the instructor actually holds a current, valid WWCC); confirmation that the 5.0★ rating specifically comes from Google Reviews (keep it as a generic "Student Rating" unless/until confirmed); a live booking submission destination (email address, CRM, or backend endpoint); real social links (Facebook/Instagram/YouTube icons currently point to `#`); a real contact phone number (currently a placeholder `0400000000`).
 
 ## Product Principles
 

@@ -101,6 +101,24 @@
         ],
         "createdAt": "2026-10-16T07:13:08.490Z",
         "reason": "deliberate continuity choice: Montserrat is already the main site's established DESIGN.md display font (Botanical Studio identity); reused here so the Practice Tools sub-app shares typographic DNA with the parent site despite its intentionally distinct dark/amber color scheme -- not a default pick"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "4px",
+        "files": [
+          "technology.html"
+        ],
+        "createdAt": "2026-10-16T08:45:55.184Z",
+        "reason": "focus-visible outline border-radius for the global keyboard-focus indicator, not a component shape -- same rationale already recorded for index.html"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "technology.html"
+        ],
+        "createdAt": "2026-10-16T08:45:55.511Z",
+        "reason": "static analysis false positive: source-only parsing cannot resolve Tailwind's responsive text-4xl/6xl utilities, same confirmed false positive already recorded for index.html"
       }
     ]
   }

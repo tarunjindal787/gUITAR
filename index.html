@@ -18,16 +18,19 @@
             theme: {
                 extend: {
                     colors: {
-                        brandCream: '#F4EFE4',
-                        brandCard: '#FFFFFF',
-                        brandCharcoal: '#2A2A25',
-                        brandMuted: '#5C5952',
-                        brandSage: '#6B8169',
-                        brandSageLight: '#AEC0AB',
-                        brandMauve: '#8B5D53',
-                        brandMauveLight: '#D3B3AC',
-                        brandSlate: '#3F5A72',
-                        brandSlateLight: '#9BB7C9',
+                        brandDark: '#0f172a',
+                        brandDarker: '#020617',
+                        brandDarkCard: '#1e293b',
+                        brandDarkLine: '#334155',
+                        brandLight: '#f8fafc',
+                        brandCard: '#ffffff',
+                        brandBorder: '#e2e8f0',
+                        brandCharcoal: '#0f172a',
+                        brandMuted: '#64748b',
+                        brandMutedLight: '#94a3b8',
+                        brandAmber: '#f59e0b',
+                        brandAmberDeep: '#d97706',
+                        brandAmberLight: '#fde68a',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -40,12 +43,12 @@
     </script>
     <style>
         a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-            outline: 2px solid #3F5A72;
+            outline: 2px solid #f59e0b;
             outline-offset: 2px;
             border-radius: 4px;
         }
         .dot-grid-accent {
-            background-image: radial-gradient(rgba(42,42,37,0.18) 1.5px, transparent 1.5px);
+            background-image: radial-gradient(rgba(255,255,255,0.18) 1.5px, transparent 1.5px);
             background-size: 14px 14px;
         }
         .brush-highlight {
@@ -56,16 +59,16 @@
             content: "";
             position: absolute;
             inset: -2px -12px;
-            background: #D3B3AC;
+            background: #f59e0b;
             z-index: -1;
             transform: rotate(-1.5deg);
             border-radius: 6px;
             clip-path: polygon(0% 15%, 100% 0%, 98% 85%, 2% 100%);
         }
         @keyframes heroCtaPulse {
-            0% { box-shadow: 0 0 0 0 rgba(63,90,114,0.45); }
-            70% { box-shadow: 0 0 0 14px rgba(63,90,114,0); }
-            100% { box-shadow: 0 0 0 0 rgba(63,90,114,0); }
+            0% { box-shadow: 0 0 0 0 rgba(245,158,11,0.45); }
+            70% { box-shadow: 0 0 0 14px rgba(245,158,11,0); }
+            100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
         }
         .hero-cta-pulse {
             animation: heroCtaPulse 1.6s ease-out 0.5s 1;
@@ -103,52 +106,55 @@
         @media (prefers-reduced-motion: reduce) {
             .sparkle-accent { animation: none; opacity: 0.6; }
         }
-        .ambient-backlight {
-            background: radial-gradient(circle, rgba(211,179,172,0.45) 0%, rgba(174,192,171,0.25) 45%, transparent 75%);
+        .ambient-glow-amber {
+            background: radial-gradient(circle, rgba(245,158,11,0.35) 0%, rgba(245,158,11,0.08) 45%, transparent 75%);
+        }
+        .ambient-glow-slate {
+            background: radial-gradient(circle, rgba(148,163,184,0.25) 0%, rgba(148,163,184,0.06) 45%, transparent 75%);
         }
     </style>
 </head>
-<body class="bg-brandCream text-brandCharcoal font-sans antialiased selection:bg-brandMauveLight selection:text-brandCharcoal overflow-x-hidden">
+<body class="bg-brandLight text-brandCharcoal font-sans antialiased selection:bg-brandAmberLight selection:text-brandCharcoal overflow-x-hidden">
 
     <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="relative z-50 bg-brandSage text-white font-bold text-xs uppercase tracking-wider py-2 px-4 text-center flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(0,0,0,0.12)]">
-        <span class="bg-white text-brandCharcoal text-[10px] px-2 py-0.5 rounded-full font-black">NEW TERM OPEN</span>
+    <div class="relative z-50 bg-brandDarker text-white font-bold text-xs uppercase tracking-wider py-2 px-4 text-center flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+        <span class="bg-brandAmber text-brandDark text-[10px] px-2 py-0.5 rounded-full font-black">NEW TERM OPEN</span>
         <span>Enrollment now open for Penrith &amp; Blue Mountains Studio &amp; Home Lessons!</span>
         <span class="hidden sm:inline h-3 w-px bg-white/30" aria-hidden="true"></span>
-        <a href="#pricing" class="hidden sm:inline underline decoration-white/50 underline-offset-2 hover:decoration-white transition-colors">Claim $100 Pack Discount &rarr;</a>
+        <a href="#pricing" class="hidden sm:inline underline decoration-brandAmber/60 underline-offset-2 hover:decoration-brandAmber transition-colors">Claim $100 Pack Discount &rarr;</a>
     </div>
 
     <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-brandCream/90 backdrop-blur-md border-b border-brandCharcoal/10 transition-all">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brandBorder transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-full bg-brandSage flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-mountain-sun text-white text-xl"></i>
+                <div class="w-11 h-11 rounded-full bg-brandDark flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-mountain-sun text-brandAmber text-xl"></i>
                 </div>
                 <div>
                     <span class="block font-black text-xl tracking-wide text-brandCharcoal leading-none font-display">Mountain</span>
-                    <span class="block text-[11px] font-bold tracking-[0.25em] text-brandMauve uppercase leading-tight">Culture Guitar</span>
+                    <span class="block text-[11px] font-bold tracking-[0.25em] text-brandAmberDeep uppercase leading-tight">Culture Guitar</span>
                 </div>
             </a>
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-4 lg:gap-7 text-xs font-bold tracking-widest uppercase">
-                <a href="#home" class="text-brandMuted hover:text-brandSage transition-colors">Home</a>
-                <a href="#features" class="text-brandMuted hover:text-brandSage transition-colors">Why Us</a>
-                <a href="#pricing" class="text-brandMuted hover:text-brandSage transition-colors">Pricing</a>
-                <a href="#locations" class="text-brandMuted hover:text-brandSage transition-colors">Locations</a>
-                <a href="#reviews" class="text-brandMuted hover:text-brandSage transition-colors">Reviews</a>
-                <a href="practice/" class="text-brandMuted hover:text-brandSage transition-colors">Practice Tools</a>
+                <a href="#home" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Home</a>
+                <a href="#features" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Why Us</a>
+                <a href="#pricing" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Pricing</a>
+                <a href="#locations" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Locations</a>
+                <a href="#reviews" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Reviews</a>
+                <a href="practice/" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Practice Tools</a>
             </nav>
 
             <!-- CTA Button -->
             <div class="hidden md:flex items-center gap-4">
                 <a href="tel:0400000000" class="hidden xl:flex text-brandMuted hover:text-brandCharcoal text-xs font-bold tracking-wider items-center gap-2" aria-label="Call Penrith and Mountains">
-                    <i class="fa-solid fa-phone text-brandSage"></i>
+                    <i class="fa-solid fa-phone text-brandAmberDeep"></i>
                     <span>Penrith &amp; Mountains</span>
                 </a>
-                <button onclick="openBookingModal('General Header CTA')" class="bg-brandSlate hover:bg-[#344A5E] text-white font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
+                <button onclick="openBookingModal('General Header CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
                     <span>Book A Lesson</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
@@ -163,34 +169,35 @@
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brandCard border-b border-brandCharcoal/10 px-4 pt-3 pb-6 space-y-3">
-            <a href="#home" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandSage">Home</a>
-            <a href="#features" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandSage">Why Us</a>
-            <a href="#pricing" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandSage">Pricing</a>
-            <a href="#locations" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandSage">Locations</a>
-            <a href="#reviews" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandSage">Reviews</a>
-            <a href="practice/" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandSage">Practice Tools</a>
-            <a href="tel:0400000000" class="mobile-link flex items-center gap-2 py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandSage">
-                <i class="fa-solid fa-phone text-brandSage"></i>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brandBorder px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Home</a>
+            <a href="#features" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Why Us</a>
+            <a href="#pricing" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Pricing</a>
+            <a href="#locations" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Locations</a>
+            <a href="#reviews" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Reviews</a>
+            <a href="practice/" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Practice Tools</a>
+            <a href="tel:0400000000" class="mobile-link flex items-center gap-2 py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">
+                <i class="fa-solid fa-phone text-brandAmberDeep"></i>
                 <span>Penrith &amp; Mountains</span>
             </a>
-            <button onclick="openBookingModal('Mobile Menu CTA')" class="w-full mt-4 bg-brandSlate text-white font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs">
+            <button onclick="openBookingModal('Mobile Menu CTA')" class="w-full mt-4 bg-brandAmber text-brandDark font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs">
                 <span>Book A Lesson Now</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </header>
 
-    <!-- SECTION 1: HERO -->
-    <section id="home" class="relative overflow-hidden bg-brandCream">
-        <div class="absolute top-16 right-10 sm:right-24 w-24 h-20 dot-grid-accent opacity-40 pointer-events-none" aria-hidden="true"></div>
-        <div class="hidden sm:flex absolute bottom-10 right-10 lg:right-24 items-center gap-4 opacity-70 pointer-events-none" aria-hidden="true">
-            <div class="w-16 h-16 rounded-full bg-brandSlateLight/60"></div>
-            <div class="w-16 h-px bg-brandCharcoal/20"></div>
-            <div class="w-3 h-3 rounded-full bg-brandSlate"></div>
+    <!-- SECTION 1: HERO (DARK) -->
+    <section id="home" class="relative overflow-hidden bg-brandDark">
+        <div class="absolute top-16 right-10 sm:right-24 w-24 h-20 dot-grid-accent opacity-30 pointer-events-none" aria-hidden="true"></div>
+        <div class="hidden sm:flex absolute bottom-10 right-10 lg:right-24 items-center gap-4 opacity-60 pointer-events-none" aria-hidden="true">
+            <div class="w-16 h-16 rounded-full bg-brandDarkLine/60"></div>
+            <div class="w-16 h-px bg-white/20"></div>
+            <div class="w-3 h-3 rounded-full bg-brandAmber"></div>
         </div>
-        <!-- Ambient backlight behind the headline -->
-        <div class="ambient-backlight hidden lg:block absolute top-1/2 left-[42%] -translate-y-1/2 w-[36rem] h-[36rem] blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <!-- Ambient amber backlight behind the headline -->
+        <div class="ambient-glow-amber hidden lg:block absolute top-1/2 left-[42%] -translate-y-1/2 w-[36rem] h-[36rem] blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="ambient-glow-slate absolute -top-20 -left-20 w-[28rem] h-[28rem] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 pb-24 lg:pt-20 lg:pb-32">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -198,21 +205,21 @@
                 <!-- Photo column -->
                 <div class="lg:col-span-5 relative order-1">
                     <div class="relative mx-auto max-w-sm lg:max-w-none aspect-[4/5]">
-                        <div class="absolute -inset-6 sm:-inset-10 bg-brandSage rounded-[3rem]"></div>
-                        <div class="absolute -top-6 -left-6 w-56 h-56 sm:w-64 sm:h-64 bg-brandMauveLight rounded-full"></div>
-                        <div class="absolute bottom-0 right-2 w-48 h-48 sm:w-56 sm:h-56 bg-brandSageLight rounded-full"></div>
-                        <div class="absolute bottom-10 -right-6 w-16 h-16 bg-brandSlateLight rounded-full hidden sm:block"></div>
+                        <div class="absolute -inset-6 sm:-inset-10 bg-brandDarkCard rounded-[3rem] border border-brandDarkLine"></div>
+                        <div class="absolute -top-6 -left-6 w-56 h-56 sm:w-64 sm:h-64 bg-brandAmber/20 rounded-full"></div>
+                        <div class="absolute bottom-0 right-2 w-48 h-48 sm:w-56 sm:h-56 bg-brandDarkLine/40 rounded-full"></div>
+                        <div class="absolute bottom-10 -right-6 w-16 h-16 bg-brandAmber/30 rounded-full hidden sm:block"></div>
 
-                        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-full transition-all duration-300 hover:-translate-y-2 hover:rotate-1 hover:shadow-[0_35px_60px_-15px_rgba(42,42,37,0.35)]">
+                        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-full transition-all duration-300 hover:-translate-y-2 hover:rotate-1 hover:shadow-[0_35px_60px_-15px_rgba(245,158,11,0.35)]">
                             <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor playing an acoustic guitar" class="w-full h-full object-cover object-top">
                         </div>
 
                         <!-- Sparkle accents (hand-drawn SVG, not emoji, so they stay crisp at any size) -->
-                        <svg aria-hidden="true" class="sparkle-accent absolute -top-3 right-10 w-6 h-6 text-brandMauve hidden sm:block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
-                        <svg aria-hidden="true" class="sparkle-accent absolute top-1/3 -left-4 w-4 h-4 text-brandSlate hidden sm:block" style="animation-delay: 1.1s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
+                        <svg aria-hidden="true" class="sparkle-accent absolute -top-3 right-10 w-6 h-6 text-brandAmber hidden sm:block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
+                        <svg aria-hidden="true" class="sparkle-accent absolute top-1/3 -left-4 w-4 h-4 text-brandMutedLight hidden sm:block" style="animation-delay: 1.1s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
 
                         <!-- Decorative chord tag -->
-                        <div class="absolute -bottom-5 left-6 bg-brandCard text-brandCharcoal font-display font-black text-sm px-4 py-2 rounded-xl shadow-lg tracking-wide hidden sm:block">
+                        <div class="absolute -bottom-5 left-6 bg-brandDarkCard border border-brandDarkLine text-white font-display font-black text-sm px-4 py-2 rounded-xl shadow-lg tracking-wide hidden sm:block">
                             C &middot; G &middot; Am &middot; F
                         </div>
                     </div>
@@ -221,77 +228,77 @@
                 <!-- Content column -->
                 <div class="lg:col-span-7 order-2 lg:pl-6">
 
-                    <div class="badge-entrance inline-block p-[1.5px] rounded-full bg-gradient-to-r from-brandSage via-brandMauve to-brandSlate mb-5">
-                        <div class="flex items-center gap-2 bg-white text-brandCharcoal px-4 py-1.5 rounded-full text-[11px] font-black tracking-widest uppercase shadow-sm">
+                    <div class="badge-entrance inline-block p-[1.5px] rounded-full bg-gradient-to-r from-brandAmber via-brandAmberDeep to-brandAmber mb-5">
+                        <div class="flex items-center gap-2 bg-brandDarkCard text-white px-4 py-1.5 rounded-full text-[11px] font-black tracking-widest uppercase shadow-sm">
                             <span class="relative flex h-2.5 w-2.5">
-                                <span class="status-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600"></span>
+                                <span class="status-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
                             </span>
                             <span>Accepting New Students</span>
                         </div>
                     </div>
 
-                    <h1 class="relative font-display text-balance text-4xl sm:text-6xl lg:text-[4.5rem] uppercase leading-[0.95] tracking-tight text-brandCharcoal">
-                        <svg aria-hidden="true" class="sparkle-accent absolute -top-4 left-[38%] w-5 h-5 text-brandSage hidden sm:block" style="animation-delay: 0.5s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
-                        <span class="font-light">Turn</span> <span class="brush-highlight text-brandCharcoal font-brush font-bold px-2 text-5xl sm:text-7xl lg:text-8xl normal-case">Music</span>
-                        <br><span class="font-light">Into A</span> <span class="font-black text-brandSlate">Lifelong Skill</span>
+                    <h1 class="relative font-display text-balance text-4xl sm:text-6xl lg:text-[4.5rem] uppercase leading-[0.95] tracking-tight text-white">
+                        <svg aria-hidden="true" class="sparkle-accent absolute -top-4 left-[38%] w-5 h-5 text-brandAmber hidden sm:block" style="animation-delay: 0.5s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
+                        <span class="font-light text-slate-300">Turn</span> <span class="brush-highlight text-brandDark font-brush font-bold px-2 text-5xl sm:text-7xl lg:text-8xl normal-case">Music</span>
+                        <br><span class="font-light text-slate-300">Into A</span> <span class="font-black text-brandAmber">Lifelong Skill</span>
                     </h1>
 
-                    <p class="mt-6 text-sm sm:text-lg text-brandMuted max-w-xl leading-relaxed">
+                    <p class="mt-6 text-sm sm:text-lg text-slate-300 max-w-xl leading-relaxed">
                         Guitar lessons for all ages in a fun, supportive and relaxed environment — master acoustic or electric guitar at your own pace, across Penrith &amp; the Blue Mountains.
                     </p>
 
                     <!-- Category label (non-interactive, deliberately distinct from the CTA button below) -->
-                    <p class="mt-6 inline-flex items-center gap-2 text-brandSlate font-bold text-xs tracking-widest uppercase border-b-2 border-brandSlate/30 pb-1">
+                    <p class="mt-6 inline-flex items-center gap-2 text-brandAmber font-bold text-xs tracking-widest uppercase border-b-2 border-brandAmber/30 pb-1">
                         <i class="fa-solid fa-guitar text-[10px]" aria-hidden="true"></i>
                         Guitar Lessons For All Ages
                     </p>
 
                     <!-- Value bullets -->
-                    <ul class="mt-5 space-y-2 text-sm sm:text-base text-brandCharcoal font-medium max-w-md">
+                    <ul class="mt-5 space-y-2 text-sm sm:text-base text-slate-200 font-medium max-w-md">
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brandMauve"></i>
+                            <i class="fa-solid fa-circle-check text-brandAmber"></i>
                             <span>Beginner to advanced, ages 6 to 80+</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brandMauve"></i>
+                            <i class="fa-solid fa-circle-check text-brandAmber"></i>
                             <span>No lock-in contracts, no surprise costs</span>
                         </li>
                     </ul>
 
                     <!-- Primary conversion action: the one unmistakable CTA in this section -->
                     <div class="mt-8 flex flex-col items-center sm:items-start gap-3">
-                        <button onclick="openBookingModal('Hero Primary')" class="hero-cta-pulse bg-gradient-to-br from-brandSlate to-[#2A3F50] hover:from-[#2A3F50] hover:to-brandSlate text-white font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_10px_25px_-8px_rgba(63,90,114,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 w-full sm:w-auto">
+                        <button onclick="openBookingModal('Hero Primary')" class="hero-cta-pulse bg-gradient-to-br from-brandAmber to-brandAmberDeep hover:from-brandAmberDeep hover:to-brandAmber text-brandDark font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_25px_-8px_rgba(245,158,11,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brandDark w-full sm:w-auto">
                             <span>Book A Lesson</span>
                             <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </button>
-                        <a href="#pricing" class="group relative inline-block text-xs font-bold text-brandMuted hover:text-brandSlate transition-colors">
+                        <a href="#pricing" class="group relative inline-block text-xs font-bold text-slate-400 hover:text-brandAmber transition-colors">
                             <span>Or view pricing packages &darr;</span>
-                            <span class="absolute left-0 -bottom-0.5 h-px w-full bg-brandSlate scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                            <span class="absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
                     </div>
 
                     <!-- Trust stats -->
                     <div class="mt-8 flex flex-wrap items-center gap-3">
-                        <div class="flex items-center gap-3 bg-white border border-brandSageLight/50 rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandSageLight/40 text-brandSage"><i class="fa-solid fa-users text-sm"></i></span>
+                        <div class="flex items-center gap-3 bg-brandDarkCard border border-brandDarkLine rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAmber/15 text-brandAmber"><i class="fa-solid fa-users text-sm"></i></span>
                             <div>
-                                <p class="text-lg font-black leading-none text-brandCharcoal font-display">100+</p>
-                                <p class="text-[10px] text-brandMuted font-bold uppercase tracking-wider">Happy Students</p>
+                                <p class="text-lg font-black leading-none text-white font-display">100+</p>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Happy Students</p>
                             </div>
                         </div>
-                        <div class="flex items-center gap-3 bg-white border border-brandMauveLight/50 rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandMauveLight/40 text-brandMauve"><i class="fa-solid fa-award text-sm"></i></span>
+                        <div class="flex items-center gap-3 bg-brandDarkCard border border-brandDarkLine rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAmber/15 text-brandAmber"><i class="fa-solid fa-award text-sm"></i></span>
                             <div>
-                                <p class="text-lg font-black leading-none text-brandCharcoal font-display">10+ Yrs</p>
-                                <p class="text-[10px] text-brandMuted font-bold uppercase tracking-wider">Teaching Exp.</p>
+                                <p class="text-lg font-black leading-none text-white font-display">10+ Yrs</p>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Teaching Exp.</p>
                             </div>
                         </div>
-                        <div class="flex items-center gap-3 bg-white border border-brandSlateLight/50 rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandSlateLight/40 text-brandSlate"><i class="fa-solid fa-star text-sm"></i></span>
+                        <div class="flex items-center gap-3 bg-brandDarkCard border border-brandDarkLine rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAmber/15 text-brandAmber"><i class="fa-solid fa-star text-sm"></i></span>
                             <div>
-                                <p class="text-lg font-black leading-none text-brandCharcoal font-display">5.0 &#9733;</p>
-                                <p class="text-[10px] text-brandMuted font-bold uppercase tracking-wider">Student Rating</p>
+                                <p class="text-lg font-black leading-none text-white font-display">5.0 &#9733;</p>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Student Rating</p>
                             </div>
                         </div>
                     </div>
@@ -301,12 +308,12 @@
         </div>
     </section>
 
-    <!-- SECTION 2: FEATURES GRID SECTION (4 Interactive Cards) -->
-    <section id="features" class="py-20 bg-brandCream border-t border-brandCharcoal/10 relative">
+    <!-- SECTION 2: FEATURES GRID SECTION (LIGHT) -->
+    <section id="features" class="py-20 bg-brandLight border-t border-brandBorder relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brandSage font-black tracking-widest text-xs uppercase">Why Choose Mountain Culture</span>
+                <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Why Choose Mountain Culture</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Tailored to how you learn</h2>
                 <p class="text-brandMuted mt-3 text-sm sm:text-base">Designed to replace rigid theory with fun, practical playing from your very first session.</p>
             </div>
@@ -314,9 +321,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
                 <!-- Card 1: Beginner to Advanced -->
-                <div class="bg-brandCard border border-brandCharcoal/10 hover:border-brandSage p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                <div class="bg-brandCard border border-brandBorder hover:border-brandAmber p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-brandSageLight/40 text-brandSage flex items-center justify-center text-2xl mb-6 group-hover:bg-brandSage group-hover:text-white transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-brandAmberLight/50 text-brandAmberDeep flex items-center justify-center text-2xl mb-6 group-hover:bg-brandAmber group-hover:text-white transition-all duration-300">
                             <i class="fa-solid fa-graduation-cap"></i>
                         </div>
                         <h3 class="text-xl font-extrabold text-brandCharcoal mb-2 font-display">Beginner to Advanced</h3>
@@ -324,16 +331,16 @@
                             A clear, stress-free progression roadmap adapted for absolute beginners up to experienced performers refining their skills.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-brandCharcoal/10 text-xs font-bold text-brandSage flex items-center gap-2">
+                    <div class="mt-6 pt-4 border-t border-brandBorder text-xs font-bold text-brandAmberDeep flex items-center gap-2">
                         <span>All Ages 6 to 80+</span>
                         <i class="fa-solid fa-chevron-right text-[10px]"></i>
                     </div>
                 </div>
 
                 <!-- Card 2: Individual & Group Lessons -->
-                <div class="bg-brandCard border border-brandCharcoal/10 hover:border-brandMauve p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                <div class="bg-brandCard border border-brandBorder hover:border-brandDark p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-brandMauveLight/40 text-brandMauve flex items-center justify-center text-2xl mb-6 group-hover:bg-brandMauve group-hover:text-white transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-100 text-brandDark flex items-center justify-center text-2xl mb-6 group-hover:bg-brandDark group-hover:text-brandAmber transition-all duration-300">
                             <i class="fa-solid fa-users"></i>
                         </div>
                         <h3 class="text-xl font-extrabold text-brandCharcoal mb-2 font-display">Individual &amp; Group</h3>
@@ -341,16 +348,16 @@
                             Pick focused 1-on-1 private tuition or bring a friend for engaging group sessions designed to build team musicality.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-brandCharcoal/10 text-xs font-bold text-brandMauve flex items-center gap-2">
+                    <div class="mt-6 pt-4 border-t border-brandBorder text-xs font-bold text-brandDark flex items-center gap-2">
                         <span>Flexible Formats</span>
                         <i class="fa-solid fa-chevron-right text-[10px]"></i>
                     </div>
                 </div>
 
                 <!-- Card 3: Learn Your Favourite Songs -->
-                <div class="bg-brandCard border border-brandCharcoal/10 hover:border-brandSlate p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                <div class="bg-brandCard border border-brandBorder hover:border-brandAmber p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-brandSlateLight/40 text-brandSlate flex items-center justify-center text-2xl mb-6 group-hover:bg-brandSlate group-hover:text-white transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-brandAmberLight/50 text-brandAmberDeep flex items-center justify-center text-2xl mb-6 group-hover:bg-brandAmber group-hover:text-white transition-all duration-300">
                             <i class="fa-solid fa-music"></i>
                         </div>
                         <h3 class="text-xl font-extrabold text-brandCharcoal mb-2 font-display">Learn Fav Songs</h3>
@@ -358,16 +365,16 @@
                             Learn through the music you love! We breakdown Rock, Blues, Pop, Folk, and Metal songs into easy step-by-step riffs.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-brandCharcoal/10 text-xs font-bold text-brandSlate flex items-center gap-2">
+                    <div class="mt-6 pt-4 border-t border-brandBorder text-xs font-bold text-brandAmberDeep flex items-center gap-2">
                         <span>Your Fav Genres</span>
                         <i class="fa-solid fa-chevron-right text-[10px]"></i>
                     </div>
                 </div>
 
                 <!-- Card 4: Build Skills & Confidence -->
-                <div class="bg-brandCard border border-brandCharcoal/10 hover:border-brandSage p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                <div class="bg-brandCard border border-brandBorder hover:border-brandDark p-8 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-brandSageLight/40 text-brandSage flex items-center justify-center text-2xl mb-6 group-hover:bg-brandSage group-hover:text-white transition-all duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-100 text-brandDark flex items-center justify-center text-2xl mb-6 group-hover:bg-brandDark group-hover:text-brandAmber transition-all duration-300">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
                         <h3 class="text-xl font-extrabold text-brandCharcoal mb-2 font-display">Build Skills &amp; Confidence</h3>
@@ -375,7 +382,7 @@
                             Develop solid picking habits, rhythm timing, fretboard knowledge, and real stage readiness with supportive coaching.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-brandCharcoal/10 text-xs font-bold text-brandSage flex items-center gap-2">
+                    <div class="mt-6 pt-4 border-t border-brandBorder text-xs font-bold text-brandDark flex items-center gap-2">
                         <span>Real Results</span>
                         <i class="fa-solid fa-chevron-right text-[10px]"></i>
                     </div>
@@ -385,101 +392,101 @@
         </div>
     </section>
 
-    <!-- SECTION 3: PRICING SECTION -->
-    <section id="pricing" class="py-20 bg-brandSageLight/20 relative">
+    <!-- SECTION 3: PRICING SECTION (DARK) -->
+    <section id="pricing" class="py-20 bg-brandDark relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brandSage font-black tracking-widest text-xs uppercase">Simple &amp; Clear Rates</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Simple lesson pricing</h2>
-                <p class="text-brandMuted mt-3 text-sm sm:text-base">No lock-in contracts or surprise costs. Choose casual single lessons or discount packages.</p>
+                <span class="text-brandAmber font-black tracking-widest text-xs uppercase">Simple &amp; Clear Rates</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 font-display tracking-tight">Simple lesson pricing</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">No lock-in contracts or surprise costs. Choose casual single lessons or discount packages.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
 
                 <!-- Card 1: Single Lesson ($35) -->
-                <div class="bg-brandCard text-brandCharcoal rounded-3xl p-8 sm:p-10 shadow-sm border border-brandCharcoal/10 relative flex flex-col justify-between opacity-90 hover:opacity-100 transition-opacity">
+                <div class="bg-brandDarkCard text-white rounded-3xl p-8 sm:p-10 shadow-sm border border-brandDarkLine relative flex flex-col justify-between opacity-90 hover:opacity-100 transition-opacity">
                     <div>
-                        <div class="inline-block bg-brandSageLight/40 text-brandSage font-black px-3 py-1 rounded-md text-[11px] uppercase tracking-wider mb-4">
+                        <div class="inline-block bg-white/10 text-slate-300 font-black px-3 py-1 rounded-md text-[11px] uppercase tracking-wider mb-4">
                             Casual Option
                         </div>
-                        <h3 class="text-3xl font-black tracking-tight text-brandCharcoal font-display">$35 / Half Hour</h3>
-                        <p class="text-brandMuted text-xs sm:text-sm mt-1">Single 30-minute private 1-on-1 lesson session.</p>
+                        <h3 class="text-3xl font-black tracking-tight text-white font-display">$35 / Half Hour</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Single 30-minute private 1-on-1 lesson session.</p>
 
                         <div class="my-8 flex items-baseline">
-                            <span class="text-6xl sm:text-7xl font-black tracking-tight text-brandCharcoal font-display">$35</span>
-                            <span class="text-brandMuted font-bold ml-2 text-sm uppercase">/ 30 min lesson</span>
+                            <span class="text-6xl sm:text-7xl font-black tracking-tight text-white font-display">$35</span>
+                            <span class="text-slate-400 font-bold ml-2 text-sm uppercase">/ 30 min lesson</span>
                         </div>
-                        <p class="-mt-6 mb-2 text-xs font-bold text-brandMuted">That's $35 per lesson, every time.</p>
+                        <p class="-mt-6 mb-2 text-xs font-bold text-slate-400">That's $35 per lesson, every time.</p>
 
-                        <ul class="space-y-3.5 border-t border-brandCharcoal/10 pt-6 text-xs sm:text-sm font-bold text-brandCharcoal">
+                        <ul class="space-y-3.5 border-t border-brandDarkLine pt-6 text-xs sm:text-sm font-bold text-slate-200">
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSage text-base"></i>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
                                 <span>Personalized 1-on-1 instruction</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSage text-base"></i>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
                                 <span>Custom song charts &amp; tab sheets</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSage text-base"></i>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
                                 <span>Flexible week-to-week schedule</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSage text-base"></i>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
                                 <span>Acoustic or Electric guitar</span>
                             </li>
                         </ul>
                     </div>
 
-                    <button onclick="openBookingModal('Single Lesson ($35)')" class="mt-8 w-full bg-brandSage hover:bg-[#5A6E58] text-white font-black py-4 rounded-2xl shadow-sm transition-all text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+                    <button onclick="openBookingModal('Single Lesson ($35)')" class="mt-8 w-full bg-white/10 hover:bg-white/15 border border-brandDarkLine text-white font-black py-4 rounded-2xl shadow-sm transition-all text-xs tracking-widest uppercase flex items-center justify-center gap-2">
                         <span>Book Single Lesson</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
 
                 <!-- Card 2: 10 Lesson Package ($250 - HIGHLIGHTED) -->
-                <div class="bg-brandCard text-brandCharcoal rounded-3xl p-8 sm:p-10 shadow-2xl border-4 border-brandSlate relative flex flex-col justify-between lg:scale-105 z-10 hover:lg:scale-[1.07] transition-transform">
+                <div class="bg-brandDarkCard text-white rounded-3xl p-8 sm:p-10 shadow-2xl border-4 border-brandAmber relative flex flex-col justify-between lg:scale-105 z-10 hover:lg:scale-[1.07] transition-transform">
 
                     <!-- Value Badge -->
-                    <div class="absolute -top-4 right-6 bg-brandSlate text-white font-black px-4 py-1.5 rounded-full text-[11px] uppercase tracking-widest shadow-lg">
+                    <div class="absolute -top-4 right-6 bg-brandAmber text-brandDark font-black px-4 py-1.5 rounded-full text-[11px] uppercase tracking-widest shadow-lg">
                         Save $100 &bull; Most Popular
                     </div>
 
                     <div>
-                        <div class="inline-block bg-brandSlateLight/30 text-brandSlate font-black px-3 py-1 rounded-md text-[11px] uppercase tracking-wider mb-4">
+                        <div class="inline-block bg-brandAmber/15 text-brandAmber font-black px-3 py-1 rounded-md text-[11px] uppercase tracking-wider mb-4">
                             Best Value Bundle
                         </div>
-                        <h3 class="text-3xl font-black tracking-tight text-brandCharcoal font-display">$250 Package</h3>
-                        <p class="text-brandMuted text-xs sm:text-sm mt-1">10 lessons package (30 minutes each).</p>
+                        <h3 class="text-3xl font-black tracking-tight text-white font-display">$250 Package</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">10 lessons package (30 minutes each).</p>
 
                         <div class="my-8 flex items-baseline">
-                            <span class="text-6xl sm:text-7xl font-black tracking-tight text-brandSlate font-display">$250</span>
-                            <span class="text-brandMuted font-bold ml-2 text-sm uppercase">/ for 10 lessons</span>
+                            <span class="text-6xl sm:text-7xl font-black tracking-tight text-brandAmber font-display">$250</span>
+                            <span class="text-slate-400 font-bold ml-2 text-sm uppercase">/ for 10 lessons</span>
                         </div>
-                        <p class="-mt-6 mb-2 text-xs font-black text-brandSlate">Just $25 per lesson &mdash; save $10 every single time.</p>
+                        <p class="-mt-6 mb-2 text-xs font-black text-brandAmber">Just $25 per lesson &mdash; save $10 every single time.</p>
 
-                        <ul class="space-y-3.5 border-t border-brandCharcoal/10 pt-6 text-xs sm:text-sm font-semibold text-brandCharcoal">
+                        <ul class="space-y-3.5 border-t border-brandDarkLine pt-6 text-xs sm:text-sm font-semibold text-slate-200">
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSlate text-base"></i>
-                                <span><strong class="text-brandSlate">Save $100</strong> vs casual single lesson rate</span>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
+                                <span><strong class="text-brandAmber">Save $100</strong> vs casual single lesson rate</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSlate text-base"></i>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
                                 <span>Guaranteed recurring weekly timeslot</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSlate text-base"></i>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
                                 <span>Structured 10-week step roadmap</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-circle-check text-brandSlate text-base"></i>
+                                <i class="fa-solid fa-circle-check text-brandAmber text-base"></i>
                                 <span>Free video recaps for home practice</span>
                             </li>
                         </ul>
                     </div>
 
-                    <button onclick="openBookingModal('10 Lesson Package ($250)')" class="mt-8 w-full bg-brandSlate hover:bg-[#344A5E] text-white font-black py-4 rounded-2xl shadow-sm transition-all text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+                    <button onclick="openBookingModal('10 Lesson Package ($250)')" class="mt-8 w-full bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-4 rounded-2xl shadow-sm transition-all text-xs tracking-widest uppercase flex items-center justify-center gap-2">
                         <span>Claim $250 Package</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -489,108 +496,127 @@
         </div>
     </section>
 
-    <!-- SECTION 4: INTERACTIVE LOCATION & STUDIO TABS -->
-    <section id="locations" class="py-20 bg-brandCream border-t border-brandCharcoal/10">
+    <!-- SECTION 4: LOCATIONS & INTERACTIVE MAP (DARK / HIGH-TRUST) -->
+    <section id="locations" class="py-20 bg-brandDarker">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brandSage font-black tracking-widest text-xs uppercase">Location &amp; Studio Options</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Teaching across two regions</h2>
-                <p class="text-brandMuted mt-3 text-sm sm:text-base">Choose between studio lessons or mobile in-home lessons across Penrith &amp; the Blue Mountains.</p>
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brandAmber font-black tracking-widest text-xs uppercase">Location &amp; Studio Options</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 font-display tracking-tight">Teaching across two regions</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Choose between studio lessons or mobile in-home lessons across Penrith &amp; the Blue Mountains.</p>
+            </div>
+
+            <!-- Trust banner -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+                <span class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-xs font-bold px-4 py-2 rounded-full">
+                    <i class="fa-solid fa-award text-brandAmber"></i> 10+ Years Local Teaching Experience
+                </span>
+                <span class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-xs font-bold px-4 py-2 rounded-full">
+                    <i class="fa-solid fa-star text-brandAmber"></i> 5.0&#9733; Student Rating
+                </span>
+                <span class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-xs font-bold px-4 py-2 rounded-full">
+                    <i class="fa-solid fa-file-circle-check text-brandAmber"></i> No Locked-In Contracts
+                </span>
             </div>
 
             <!-- Tab Buttons -->
             <div class="flex justify-center mb-8 gap-3">
-                <button onclick="switchTab('penrith')" id="tab-penrith" class="location-tab active-tab bg-brandSlate text-white font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
-                    <i class="fa-solid fa-location-dot mr-2"></i>Penrith Region
+                <button onclick="switchTab('penrith')" id="tab-penrith" class="location-tab active-tab bg-brandAmber text-brandDark font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all">
+                    <i class="fa-solid fa-location-dot mr-2"></i>Penrith Dedicated Studio
                 </button>
-                <button onclick="switchTab('mountains')" id="tab-mountains" class="location-tab bg-brandCard text-brandMuted border border-brandCharcoal/15 font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-wider hover:text-brandCharcoal transition-all">
-                    <i class="fa-solid fa-mountain mr-2"></i>Blue Mountains Areas
+                <button onclick="switchTab('mountains')" id="tab-mountains" class="location-tab bg-brandDarkCard text-slate-300 border border-brandDarkLine font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-wider hover:text-white transition-all">
+                    <i class="fa-solid fa-car mr-2"></i>Mobile In-Home Lessons
                 </button>
             </div>
 
             <!-- Tab 1 Content: Penrith -->
-            <div id="content-penrith" class="location-content grid lg:grid-cols-2 gap-8 lg:gap-0 items-center bg-brandCard border border-brandCharcoal/10 p-8 sm:p-10 rounded-3xl shadow-sm">
+            <div id="content-penrith" class="location-content grid lg:grid-cols-2 gap-8 items-stretch bg-brandDarkCard border border-brandDarkLine p-8 sm:p-10 rounded-3xl shadow-sm">
                 <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 bg-brandSageLight/40 text-brandSage text-xs font-bold px-3 py-1 rounded-lg uppercase">
+                    <div class="inline-flex items-center gap-2 bg-brandAmber/15 text-brandAmber text-xs font-bold px-3 py-1 rounded-lg uppercase">
                         <i class="fa-solid fa-house-user"></i> Dedicated Music Studio
                     </div>
-                    <h3 class="text-3xl font-black text-brandCharcoal font-display">Penrith Guitar Studio</h3>
-                    <p class="text-brandMuted text-sm leading-relaxed">
+                    <h3 class="text-3xl font-black text-white font-display">Penrith Guitar Studio</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
                         Equipped with premium amps, acoustic guitars, electric guitars, recording tools, and comfortable seating for parents and students alike.
                     </p>
-                    <ul class="space-y-2 text-xs text-brandCharcoal font-semibold pt-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandSage"></i> Easy parking on-site</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandSage"></i> After-school and weekend timeslots available</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandSage"></i> Full acoustic isolation for optimal focus</li>
+                    <ul class="space-y-2 text-xs text-slate-200 font-semibold pt-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Easy parking on-site</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> After-school and weekend timeslots available</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Full acoustic isolation for optimal focus</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Serving Emu Plains, Jamisontown, Cranebrook, Glenmore Park &amp; St Marys</li>
                     </ul>
                     <div class="pt-4">
-                        <button onclick="openBookingModal('Penrith Studio')" class="bg-brandSlate text-white font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase">
+                        <button onclick="openBookingModal('Penrith Studio')" class="bg-brandAmber text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase">
                             Book Penrith Studio Slot
                         </button>
                     </div>
                 </div>
-                <div class="text-center lg:text-left lg:border-l lg:border-brandCharcoal/10 lg:pl-12 space-y-3">
-                    <i class="fa-solid fa-map-location-dot text-4xl text-brandSage"></i>
-                    <h4 class="text-lg font-bold text-brandCharcoal uppercase">Serving Penrith &amp; Surrounds</h4>
-                    <p class="text-xs text-brandMuted">Including Emu Plains, Jamisontown, Cranebrook, Glenmore Park, and St Marys.</p>
+                <div class="rounded-2xl overflow-hidden border border-brandDarkLine min-h-[280px]">
+                    <iframe
+                        title="Map of Penrith, NSW"
+                        src="https://www.google.com/maps?q=Penrith+NSW+Australia&output=embed"
+                        class="w-full h-full min-h-[280px]"
+                        style="border:0;"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
 
             <!-- Tab 2 Content: Blue Mountains -->
-            <div id="content-mountains" class="location-content hidden grid lg:grid-cols-2 gap-8 lg:gap-0 items-center bg-brandCard border border-brandCharcoal/10 p-8 sm:p-10 rounded-3xl shadow-sm">
+            <div id="content-mountains" class="location-content hidden grid lg:grid-cols-2 gap-8 items-center bg-brandDarkCard border border-brandDarkLine p-8 sm:p-10 rounded-3xl shadow-sm">
                 <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 bg-brandMauveLight/40 text-brandMauve text-xs font-bold px-3 py-1 rounded-lg uppercase">
+                    <div class="inline-flex items-center gap-2 bg-brandAmber/15 text-brandAmber text-xs font-bold px-3 py-1 rounded-lg uppercase">
                         <i class="fa-solid fa-car"></i> Mobile / In-Home &amp; Studio
                     </div>
-                    <h3 class="text-3xl font-black text-brandCharcoal font-display">Blue Mountains Region</h3>
-                    <p class="text-brandMuted text-sm leading-relaxed">
+                    <h3 class="text-3xl font-black text-white font-display">Blue Mountains Region</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
                         We travel up the mountain corridor! Convenient lesson arrangements from Glenbrook up through Katoomba and Blackheath.
                     </p>
-                    <ul class="space-y-2 text-xs text-brandCharcoal font-semibold pt-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandMauve"></i> Lower to Upper Mountains coverage</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandMauve"></i> In-home lesson options by request</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandMauve"></i> Flexible timing for school-age students</li>
+                    <ul class="space-y-2 text-xs text-slate-200 font-semibold pt-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Lower to Upper Mountains coverage</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> In-home lesson options by request</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Flexible timing for school-age students</li>
                     </ul>
                     <div class="pt-4">
-                        <button onclick="openBookingModal('Blue Mountains')" class="bg-brandMauve text-white font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase">
+                        <button onclick="openBookingModal('Blue Mountains')" class="bg-brandAmber text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase">
                             Book Mountains Slot
                         </button>
                     </div>
                 </div>
-                <div class="text-center lg:text-left lg:border-l lg:border-brandCharcoal/10 lg:pl-12 space-y-3">
-                    <i class="fa-solid fa-mountain text-4xl text-brandMauve"></i>
-                    <h4 class="text-lg font-bold text-brandCharcoal uppercase">Serving Blue Mountains Townships</h4>
-                    <p class="text-xs text-brandMuted">Including Glenbrook, Blaxland, Springwood, Hazelbrook, Wentworth Falls &amp; Katoomba.</p>
+                <div class="text-center lg:text-left lg:border-l lg:border-brandDarkLine lg:pl-12 space-y-3">
+                    <i class="fa-solid fa-mountain text-4xl text-brandAmber"></i>
+                    <h4 class="text-lg font-bold text-white uppercase">Serving Blue Mountains Townships</h4>
+                    <p class="text-xs text-slate-400">Including Glenbrook, Blaxland, Springwood, Hazelbrook, Wentworth Falls &amp; Katoomba.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- SECTION 5: STUDENT REVIEWS -->
-    <section id="reviews" class="py-20 bg-brandSageLight/20 overflow-hidden">
+    <!-- SECTION 5: STUDENT REVIEWS (LIGHT) -->
+    <section id="reviews" class="py-20 bg-brandLight overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brandSage font-black tracking-widest text-xs uppercase">Student Testimonials</span>
+                <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Student Testimonials</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Loved by local musicians</h2>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 lg:items-end">
                 <!-- Review 1 -->
-                <div class="lg:mb-10 bg-brandCard border border-brandCharcoal/10 p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
-                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandSageLight/50 leading-none select-none">&ldquo;</span>
+                <div class="lg:mb-10 bg-brandCard border border-brandBorder p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
+                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmberLight/60 leading-none select-none">&ldquo;</span>
                     <div class="relative">
-                        <div class="flex text-brandSlate gap-1 text-sm mb-4">
+                        <div class="flex text-brandAmber gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-brandCharcoal text-xs sm:text-sm leading-relaxed">
                             As an adult beginner, I was nervous about starting guitar. Within 4 weeks I was playing my favourite classic rock riffs! Patient teacher and very encouraging environment.
                         </p>
                     </div>
-                    <div class="relative mt-6 pt-6 border-t border-brandCharcoal/10 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brandSage text-white font-black flex items-center justify-center text-xs">
+                    <div class="relative mt-6 pt-6 border-t border-brandBorder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brandDark text-brandAmber font-black flex items-center justify-center text-xs">
                             JD
                         </div>
                         <div>
@@ -601,18 +627,18 @@
                 </div>
 
                 <!-- Review 2 (Featured) -->
-                <div class="bg-brandCard border-2 border-brandSlate p-8 sm:p-10 rounded-3xl shadow-xl relative flex flex-col justify-between overflow-hidden z-10">
-                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandSlateLight/40 leading-none select-none">&ldquo;</span>
+                <div class="bg-brandCard border-2 border-brandAmber p-8 sm:p-10 rounded-3xl shadow-xl relative flex flex-col justify-between overflow-hidden z-10">
+                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmberLight/70 leading-none select-none">&ldquo;</span>
                     <div class="relative">
-                        <div class="flex text-brandSlate gap-1 text-sm mb-4">
+                        <div class="flex text-brandAmber gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-brandCharcoal text-sm leading-relaxed font-medium">
                             The 10-lesson bundle is worth every cent! My daughter has progressed immensely and looks forward to her guitar lesson every Tuesday afternoon.
                         </p>
                     </div>
-                    <div class="relative mt-6 pt-6 border-t border-brandCharcoal/10 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brandSlate text-white font-black flex items-center justify-center text-xs">
+                    <div class="relative mt-6 pt-6 border-t border-brandBorder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brandAmber text-brandDark font-black flex items-center justify-center text-xs">
                             MC
                         </div>
                         <div>
@@ -623,18 +649,18 @@
                 </div>
 
                 <!-- Review 3 -->
-                <div class="lg:mb-10 bg-brandCard border border-brandCharcoal/10 p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
-                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandMauveLight/50 leading-none select-none">&ldquo;</span>
+                <div class="lg:mb-10 bg-brandCard border border-brandBorder p-8 rounded-3xl shadow-sm relative flex flex-col justify-between overflow-hidden">
+                    <span aria-hidden="true" class="absolute -top-5 -left-2 font-display text-8xl font-black text-brandAmberLight/60 leading-none select-none">&ldquo;</span>
                     <div class="relative">
-                        <div class="flex text-brandSlate gap-1 text-sm mb-4">
+                        <div class="flex text-brandAmber gap-1 text-sm mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-brandCharcoal text-xs sm:text-sm leading-relaxed">
                             Great focus on technique without getting bogged down in boring drills. I can now play lead solos and understand fretboard scales comfortably.
                         </p>
                     </div>
-                    <div class="relative mt-6 pt-6 border-t border-brandCharcoal/10 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brandMauve text-white font-black flex items-center justify-center text-xs">
+                    <div class="relative mt-6 pt-6 border-t border-brandBorder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-700 text-white font-black flex items-center justify-center text-xs">
                             BH
                         </div>
                         <div>
@@ -648,52 +674,63 @@
         </div>
     </section>
 
-    <!-- FOOTER CTA -->
-    <section class="py-16 bg-brandSlate text-white">
+    <!-- FOOTER CTA (DARK) -->
+    <section class="py-16 bg-gradient-to-r from-brandDark to-brandDarker text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl sm:text-5xl font-black font-display tracking-tight">Start playing guitar this week!</h2>
-            <p class="mt-2 text-base sm:text-lg font-bold opacity-90">Spots are limited for the current term across Penrith &amp; Blue Mountains.</p>
+            <p class="mt-2 text-base sm:text-lg font-bold text-slate-300">Spots are limited for the current term across Penrith &amp; Blue Mountains.</p>
             <div class="mt-8 flex justify-center">
-                <button onclick="openBookingModal('Footer Banner CTA')" class="bg-white hover:bg-brandCream text-brandSlate font-black px-10 py-4 rounded-full text-xs tracking-widest uppercase shadow-2xl transition-all transform hover:scale-105">
+                <button onclick="openBookingModal('Footer Banner CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-10 py-4 rounded-full text-xs tracking-widest uppercase shadow-2xl transition-all transform hover:scale-105">
                     Book Your Lesson Now
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-brandCream text-brandMuted py-12 border-t border-brandCharcoal/10 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-brandSage text-white flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-mountain-sun"></i>
+    <!-- FOOTER (DARK) -->
+    <footer class="bg-brandDarker text-slate-400 py-12 border-t border-brandDarkLine text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-brandAmber text-brandDark flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                    </div>
+                    <span class="text-white font-extrabold tracking-wider">Mountain Culture Guitar Lessons</span>
                 </div>
-                <span class="text-brandCharcoal font-extrabold tracking-wider">Mountain Culture Guitar Lessons</span>
+
+                <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-slate-400">
+                    <a href="#home" class="hover:text-brandAmber transition-colors">Home</a>
+                    <a href="#pricing" class="hover:text-brandAmber transition-colors">Pricing</a>
+                    <a href="#locations" class="hover:text-brandAmber transition-colors">Locations</a>
+                    <a href="practice/" class="hover:text-brandAmber transition-colors">Practice Tools</a>
+                    <a href="technology.html" class="hover:text-brandAmber transition-colors">Technology Partner</a>
+                </nav>
+
+                <div class="flex gap-4 text-base">
+                    <a href="#" class="hover:text-brandAmber transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-brandAmber transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-brandAmber transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
 
-            <p class="text-brandMuted">
-                &copy; <span id="year"></span> Mountain Culture Guitar Lessons. Penrith &amp; Blue Mountains, NSW.
-            </p>
-
-            <div class="flex gap-4 text-base">
-                <a href="#" class="hover:text-brandSage transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-brandSage transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-brandSage transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            <div class="pt-6 border-t border-brandDarkLine flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-500">
+                <p>&copy; <span id="year"></span> Mountain Culture Guitar Lessons. Penrith &amp; Blue Mountains, NSW.</p>
+                <p>Powered by <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-300 hover:text-brandAmber transition-colors">JobGen.AI</a></p>
             </div>
         </div>
     </footer>
 
     <!-- INTERACTIVE BOOKING MODAL -->
-    <div id="booking-modal" class="fixed inset-0 z-50 bg-brandCharcoal/60 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="bg-brandCard border border-brandCharcoal/10 w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden relative animate-fade-in" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="booking-modal" class="fixed inset-0 z-50 bg-brandDarker/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-white border border-brandBorder w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden relative animate-fade-in" role="dialog" aria-modal="true" aria-labelledby="modal-title">
 
             <!-- Modal Header -->
-            <div class="bg-brandSlate px-6 py-6 flex items-center justify-between">
+            <div class="bg-brandDark px-6 py-6 flex items-center justify-between">
                 <div>
                     <h3 id="modal-title" class="text-xl font-black text-white font-display">Book Your Guitar Lesson</h3>
-                    <p class="text-xs text-white/80 font-bold mt-0.5" id="modal-option-text">Selected Option: General</p>
+                    <p class="text-xs text-brandAmber font-bold mt-0.5" id="modal-option-text">Selected Option: General</p>
                 </div>
-                <button onclick="closeBookingModal()" class="text-white/70 hover:text-white text-xl p-1 transition-colors" aria-label="Close booking form">
+                <button onclick="closeBookingModal()" class="text-slate-400 hover:text-white text-xl p-1 transition-colors" aria-label="Close booking form">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -702,24 +739,24 @@
             <form id="booking-form" onsubmit="handleFormSubmit(event)" class="p-6 space-y-4">
                 <div>
                     <label for="field-name" class="block text-xs font-bold text-brandMuted uppercase mb-2">Student / Parent Name</label>
-                    <input id="field-name" type="text" required placeholder="Full name" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                    <input id="field-name" type="text" required placeholder="Full name" class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs">
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label for="field-email" class="block text-xs font-bold text-brandMuted uppercase mb-2">Email Address</label>
-                        <input id="field-email" type="email" required placeholder="email@example.com" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                        <input id="field-email" type="email" required placeholder="email@example.com" class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs">
                     </div>
                     <div>
                         <label for="field-phone" class="block text-xs font-bold text-brandMuted uppercase mb-2">Phone Number</label>
-                        <input id="field-phone" type="tel" required placeholder="0400 000 000" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                        <input id="field-phone" type="tel" required placeholder="0400 000 000" class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label for="field-location" class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Location</label>
-                        <select id="field-location" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                        <select id="field-location" class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs">
                             <option>Penrith Studio</option>
                             <option>Blue Mountains Area</option>
                             <option>In-Home Mobile Lesson</option>
@@ -727,7 +764,7 @@
                     </div>
                     <div>
                         <label for="modal-select-package" class="block text-xs font-bold text-brandMuted uppercase mb-2">Lesson Package</label>
-                        <select id="modal-select-package" class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs">
+                        <select id="modal-select-package" class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs">
                             <option value="Single Lesson ($35)">Single Lesson ($35)</option>
                             <option value="10 Lesson Package ($250)">10 Lessons Pack ($250 - Save $100)</option>
                         </select>
@@ -736,10 +773,10 @@
 
                 <div>
                     <label for="field-notes" class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Day / Time &amp; Music Style</label>
-                    <textarea id="field-notes" rows="2" placeholder="e.g. Tuesday afternoons, interested in learning Acoustic Folk/Rock..." class="w-full bg-brandCream border border-brandCharcoal/15 rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandSlate focus:ring-2 focus:ring-brandSlate/20 transition-shadow text-xs"></textarea>
+                    <textarea id="field-notes" rows="2" placeholder="e.g. Tuesday afternoons, interested in learning Acoustic Folk/Rock..." class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-brandSlate hover:bg-[#344A5E] text-white font-black py-4 rounded-xl transition-all duration-150 text-xs tracking-widest uppercase shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandSlate focus-visible:ring-offset-2 mt-2">
+                <button type="submit" class="w-full bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-4 rounded-xl transition-all duration-150 text-xs tracking-widest uppercase shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandDark focus-visible:ring-offset-2 mt-2">
                     Submit Lesson Request
                 </button>
             </form>
@@ -751,7 +788,7 @@
                 </div>
                 <h4 class="text-2xl font-black text-brandCharcoal font-display">Lesson Request Submitted!</h4>
                 <p class="text-brandMuted text-xs sm:text-sm">Thank you! We will contact you via phone or email within 24 hours to confirm your starting date.</p>
-                <button onclick="closeBookingModal()" class="bg-brandSlate text-white font-black px-6 py-2.5 rounded-full text-xs uppercase tracking-wider">
+                <button onclick="closeBookingModal()" class="bg-brandAmber text-brandDark font-black px-6 py-2.5 rounded-full text-xs uppercase tracking-wider">
                     Close Window
                 </button>
             </div>
@@ -782,20 +819,20 @@
         function switchTab(tab) {
             document.querySelectorAll('.location-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.location-tab').forEach(btn => {
-                btn.classList.remove('bg-brandSlate', 'text-white');
-                btn.classList.add('bg-brandCard', 'text-brandMuted', 'border', 'border-brandCharcoal/15');
+                btn.classList.remove('bg-brandAmber', 'text-brandDark');
+                btn.classList.add('bg-brandDarkCard', 'text-slate-300', 'border', 'border-brandDarkLine');
             });
 
             if (tab === 'penrith') {
                 document.getElementById('content-penrith').classList.remove('hidden');
                 const penBtn = document.getElementById('tab-penrith');
-                penBtn.classList.add('bg-brandSlate', 'text-white');
-                penBtn.classList.remove('bg-brandCard', 'text-brandMuted', 'border', 'border-brandCharcoal/15');
+                penBtn.classList.add('bg-brandAmber', 'text-brandDark');
+                penBtn.classList.remove('bg-brandDarkCard', 'text-slate-300', 'border', 'border-brandDarkLine');
             } else {
                 document.getElementById('content-mountains').classList.remove('hidden');
                 const mtnBtn = document.getElementById('tab-mountains');
-                mtnBtn.classList.add('bg-brandSlate', 'text-white');
-                mtnBtn.classList.remove('bg-brandCard', 'text-brandMuted', 'border', 'border-brandCharcoal/15');
+                mtnBtn.classList.add('bg-brandAmber', 'text-brandDark');
+                mtnBtn.classList.remove('bg-brandDarkCard', 'text-slate-300', 'border', 'border-brandDarkLine');
             }
         }
 

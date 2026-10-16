@@ -1,127 +1,96 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T00:00:00Z",
+  "generatedAt": "2026-10-16T00:00:00Z",
   "title": "Design System: Mountain Culture Guitar Lessons",
   "extensions": {
     "colorMeta": {
-      "sage": { "role": "primary", "displayName": "Sage", "canonical": "#6B8169", "tonalRamp": ["#2E362D", "#44503F", "#596A52", "#6B8169", "#8CA186", "#AEC0AB", "#CFDBCD", "#E8EFE7"] },
-      "sage-light": { "role": "primary-soft", "displayName": "Sage Light", "canonical": "#AEC0AB", "tonalRamp": ["#546055", "#6E7D6F", "#8A9C8A", "#AEC0AB", "#C3D1C1", "#D7E1D5", "#EAF0E9", "#F6F9F5"] },
-      "mauve": { "role": "secondary", "displayName": "Mauve", "canonical": "#8B5D53", "tonalRamp": ["#3B2622", "#573933", "#704A43", "#8B5D53", "#A57A71", "#C19A92", "#D9BFB9", "#EEE1DD"] },
-      "mauve-light": { "role": "secondary-soft", "displayName": "Mauve Light", "canonical": "#D3B3AC", "tonalRamp": ["#6B4F4A", "#8A6B64", "#AC8981", "#D3B3AC", "#DEC5BF", "#E9D7D2", "#F2E6E3", "#F9F2F0"] },
-      "slate": { "role": "tertiary", "displayName": "Slate", "canonical": "#3F5A72", "tonalRamp": ["#1B2834", "#28384A", "#334A5F", "#3F5A72", "#527189", "#7793A5", "#9BB7C9", "#C6DAE4"] },
-      "slate-light": { "role": "tertiary-soft", "displayName": "Slate Light", "canonical": "#9BB7C9", "tonalRamp": ["#44586A", "#5E7689", "#7D97AB", "#9BB7C9", "#B5CAD8", "#CEDFE8", "#E3EEF2", "#F2F7F9"] },
-      "cream": { "role": "neutral", "displayName": "Cream", "canonical": "#F4EFE4", "tonalRamp": ["#8A8378", "#AEA698", "#C9C1B1", "#E0D9C9", "#EBE5D8", "#F4EFE4", "#F8F4EC", "#FCFAF5"] },
-      "charcoal": { "role": "neutral", "displayName": "Charcoal", "canonical": "#2A2A25", "tonalRamp": ["#000000", "#15150F", "#2A2A25", "#3D3D36", "#54544B", "#73706A", "#A3A099", "#D4D2CC"] },
-      "muted-taupe": { "role": "neutral", "displayName": "Muted Taupe", "canonical": "#5C5952", "tonalRamp": ["#2E2C28", "#3F3D38", "#4E4C46", "#5C5952", "#78756D", "#949089", "#B4B1AA", "#D8D6D1"] }
+      "amber": { "role": "accent", "displayName": "Amber", "canonical": "#F59E0B", "tonalRamp": ["#451A03", "#78350F", "#92400E", "#B45309", "#D97706", "#F59E0B", "#FBBF24", "#FDE68A"] },
+      "dark": { "role": "neutral", "displayName": "Dark", "canonical": "#0F172A", "tonalRamp": ["#020617", "#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1"] },
+      "darker": { "role": "neutral", "displayName": "Darker", "canonical": "#020617", "tonalRamp": ["#000000", "#020617", "#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8"] },
+      "light": { "role": "neutral", "displayName": "Light", "canonical": "#F8FAFC", "tonalRamp": ["#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F1F5F9", "#F8FAFC", "#FAFBFC", "#FFFFFF"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Section headlines, mixed case, 900 weight." },
-      "display-light": { "displayName": "Display Light", "purpose": "The Weight Contrast Rule: thin (300) connective words in the hero masthead only (\"Turn\", \"Into A\")." },
-      "brush": { "displayName": "Brush", "purpose": "One hand-marked emphasis word per hero only. Carried over from the prior identity, recolored to mauve." },
-      "body": { "displayName": "Body", "purpose": "Paragraph copy, card descriptions." },
-      "label": { "displayName": "Label", "purpose": "Nav links, button text, eyebrows, tag bars. Uppercase with letter-spacing." }
+      "display": { "displayName": "Display", "purpose": "Section headlines, 900 weight, white on dark / charcoal on light." },
+      "display-light": { "displayName": "Display Light", "purpose": "Hero masthead connective words (\"Turn\", \"Into A\"), thin 300 weight against the heavy emphasis word." },
+      "brush": { "displayName": "Brush", "purpose": "One hand-marked hero word only, carried over from the prior identity." }
     },
     "shadows": [
-      { "name": "card-rest", "value": "0 1px 2px rgba(42,42,37,0.06), 0 1px 3px rgba(42,42,37,0.08)", "purpose": "Default card elevation (Tailwind shadow-sm). Neutral, no color tint -- the No-Glow Rule." },
-      { "name": "card-featured", "value": "0 20px 25px -5px rgba(42,42,37,0.12), 0 8px 10px -6px rgba(42,42,37,0.1)", "purpose": "The one featured card per section (Tailwind shadow-xl), paired with a 2-4px slate border." }
+      { "name": "card-rest", "value": "0 1px 2px rgba(0,0,0,0.06)", "purpose": "Default card elevation, dark or light." },
+      { "name": "card-featured", "value": "0 20px 25px -5px rgba(0,0,0,0.2)", "purpose": "The one featured card per section, paired with a thick amber border." },
+      { "name": "hero-ambient-amber", "value": "radial-gradient(circle, rgba(245,158,11,0.35) 0%, rgba(245,158,11,0.08) 45%, transparent 75%)", "purpose": "Hero-only ambient backlight, confirmed exception to the No-Glow default." }
     ],
     "motion": [
-      { "name": "hover-lift", "value": "transform 0.2s ease, translateY(-2px) on hover", "purpose": "Standard button/card hover feedback." },
-      { "name": "press-compress", "value": "scale(0.97-0.98) translateY(0) on active, 150ms", "purpose": "Tactile press feedback on primary buttons." },
-      { "name": "badge-entrance", "value": "fade + rise, 0.9s cubic-bezier(0.16,1,0.3,1), once on load", "purpose": "One-time attention flourish on the hero's status badge -- never looped, since it is static copy, not live data." }
+      { "name": "status-ping", "value": "scale(2.2) + fade, 2s infinite", "purpose": "Marks a real, currently-true status (accepting students now) -- never a fabricated live feed. Hero only." },
+      { "name": "sparkle-twinkle", "value": "scale/rotate/opacity pulse, 3s infinite", "purpose": "Decorative hero flourish, SVG not emoji." }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
       { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" }
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
     ]
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Primary Button (Amber)",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Solid slate pill button, white text -- the system's action color.",
-      "html": "<button class=\"ds-btn-primary\">Book a Lesson <svg class=\"ds-icon\" viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; background: #3F5A72; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease; box-shadow: 0 10px 20px -8px rgba(63,90,114,0.4); } .ds-btn-primary:hover { background: #344A5E; transform: translateY(-2px); } .ds-btn-primary:active { transform: translateY(0) scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #3F5A72; outline-offset: 2px; }"
+      "description": "Solid amber pill button, dark text -- the system's one accent, used on both dark and light sections.",
+      "html": "<button class=\"ds-btn-primary\">Book a Lesson</button>",
+      "css": ".ds-btn-primary { background: #F59E0B; color: #0F172A; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; } .ds-btn-primary:hover { background: #D97706; transform: translateY(-2px); }"
     },
     {
-      "name": "Secondary Button",
-      "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Solid sage pill button for the persistent header CTA.",
-      "html": "<button class=\"ds-btn-secondary\">Book a Lesson</button>",
-      "css": ".ds-btn-secondary { background: #6B8169; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; padding: 14px 24px; border-radius: 9999px; border: none; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; } .ds-btn-secondary:hover { background: #5A6E58; transform: translateY(-2px); }"
-    },
-    {
-      "name": "Feature Card",
+      "name": "Dark Card",
       "kind": "card",
-      "refersTo": "card-standard",
-      "description": "White card with a tinted icon circle, soft shadow, thin border that deepens on hover.",
-      "html": "<div class=\"ds-card\"><div class=\"ds-card-icon\">♫</div><h3 class=\"ds-card-title\">Learn Fav Songs</h3><p class=\"ds-card-body\">Learn through the music you love, broken into easy step-by-step riffs.</p></div>",
-      "css": ".ds-card { background: #FFFFFF; border: 1px solid rgba(42,42,37,0.1); border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(42,42,37,0.08); transition: border-color 0.3s ease, transform 0.3s ease; } .ds-card:hover { border-color: #6B8169; transform: translateY(-4px); } .ds-card-icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(174,192,171,0.4); color: #6B8169; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 24px; } .ds-card-title { font-family: Montserrat, sans-serif; font-weight: 800; color: #2A2A25; margin: 0 0 8px; } .ds-card-body { color: #5C5952; font-size: 13px; line-height: 1.6; margin: 0; }"
+      "refersTo": "card-dark",
+      "description": "Card surface for dark sections (hero, pricing, locations).",
+      "html": "<div class=\"ds-card-dark\"><h3>Card title</h3><p>Body copy.</p></div>",
+      "css": ".ds-card-dark { background: #1E293B; border: 1px solid #334155; border-radius: 24px; padding: 32px; color: #fff; }"
     },
     {
-      "name": "Featured Pricing Card",
+      "name": "Light Card",
       "kind": "card",
-      "refersTo": "card-featured",
-      "description": "White card with a thick slate border and deep neutral shadow -- the Spotlight slot.",
-      "html": "<div class=\"ds-card-featured\"><span class=\"ds-badge-value\">SAVE $100</span><h3 class=\"ds-card-featured-title\">$250 Package</h3><p class=\"ds-price\">$250</p></div>",
-      "css": ".ds-card-featured { background: #FFFFFF; border: 4px solid #3F5A72; border-radius: 24px; padding: 40px; position: relative; box-shadow: 0 20px 25px -5px rgba(42,42,37,0.12); color: #2A2A25; } .ds-badge-value { position: absolute; top: -16px; right: 24px; background: #3F5A72; color: #fff; font-weight: 900; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 16px; border-radius: 9999px; } .ds-card-featured-title { font-family: Montserrat, sans-serif; font-weight: 900; margin: 0 0 4px; } .ds-price { font-family: Montserrat, sans-serif; font-size: 56px; font-weight: 900; color: #3F5A72; margin: 16px 0 0; }"
+      "refersTo": "card-light",
+      "description": "Card surface for light sections (features, reviews).",
+      "html": "<div class=\"ds-card-light\"><h3>Card title</h3><p>Body copy.</p></div>",
+      "css": ".ds-card-light { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; color: #0F172A; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }"
     },
     {
-      "name": "Input Field",
-      "kind": "input",
-      "refersTo": "input-field",
-      "description": "Cream form field used throughout the booking modal.",
-      "html": "<label class=\"ds-label\">Email Address</label><input class=\"ds-input\" type=\"email\" placeholder=\"email@example.com\">",
-      "css": ".ds-label { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #5C5952; margin-bottom: 8px; } .ds-input { width: 100%; background: #F4EFE4; border: 1px solid rgba(42,42,37,0.15); border-radius: 12px; padding: 16px; color: #2A2A25; font-size: 13px; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input:focus { outline: none; border-color: #3F5A72; box-shadow: 0 0 0 2px rgba(63,90,114,0.2); }"
-    },
-    {
-      "name": "Decorative Circles",
-      "kind": "custom",
-      "refersTo": "decorative-circles",
-      "description": "Two to three overlapping oversized soft-tone circles behind a photo frame -- the signature cut-paper device. Reserved for photography only.",
-      "html": "<div class=\"ds-circle-wrap\"><div class=\"ds-circle ds-circle-mauve\"></div><div class=\"ds-circle ds-circle-sage\"></div><img class=\"ds-photo\" src=\"photo.jpg\" alt=\"\"></div>",
-      "css": ".ds-circle-wrap { position: relative; width: 320px; height: 400px; } .ds-circle { position: absolute; border-radius: 9999px; } .ds-circle-mauve { top: -24px; left: -24px; width: 220px; height: 220px; background: #D3B3AC; } .ds-circle-sage { bottom: 0; right: 8px; width: 180px; height: 180px; background: #AEC0AB; } .ds-photo { position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 32px; box-shadow: 0 20px 25px -5px rgba(42,42,37,0.15); }"
-    },
-    {
-      "name": "Brush Highlight",
-      "kind": "custom",
-      "refersTo": "brush-highlight",
-      "description": "Signature hand-marked word treatment, carried over from the prior identity and recolored to mauve. One word per hero, never repeated.",
-      "html": "<span class=\"ds-brush\">Music</span>",
-      "css": ".ds-brush { position: relative; z-index: 1; font-family: Caveat, cursive; font-weight: 700; font-size: 48px; color: #2A2A25; padding: 0 8px; } .ds-brush::before { content: \"\"; position: absolute; inset: -2px -12px; background: #D3B3AC; z-index: -1; transform: rotate(-1.5deg); border-radius: 6px; clip-path: polygon(0% 15%, 100% 0%, 98% 85%, 2% 100%); }"
+      "name": "Trust Banner Pill",
+      "kind": "chip",
+      "refersTo": "trust-banner",
+      "description": "Confirmed-fact-only trust pill, dark section.",
+      "html": "<span class=\"ds-trust-pill\">10+ Years Local Teaching Experience</span>",
+      "css": ".ds-trust-pill { display: inline-flex; align-items: center; gap: 8px; background: #1E293B; border: 1px solid #334155; color: #E2E8F0; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 9999px; }"
     }
   ],
   "narrative": {
-    "northStar": "The Botanical Studio",
-    "overview": "The system reads as a calm, plant-filled teaching studio on a Sunday morning -- warm cream paper, muted sage and dusty mauve color-blocks, a confident slate-blue for action, and soft natural light rather than stage glow. Where the old identity shouted from a dark stage, this one invites you in from a sunlit room. Overlapping color-blocked circles sit behind the instructor's photo like cut-paper shapes -- an editorial, scrapbook-adjacent composition rather than a poster. The one handwritten touch survives from the old system, recolored, as continuity of personality rather than identity.",
+    "northStar": "The Night Studio, Lit by One Warm Lamp",
+    "overview": "The page alternates dark and light sections like a studio at night: the hero, pricing, and locations sections go dark-slate with a single warm amber accent doing all the signaling, while Why Us and testimonials stay crisp and bright for readability and relief. Dark sections hold the decisions that matter most; light sections hold the proof and explanation. Trust is built through specificity -- a real map, real stats, real testimonials -- not decoration.",
     "keyCharacteristics": [
-      "Warm cream ground with white cards; soft shadows and thin charcoal-tinted borders instead of dark-theme glow",
-      "Three accent families (sage, mauve, slate), each with a light/soft tint for decoration and a deeper tone for text and buttons",
-      "Overlapping color-blocked circles as the signature decorative device, specifically behind photography",
-      "Mixed-case, mixed-weight display type replaces the old all-caps poster voice",
-      "One surviving signature: the hand-marker highlight on a single hero word, now in mauve instead of yellow"
+      "Strict section-level alternation: Hero (dark), Why Us (light), Pricing (dark), Locations (dark), Reviews (light), Footer (dark)",
+      "One accent color (amber) carries every CTA and highlight across both dark and light sections",
+      "Dark sections use dark-card surfaces with thin borders, never pure black-on-black",
+      "Light sections use true white cards on an off-white ground",
+      "The hero carries a confirmed, bounded set of glow/motion accents not used elsewhere"
     ],
     "rules": [
-      { "name": "The Deep/Light Pairing Rule", "body": "Every accent family ships two tones: a deep one for text, borders, and buttons, and a soft one for decoration. Never use the soft tone where text needs to sit on it directly.", "section": "colors" },
-      { "name": "The Weight Contrast Rule", "body": "The hero masthead mixes a thin (300) connective weight against the system's heavy (900) emphasis weight. Section headings elsewhere stay single-weight 900.", "section": "typography" },
-      { "name": "The One Brush Rule", "body": "Caveat is the system's single handwriting moment. It marks one word in the hero and nowhere else.", "section": "typography" },
-      { "name": "The No-Glow Rule", "body": "Depth comes from a real offset-and-blur shadow, never a zero-offset colored halo. This is a deliberate reversal of the old system's Spotlight glow.", "section": "elevation" }
+      { "name": "The One-Accent Rule", "body": "Amber is the system's only accent color, on both dark and light sections.", "section": "colors" },
+      { "name": "The Hero-Only Glow Rule", "body": "Glow, gradient rings, and sparkle accents are a confirmed hero flourish, not a system-wide depth cue.", "section": "elevation" },
+      { "name": "The Honest-Pulse Rule", "body": "The hero's status-badge pulse marks a real, currently-true state, never a fabricated live-updating feed.", "section": "elevation" }
     ],
     "dos": [
-      "Do pair every accent's deep tone (text/buttons) with its own soft tone (decoration) -- never cross them.",
-      "Do keep elevation as a real offset-and-blur shadow; no colored glow anywhere in this system.",
-      "Do reserve the overlapping decorative circles for photography, not plain cards or text blocks.",
-      "Do keep Caveat/brush typography to one word, one time, per hero.",
-      "Do keep buttons fully rounded (pill) -- the system's one consistent button shape."
+      "Do keep amber as the system's only accent color across every section.",
+      "Do keep the dark/light alternation strict and literal.",
+      "Do keep the hero's glow/pulse/sparkle accents bounded to the hero.",
+      "Do state only confirmed facts in the trust banner.",
+      "Do keep the map embed scoped to the area with a real studio."
     ],
     "donts": [
-      "Don't reintroduce the old system's zero-offset colored glow shadow; it is explicitly retired by this redesign.",
+      "Don't add a second accent hue competing with amber.",
+      "Don't soften the hard cut between dark and light sections with a gradient transition.",
       "Don't stack two bordered/backgrounded containers inside each other for ordinary content.",
-      "Don't animate a status badge or indicator unless it represents genuinely live, changing data.",
-      "Don't use the soft/light accent tint anywhere text needs to sit directly on it -- contrast fails."
+      "Don't animate a status indicator to suggest a live feed when the fact is just true/false."
     ]
   }
 }

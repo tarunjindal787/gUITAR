@@ -1,17 +1,20 @@
 ---
 name: Mountain Culture Guitar Lessons
-description: A light, botanical-studio editorial landing page for a guitar-lesson business.
+description: A dark/light alternating editorial landing page for a guitar-lesson business, built for trust and clarity.
 colors:
-  cream: "#F4EFE4"
+  dark: "#0F172A"
+  darker: "#020617"
+  dark-card: "#1E293B"
+  dark-line: "#334155"
+  light: "#F8FAFC"
   card-white: "#FFFFFF"
-  charcoal: "#2A2A25"
-  muted-taupe: "#5C5952"
-  sage: "#6B8169"
-  sage-light: "#AEC0AB"
-  mauve: "#8B5D53"
-  mauve-light: "#D3B3AC"
-  slate: "#3F5A72"
-  slate-light: "#9BB7C9"
+  border-light: "#E2E8F0"
+  charcoal: "#0F172A"
+  muted: "#64748B"
+  muted-light: "#94A3B8"
+  amber: "#F59E0B"
+  amber-deep: "#D97706"
+  amber-light: "#FDE68A"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -56,23 +59,18 @@ spacing:
   xl: "80px"
 components:
   button-primary:
-    backgroundColor: "{colors.slate}"
-    textColor: "#ffffff"
+    backgroundColor: "{colors.amber}"
+    textColor: "{colors.dark}"
     rounded: "{rounded.full}"
     padding: "16px 36px"
-  button-secondary:
-    backgroundColor: "{colors.sage}"
-    textColor: "#ffffff"
-    rounded: "{rounded.full}"
-    padding: "16px 24px"
-  card-standard:
+  card-light:
     backgroundColor: "{colors.card-white}"
     textColor: "{colors.charcoal}"
     rounded: "{rounded.2xl}"
     padding: "32px"
-  card-featured:
-    backgroundColor: "{colors.card-white}"
-    textColor: "{colors.charcoal}"
+  card-dark:
+    backgroundColor: "{colors.dark-card}"
+    textColor: "#ffffff"
     rounded: "{rounded.3xl}"
     padding: "40px"
 ---
@@ -81,125 +79,113 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Botanical Studio"**
+**Creative North Star: "The Night Studio, Lit by One Warm Lamp"**
 
-*(This is a redesign, replacing the dark "Golden Hour Stage" identity built in earlier sessions. The client pinned a reference — a generic pastel landing-page template — and explicitly confirmed a full rebrand across the whole site, not just the hero; this file replaces the old one entirely rather than extending it. The old dark/amber system is now anti-reference, not a lineage to preserve.)*
+*(This is the system's third identity, replacing "The Botanical Studio" (cream/sage/mauve/slate) on 2026-10-16, per explicit, repeated client direction for a dark/light alternating structure with amber accents. The prior light identity is retired; treat it as evidence, not lineage.)*
 
-The system reads as a calm, plant-filled teaching studio on a Sunday morning — warm cream paper, muted sage and dusty mauve color-blocks, a confident slate-blue for action, and soft natural light rather than stage glow. Where the old identity shouted from a dark stage, this one invites you in from a sunlit room. Overlapping color-blocked circles (a sage circle, a mauve circle, a small slate accent) sit behind the instructor's photo like cut-paper shapes — an editorial, scrapbook-adjacent composition rather than a poster. The one handwritten touch (the marker-highlighted "Music") survives from the old system, recolored, as continuity of personality rather than identity.
+The page alternates dark and light sections like a studio at night: the hero, pricing, and locations sections go dark-slate with a single warm amber accent doing all the signaling, while "Why Us" and testimonials stay crisp and bright for readability and relief. The rhythm itself communicates something: dark sections hold the decisions that matter most (the offer, the price, the place), light sections hold the proof and explanation. Trust is built through specificity — a real map, real stats, real testimonials — not through decoration.
 
 **Key Characteristics:**
-- Warm cream ground with white cards; soft shadows and thin charcoal-tinted borders instead of dark-theme glow
-- Three accent families (sage, mauve, slate), each with a light/soft tint for decoration and a deeper tone for text and buttons — never gray-on-gray
-- Overlapping color-blocked circles as the signature decorative device, specifically behind photography
-- Mixed-case, mixed-weight display type (a thin connective weight against a heavy emphasis weight) replaces the old all-caps poster voice
-- One surviving signature: the hand-marker highlight on a single hero word, now in mauve instead of yellow
+- Strict section-level alternation: Hero (dark) → Why Us (light) → Pricing (dark) → Locations (dark, high-trust) → Reviews (light) → Footer CTA/Footer (dark)
+- One accent color (amber) carries every call-to-action and highlight across both dark and light sections — never diluted with a second competing hue
+- Dark sections use `brandDarkCard` surfaces with thin `brandDarkLine` borders, never pure black-on-black
+- Light sections use true white cards on an off-white (`#F8FAFC`) ground with a visible but quiet `#E2E8F0` border
+- Hero carries a small set of confirmed, deliberate glow/motion accents (ambient amber backlight, a gradient-ring status badge with a one-time-justified pulse, sparkle flourishes) — see Elevation & Depth
 
 ## Colors
 
-A warm, paper-like neutral ground with three muted accent families doing the work color used to do with raw saturation.
+Two neutral families (dark slate, off-white) plus exactly one accent (amber) that never competes with a second hue for attention.
 
-### Primary
-- **Sage** (#6B8169): The studio's primary brand color — logo mark, primary section labels, the Penrith location's accent, default "book" actions outside the hero.
+### Primary Accent
+- **Amber** (#F59E0B, deep #D97706, light tint #FDE68A): Every CTA, every highlighted price, every "this is the one" signal, on both dark and light backgrounds. This is a deliberate one-accent system — resist adding a second accent hue.
 
-### Secondary
-- **Mauve** (#8B5D53): The second accent — Blue Mountains location's color, alternate feature icons, the decorative hero circle and chord tag.
+### Dark Neutrals
+- **Dark** (#0F172A): Hero and pricing section background.
+- **Darker** (#020617): Locations and footer background — the "deepest" sections, reserved for trust/closing moments.
+- **Dark Card** (#1E293B): Card surfaces sitting on dark sections.
+- **Dark Line** (#334155): Borders and dividers on dark sections.
 
-### Tertiary
-- **Slate** (#3F5A72): The action color — the hero and modal's primary CTA, the featured pricing package, the featured testimonial border. Slate is reserved for "the one to pick" in any given section, inherited from the old system's Spotlight Rule but now expressed as a deep, confident blue instead of a glow.
-
-### Neutral
-- **Cream** (#F4EFE4): Page background throughout.
-- **Card White** (#FFFFFF): Every card, modal, and input surface.
-- **Charcoal** (#2A2A25): Primary text color.
-- **Muted Taupe** (#5C5952): Secondary/caption text, replacing the old system's gray-400. Darkened during a polish pass (2026-10-16) from an initial #73706A, which measured ~4.3:1 on Cream — just under the 4.5:1 AA floor for normal text. The current value measures ~6:1.
+### Light Neutrals
+- **Light** (#F8FAFC): Features and testimonials section background.
+- **Card White** (#FFFFFF): Every card on a light section.
+- **Border Light** (#E2E8F0): Card borders and dividers on light sections.
+- **Charcoal** (#0F172A): Primary text on light sections (same value as the dark background — this is intentional: it's the system's one "ink," used as background in dark mode and as text in light mode).
+- **Muted / Muted Light**: Secondary text — `#64748B` on light sections, `#94A3B8` (lighter, for sufficient contrast) on dark sections. Never use the light-section muted value on a dark background or vice versa.
 
 ### Named Rules
-**The Deep/Light Pairing Rule.** Every accent family ships two tones: a deep one for text, borders, and buttons (readable, intentional), and a soft one for decoration — tinted icon backgrounds, hero circles, quote marks. Never use the soft tone where text needs to sit on it directly, and never use the deep tone as a large decorative fill.
+**The One-Accent Rule.** Amber is the system's only accent color. It appears on both dark and light sections, which is what makes the alternating rhythm read as one coherent system rather than two different sites stitched together.
 
 ## Typography
 
-**Display Font:** Montserrat (with sans-serif fallback)
-**Body Font:** Inter (with sans-serif fallback)
-**Brush/Signature Font:** Caveat (with cursive fallback)
+**Display Font:** Montserrat · **Body Font:** Inter · **Brush/Signature Font:** Caveat
 
-**Character:** Montserrat carries headlines in a mixed-case, mixed-weight voice — editorial rather than shouted. Inter stays quiet for anything meant to be read. Caveat appears exactly once per hero as the system's single handwritten moment.
+**Character:** Montserrat carries headlines in a mixed-case, mixed-weight voice. Inter stays quiet for body copy. Caveat appears exactly once per hero as the system's single handwritten moment (carried over from the prior identity, recolored to charcoal-on-amber-swatch).
 
 ### Hierarchy
-- **Display** (900, clamp 1.875rem–4.5rem, 1.0 line-height): Section headlines, mixed case, moderate tracking.
-- **Display Light** (300, same size range, 0.95 line-height): The hero masthead's connective words ("Turn", "Into A"), paired against a heavy emphasis word for editorial contrast — see the Weight Contrast Rule.
-- **Brush** (700, clamp 3rem–5rem, cursive): The one hand-marked emphasis word per hero only.
-- **Body** (400, 0.75–1.125rem, 1.6 line-height): Paragraph copy.
-- **Label** (800, 0.6875–0.75rem, 0.1em tracking, uppercase): Nav links, button text, eyebrows, tag bars.
+- **Display** (900): Section headlines — white on dark sections, charcoal on light sections.
+- **Display Light** (300): The hero masthead's connective words ("Turn", "Into A") against the heavy emphasis word — see the Weight Contrast Rule.
+- **Brush** (700, cursive): The one hand-marked hero word.
+- **Body / Label**: As documented in the frontmatter.
 
 ### Named Rules
-**The Weight Contrast Rule.** The hero masthead mixes a thin (300) connective weight against the system's heavy (900) emphasis weight, for an editorial, high-contrast feel at the one place the system spends its biggest type. Section headings elsewhere stay single-weight 900.
+**The Weight Contrast Rule.** The hero masthead mixes a thin (300) connective weight against the system's heavy (900) emphasis weight. Section headings elsewhere stay single-weight 900.
 
-**The One Brush Rule.** Caveat is the system's single handwriting moment. It marks one word in the hero and nowhere else.
+**The One Brush Rule.** Caveat marks one word in the hero and nowhere else.
 
 ## Layout
 
-A `max-w-7xl` centered container runs the page, with horizontal padding stepping `px-4 → sm:px-6 → lg:px-8`. The hero is a flat cream section (a 2026-10-16 revision: the original diagonal sage/cream split background caused text to inherit the wrong color once the layout stacked on mobile — see the mobile-contrast fix below); the sage color now lives only in a rounded panel confined to the photo column, where it can't collide with text color. Every other section is a flat cream or soft-sage-tinted band, alternating for rhythm. Cards never nest a second bordered/backgrounded box for ordinary content — a divider or spacing separates sub-content instead.
+A `max-w-7xl` centered container runs the page. Sections alternate dark/light in strict sequence (see Overview); there is no gradient or soft transition between them — the hard cut between a dark and light section is part of the rhythm, not a flaw to soften. Cards never nest a second bordered/backgrounded box for ordinary content.
 
 ## Elevation & Depth
 
-Mostly soft and natural: cards sit on a thin 1-2px charcoal-tinted border with a true drop shadow (offset + blur) for lift. A featured element (the featured pricing card, the featured testimonial) is marked by a thicker slate border and a deeper shadow. The system also permits a small, deliberate set of ambient accents in the hero specifically — ring gradients, a soft radial backlight, sparkle flourishes, a gradient CTA with an inset highlight, and a one-time pulse on the "Accepting New Students" indicator — confirmed with the client on 2026-10-16 after an earlier pass had retired all glow/pulse as a blanket rule. The distinction that survives: glow is a rare hero accent, not the system's default depth cue, and no animation fakes liveness for data that isn't actually live-checked (the pulse here marks a real, currently-true status, not a fabricated real-time feed).
+Mostly flat with real shadows: cards on both dark and light sections use a thin border plus a soft offset-and-blur shadow for lift, never a colored halo as the *default* depth cue. The hero is a confirmed, bounded exception (2026-10-16): it carries a small set of deliberate glow/motion accents — a soft radial amber backlight behind the headline, a gradient-ring status badge with a pulse on its live-status dot, hand-drawn SVG sparkle flourishes near the brush word and photo, and a gradient CTA with an inset highlight. These were requested twice, explicitly, by the client after an initial decline — they are a confirmed hero-only flourish, not license to add glow elsewhere.
 
 ### Shadow Vocabulary
-- **Card rest** (`shadow-sm`, neutral): Default card elevation.
-- **Card featured** (`shadow-xl`, neutral): The one featured card per section, paired with a 2-4px slate border.
-- **Modal / CTA** (`shadow-lg` to `shadow-2xl`, often with a soft inset highlight on primary buttons): Floating elements above the page plane.
-- **Hero ambient glow** (`radial-gradient` blurred backlight, gradient badge rings, sparkle accents): Reserved for the hero only — never spread to ordinary cards or body sections.
+- **Card rest** (`shadow-sm`, neutral): Default card elevation, dark or light.
+- **Card featured** (`shadow-xl`/`shadow-2xl` + thick amber border): The one featured card per section (pricing's $250 package, the featured testimonial).
+- **Hero ambient accents**: Radial amber/slate glow blobs, gradient-ring badge, sparkle SVGs, inset-highlight CTA — hero only.
 
 ### Named Rules
-**The Hero-Only Glow Rule.** Ambient glow, gradient rings, and sparkle accents are confirmed, deliberate hero flourishes — not a system-wide depth cue. Every other section stays on flat, neutral elevation (shadow + border only).
+**The Hero-Only Glow Rule.** Glow, gradient rings, and sparkle accents are a deliberate, confirmed hero flourish. Every other section stays on flat, neutral elevation (border + shadow only).
+
+**The Honest-Pulse Rule.** The hero's status-badge pulse marks a real, currently-true state ("accepting students right now"), never a fabricated live-updating feed. No animation should imply real-time data that isn't actually checked.
 
 ## Shapes
 
-Soft, generous rounding — `rounded-2xl`/`rounded-3xl` (16-24px) on cards, fully `rounded-full` pill buttons and tags (a change from the old system's `rounded-xl` buttons), and large soft circles (hundreds of px) as the signature decorative device behind photography. Borders are thin and low-opacity (charcoal at ~10%) rather than the old system's visible neutral-800 lines.
+Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full` pills and buttons. Borders are thin (1px) on both dark and light cards; a featured element gets a thicker (2-4px) amber border instead of a heavier shadow.
 
 ## Components
 
 ### Buttons
-- **Shape:** Fully rounded (pill), a deliberate change from the old system's 12px corner buttons.
-- **Primary (action):** Solid slate, white text — hero CTA, modal submit, featured pricing CTA.
-- **Secondary (brand):** Solid sage, white text — header's persistent CTA, Penrith location CTA.
-- **Tertiary:** Solid mauve, white text — Blue Mountains location CTA.
-- **Hover / Focus:** A -2px lift plus a slightly deeper shade; focus-visible gets a visible ring in the button's own color family.
+- **Primary (action):** Solid amber, dark text — every "Book a Lesson" button, on both dark and light sections.
+- **Secondary (on dark):** `bg-white/10` with a `brandDarkLine` border, white text — the casual-tier button on the dark pricing section.
+- **Hover / Focus:** A -2px lift plus a slightly deeper shade; focus-visible gets a visible ring (amber on dark backgrounds, with an explicit ring-offset color so it's never invisible against the page).
 
-### Cards / Containers
-- **Corner Style:** `rounded-2xl` grid cards, `rounded-3xl` showcase cards (pricing, testimonials, modal).
-- **Background:** White by default on a cream or soft-sage-tinted section background.
-- **Shadow Strategy:** Soft neutral shadow at rest; a thicker slate border + deeper shadow on the one featured card per section (see Elevation).
-- **Border:** 1px charcoal/10 ordinary; 2-4px slate on the featured variant.
-
-### Inputs / Fields
-- **Style:** Cream background, 1px charcoal/15 border, `rounded-xl`, generous padding.
-- **Focus:** Border shifts to slate plus a soft slate focus ring.
+### Cards
+- **Light section cards:** White background, `border-light` border, charcoal text.
+- **Dark section cards:** `dark-card` background, `dark-line` border, white/slate-300 text.
+- **Featured card:** Thicker amber border + deeper shadow, regardless of light or dark context.
 
 ### Navigation
-- **Style:** Sticky cream header with a thin bottom border; label-style nav links in muted taupe, going sage on hover. The persistent header CTA is solid slate.
+- **Style:** The header stays white/translucent at all times (even though the hero beneath it is dark) so it reads consistently whether the page is scrolled to a dark or light section — a deliberate choice to avoid a second "header theme" state.
 
-### Decorative Circles (signature component)
-Two to three overlapping, oversized soft-tone circles (sage-light, mauve-light, slate-light) sit behind a photo frame, each at a different scale and offset — the system's signature "cut-paper" decorative device. Reserved for photography; never used behind plain text or cards.
+### Trust Banner (signature component, new)
+A row of pill badges on the dark Locations section stating only confirmed facts (10+ years experience, 5.0★ rating, no locked-in contracts). This component exists specifically to NOT include unconfirmed claims — a Working With Children Check credential was proposed and explicitly declined pending real verification; do not add compliance/safety claims here without the client confirming them as true first.
 
-### Brush Highlight (signature component, carried over)
-A single word per hero wrapped in Caveat cursive, sitting on a rotated mauve marker-swatch. Recolored from the old system's yellow but structurally unchanged — the one surviving continuity piece between the two identities.
+### Interactive Map (signature component, new)
+A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent (it's described via its suburb list instead).
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** pair every accent's deep tone (text/buttons) with its own soft tone (decoration) — never cross them.
-- **Do** keep elevation as a real offset-and-blur shadow outside the hero; glow/gradient-ring accents are a confirmed hero-only flourish, not a system-wide depth cue (see The Hero-Only Glow Rule).
-- **Do** reserve the overlapping decorative circles for photography, not for plain cards or text blocks.
-- **Do** keep Caveat/brush typography to one word, one time, per hero.
-- **Do** keep buttons fully rounded (pill) — this is the system's one consistent button shape.
-- **Do** put status/info pill badges on solid white with charcoal text (plus a small colored accent dot if needed), not colored text on a light tint — a 2026-10-16 audit found `text-brandSage` on `bg-white/90` measuring ~4.3:1, under the AA floor.
-- **Do** style a non-interactive category label as plain text with a thin underline accent (`border-b-2 border-{color}/30`), never as a solid filled pill — a solid rounded-full/rounded-md fill reads as a button and invites misclicks.
-- **Do** give the featured pricing/plan card a real size difference (`lg:scale-105` or larger), not just a heavier border, when it needs to out-anchor a sibling option.
+- Do keep amber as the system's only accent color across every section.
+- Do keep the dark/light alternation strict and literal — it's the structural idea of this redesign.
+- Do keep the hero's glow/pulse/sparkle accents bounded to the hero; don't let them creep into other sections.
+- Do state only confirmed facts in the trust banner; treat any new compliance/certification claim as requiring explicit client confirmation before publishing.
+- Do keep the map embed scoped to the area with a real studio; don't fabricate a pin for a service area that doesn't have one.
 
 ### Don't:
-- **Don't** spread the hero's glow/gradient-ring/sparkle accents to other sections — they stay a deliberate, bounded hero flourish, confirmed with the client, not a precedent for glow everywhere.
-- **Don't** stack two bordered/backgrounded containers inside each other for ordinary content.
-- **Don't** animate a status indicator to suggest a live, continuously-updating feed when the underlying fact is just true/false (the hero's status pulse marks a real, currently-true state — "accepting students right now" — never a fabricated live counter).
-- **Don't** use the soft/light accent tint anywhere text needs to sit directly on it — contrast fails.
-- **Don't** place secondary actions (social links, etc.) beside a hero's primary CTA — one primary conversion action per above-the-fold view, full stop.
+- Don't add a second accent hue competing with amber.
+- Don't soften the hard cut between dark and light sections with a gradient transition — that's a different system, not a refinement of this one.
+- Don't stack two bordered/backgrounded containers inside each other for ordinary content.
+- Don't animate a status indicator to suggest a live, continuously-updating feed when the underlying fact is just true/false.
