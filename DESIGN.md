@@ -83,10 +83,10 @@ components:
 
 *(This is the system's third identity, replacing "The Botanical Studio" (cream/sage/mauve/slate) on 2026-10-16, per explicit, repeated client direction for a dark/light alternating structure with amber accents. The prior light identity is retired; treat it as evidence, not lineage.)*
 
-The page alternates dark and light sections like a studio at night: the hero, pricing, and locations sections go dark-slate with a single warm amber accent doing all the signaling, while "Why Us" and testimonials stay crisp and bright for readability and relief. The rhythm itself communicates something: dark sections hold the decisions that matter most (the offer, the price, the place), light sections hold the proof and explanation. Trust is built through specificity — a real map, real stats, real testimonials — not through decoration.
+The page alternates dark and light sections like a studio at night: the hero and pricing sections go dark-slate with a single warm amber accent doing all the signaling, while "Why Us," Locations, and testimonials stay crisp and bright for readability and relief. The rhythm itself communicates something: dark sections hold the decisions that matter most (the offer, the price), light sections hold the proof and explanation — Locations moved to light on 2026-10-16 per explicit client request, since the map and trust banner read as proof, not decision. Trust is built through specificity — a real map, real stats, real testimonials — not through decoration.
 
 **Key Characteristics:**
-- Strict section-level alternation: Hero (dark) → Why Us (light) → Pricing (dark) → Locations (dark, high-trust) → Reviews (light) → Footer CTA/Footer (dark)
+- Section-level alternation: Hero (dark) → Why Us (light) → Pricing (dark) → Locations (light, high-trust, 2026-10-16) → Reviews (light) → Footer CTA/Footer (dark). Locations was moved from dark to light per explicit client request, giving two consecutive light sections before the dark closing CTA — a deliberate exception to strict alternation, not an error.
 - One accent color (amber) carries every call-to-action and highlight across both dark and light sections — never diluted with a second competing hue
 - Dark sections use `brandDarkCard` surfaces with thin `brandDarkLine` borders, never pure black-on-black
 - Light sections use true white cards on an off-white (`#F8FAFC`) ground with a visible but quiet `#E2E8F0` border
