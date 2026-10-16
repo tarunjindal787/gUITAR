@@ -92,6 +92,15 @@
         ],
         "createdAt": "2026-10-16T07:04:23.492Z",
         "reason": "user-specified design system for this separate Practice Tools sub-app (dark slate/amber EdTech aesthetic), explicitly distinct from the main site's Botanical Studio identity -- not a drift"
+      },
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "files": [
+          "fretboard-app/app/globals.css"
+        ],
+        "createdAt": "2026-10-16T07:13:08.490Z",
+        "reason": "deliberate continuity choice: Montserrat is already the main site's established DESIGN.md display font (Botanical Studio identity); reused here so the Practice Tools sub-app shares typographic DNA with the parent site despite its intentionally distinct dark/amber color scheme -- not a default pick"
       }
     ]
   }
