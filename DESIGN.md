@@ -169,6 +169,12 @@ Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full`
 ### Navigation
 - **Style:** The header stays white/translucent at all times (even though the hero beneath it is dark) so it reads consistently whether the page is scrolled to a dark or light section — a deliberate choice to avoid a second "header theme" state.
 
+### Find Your Fit Quiz (signature component, new 2026-10-17)
+A floating bottom-right widget opening a 2-step modal (style, then plan) that recommends a pricing tier and hands off into the real booking modal with that option pre-selected. Pure client-side logic — no fabricated data or made-up recommendations beyond the user's own two answers.
+
+### Genre & Skill Tags (signature component, new 2026-10-17)
+A tag row of styles taught (Acoustic, Electric, Rock, Blues, Pop, Folk, Metal) in the Why Us section. Deliberately generic — no specific song titles, riff names, or learning-outcome timelines, since none have been confirmed with the client.
+
 ### Trust Banner (signature component, new)
 A row of pill badges on the dark Locations section stating only confirmed facts (10+ years experience, 5.0★ rating, no locked-in contracts). This component exists specifically to NOT include unconfirmed claims — a Working With Children Check credential was proposed and explicitly declined pending real verification; do not add compliance/safety claims here without the client confirming them as true first.
 

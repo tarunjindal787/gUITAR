@@ -114,7 +114,7 @@
         }
     </style>
 </head>
-<body class="bg-brandLight text-brandCharcoal font-sans antialiased selection:bg-brandAmberLight selection:text-brandCharcoal overflow-x-hidden pb-16 md:pb-0">
+<body class="bg-brandLight text-brandCharcoal font-sans antialiased selection:bg-brandAmberLight selection:text-brandCharcoal overflow-x-hidden pb-20 md:pb-0">
 
     <!-- TOP ANNOUNCEMENT BAR -->
     <div class="relative z-50 bg-brandDarker text-white font-bold text-xs uppercase tracking-wider py-2 px-4 text-center flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
@@ -326,23 +326,65 @@
     <!-- Structural only: name and bio copy are placeholders pending real content from the client. -->
     <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-5 gap-10 items-center bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
+            <div class="grid md:grid-cols-5 gap-10 items-start bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
                 <div class="md:col-span-2">
                     <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/5] max-w-xs mx-auto md:mx-0">
                         <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor" class="w-full h-full object-cover object-top">
                     </div>
-                </div>
-                <div class="md:col-span-3">
-                    <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">About Your Instructor</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">[Instructor name to come]</h2>
-                    <ul class="mt-4 space-y-2 text-sm text-brandCharcoal font-medium">
+                    <ul class="mt-4 space-y-2 text-sm text-brandCharcoal font-medium max-w-xs mx-auto md:mx-0">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep"></i> 10+ years teaching guitar locally</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep"></i> Teaches across Penrith &amp; the Blue Mountains</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep"></i> Acoustic &amp; electric, all ages 6 to 80+</li>
                     </ul>
-                    <p class="mt-4 text-sm text-brandMuted italic border-l-2 border-brandBorder pl-4">
-                        A short personal bio and teaching philosophy from the instructor will go here once supplied &mdash; this section is placeholder structure only, not filled-in copy.
-                    </p>
+                </div>
+                <div class="md:col-span-3">
+                    <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Who We Are</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">[Instructor name to come]</h2>
+
+                    <!-- Tabs -->
+                    <div class="flex gap-2 mt-6 mb-5">
+                        <button type="button" onclick="switchInstructorTab('philosophy')" id="instructor-tab-philosophy" class="instructor-tab bg-brandAmber text-brandDark font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-all">
+                            Philosophy &amp; Method
+                        </button>
+                        <button type="button" onclick="switchInstructorTab('coverage')" id="instructor-tab-coverage" class="instructor-tab bg-brandLight text-brandMuted border border-brandBorder font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider hover:text-brandCharcoal transition-all">
+                            Local Coverage
+                        </button>
+                    </div>
+
+                    <!-- Tab 1: Philosophy & Method -->
+                    <div id="instructor-content-philosophy" class="instructor-content">
+                        <ul class="space-y-2 text-sm text-brandCharcoal font-medium">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Practical, song-first playing from the very first session &mdash; not rigid theory drilling</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>A clear, personalized progression roadmap from absolute beginner to advanced player</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Focused 1-on-1 tuition, or group sessions for friends learning together</span></li>
+                        </ul>
+                        <p class="mt-4 text-sm text-brandMuted italic border-l-2 border-brandBorder pl-4">
+                            A short personal bio and teaching philosophy from the instructor will go here once supplied &mdash; this tab is placeholder structure only, not filled-in copy.
+                        </p>
+                    </div>
+
+                    <!-- Tab 2: Local Coverage -->
+                    <div id="instructor-content-coverage" class="instructor-content hidden">
+                        <p class="text-xs font-bold text-brandMuted uppercase tracking-wider mb-2">Regions</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-brandAmberLight/40 text-brandAmberDeep text-xs font-bold px-3 py-1 rounded-full">Penrith Studio</span>
+                            <span class="bg-brandAmberLight/40 text-brandAmberDeep text-xs font-bold px-3 py-1 rounded-full">Blue Mountains Mobile</span>
+                        </div>
+                        <p class="text-xs font-bold text-brandMuted uppercase tracking-wider mb-2">Styles Taught</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Acoustic</span>
+                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Electric</span>
+                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Rock</span>
+                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Blues</span>
+                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Pop</span>
+                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Folk</span>
+                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Metal</span>
+                        </div>
+                        <a href="#locations" class="inline-flex items-center gap-2 text-xs font-bold text-brandAmberDeep hover:text-brandAmber transition-colors">
+                            <span>See full studio &amp; suburb coverage</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -428,6 +470,34 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Genre & Skill tags -->
+            <div class="mt-12 text-center">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Styles &amp; Genres We Teach</p>
+                <div class="flex flex-wrap justify-center gap-2.5">
+                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-guitar text-brandAmber group-hover:scale-110 transition-transform"></i> Acoustic
+                    </span>
+                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-bolt text-brandAmber group-hover:scale-110 transition-transform"></i> Electric
+                    </span>
+                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-fire text-brandAmber group-hover:scale-110 transition-transform"></i> Rock
+                    </span>
+                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-record-vinyl text-brandAmber group-hover:scale-110 transition-transform"></i> Blues
+                    </span>
+                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-star text-brandAmber group-hover:scale-110 transition-transform"></i> Pop
+                    </span>
+                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-leaf text-brandAmber group-hover:scale-110 transition-transform"></i> Folk
+                    </span>
+                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-skull text-brandAmber group-hover:scale-110 transition-transform"></i> Metal
+                    </span>
+                </div>
             </div>
         </div>
     </section>
@@ -583,8 +653,17 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Easy parking on-site</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> After-school and weekend timeslots available</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Full acoustic isolation for optimal focus</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Serving Emu Plains, Jamisontown, Cranebrook, Glenmore Park &amp; St Marys</li>
                     </ul>
+                    <div class="pt-2">
+                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Also Serving</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Emu Plains</span>
+                            <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Jamisontown</span>
+                            <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Cranebrook</span>
+                            <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Glenmore Park</span>
+                            <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">St Marys</span>
+                        </div>
+                    </div>
                     <div class="pt-4">
                         <button onclick="openBookingModal('Penrith Studio')" class="bg-brandAmber text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase">
                             Book Penrith Studio Slot
@@ -627,7 +706,14 @@
                 <div class="text-center lg:text-left lg:border-l lg:border-brandDarkLine lg:pl-12 space-y-3">
                     <i class="fa-solid fa-mountain text-4xl text-brandAmber"></i>
                     <h4 class="text-lg font-bold text-white uppercase">Serving Blue Mountains Townships</h4>
-                    <p class="text-xs text-slate-400">Including Glenbrook, Blaxland, Springwood, Hazelbrook, Wentworth Falls &amp; Katoomba.</p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-1.5 pt-1">
+                        <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Glenbrook</span>
+                        <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Blaxland</span>
+                        <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Springwood</span>
+                        <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Hazelbrook</span>
+                        <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Wentworth Falls</span>
+                        <span class="bg-brandDark border border-brandDarkLine text-slate-200 text-[11px] font-bold px-2.5 py-1 rounded-full">Katoomba</span>
+                    </div>
                 </div>
             </div>
 
@@ -644,6 +730,17 @@
                     <p class="mt-3 text-sm text-brandMuted leading-relaxed">
                         An interactive fretboard &amp; scale visualizer with built-in sound, free to use between lessons &mdash; no sign-up required.
                     </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center gap-1.5 bg-brandLight border border-brandBorder text-brandCharcoal text-[11px] font-bold px-3 py-1.5 rounded-full">
+                            <i class="fa-solid fa-guitar text-brandAmberDeep"></i> Interactive Fretboard
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-brandLight border border-brandBorder text-brandCharcoal text-[11px] font-bold px-3 py-1.5 rounded-full">
+                            <i class="fa-solid fa-video text-brandAmberDeep"></i> Video Recaps With 10-Lesson Pack
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-brandLight border border-brandBorder text-brandCharcoal text-[11px] font-bold px-3 py-1.5 rounded-full">
+                            <i class="fa-solid fa-handshake text-brandAmberDeep"></i> Zero Lock-In Contracts
+                        </span>
+                    </div>
                     <a href="practice/" class="mt-6 inline-flex items-center gap-2 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-widest uppercase transition-all">
                         <span>Open Practice Tools</span>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -814,35 +911,78 @@
     </section>
 
     <!-- FOOTER (DARK) -->
-    <footer class="bg-brandDarker text-slate-400 py-12 border-t border-brandDarkLine text-xs">
+    <footer class="bg-brandDarker text-slate-400 py-14 border-t border-brandDarkLine text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-brandAmber text-brandDark flex items-center justify-center font-bold">
-                        <i class="fa-solid fa-mountain-sun"></i>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+
+                <!-- Col 1: Brand & Mission -->
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-brandAmber text-brandDark flex items-center justify-center font-bold shrink-0">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <span class="text-white font-extrabold tracking-wider">Mountain Culture Guitar Lessons</span>
                     </div>
-                    <span class="text-white font-extrabold tracking-wider">Mountain Culture Guitar Lessons</span>
+                    <p class="text-slate-400 leading-relaxed">
+                        Local, personal guitar tuition across Penrith &amp; the Blue Mountains &mdash; practical playing from day one, no lock-in contracts.
+                    </p>
+                    <div class="flex gap-4 text-base mt-4">
+                        <a href="#" class="hover:text-brandAmber transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-brandAmber transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brandAmber transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
 
-                <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-slate-400">
-                    <a href="#home" class="hover:text-brandAmber transition-colors">Home</a>
-                    <a href="#pricing" class="hover:text-brandAmber transition-colors">Pricing</a>
-                    <a href="#locations" class="hover:text-brandAmber transition-colors">Locations</a>
-                    <a href="#faq" class="hover:text-brandAmber transition-colors">FAQ</a>
-                    <a href="practice/" class="hover:text-brandAmber transition-colors">Practice Tools</a>
-                    <a href="technology.html" class="hover:text-brandAmber transition-colors">Technology Partner</a>
-                </nav>
-
-                <div class="flex gap-4 text-base">
-                    <a href="#" class="hover:text-brandAmber transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-brandAmber transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-brandAmber transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <!-- Col 2: Quick Navigation -->
+                <div>
+                    <p class="text-white font-bold uppercase tracking-wider text-[11px] mb-4">Quick Links</p>
+                    <nav class="flex flex-col gap-2.5 text-slate-400">
+                        <a href="#home" class="hover:text-brandAmber transition-colors w-fit">Home</a>
+                        <a href="#instructor" class="hover:text-brandAmber transition-colors w-fit">Who We Are</a>
+                        <a href="#pricing" class="hover:text-brandAmber transition-colors w-fit">Pricing</a>
+                        <a href="practice/" class="hover:text-brandAmber transition-colors w-fit">Practice Tools</a>
+                        <a href="#faq" class="hover:text-brandAmber transition-colors w-fit">FAQ</a>
+                    </nav>
                 </div>
+
+                <!-- Col 3: Studio Locations & Coverage -->
+                <div>
+                    <p class="text-white font-bold uppercase tracking-wider text-[11px] mb-4">Locations &amp; Coverage</p>
+                    <nav class="flex flex-col gap-2.5 text-slate-400">
+                        <a href="#locations" class="hover:text-brandAmber transition-colors w-fit">Penrith Dedicated Studio</a>
+                        <a href="#locations" class="hover:text-brandAmber transition-colors w-fit">Blue Mountains Mobile</a>
+                        <a href="#locations" class="hover:text-brandAmber transition-colors w-fit">View Full Coverage &amp; Map</a>
+                    </nav>
+                </div>
+
+                <!-- Col 4: Booking & Availability -->
+                <div>
+                    <p class="text-white font-bold uppercase tracking-wider text-[11px] mb-4">Book A Lesson</p>
+                    <div class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-[11px] font-bold px-3 py-1.5 rounded-full mb-4">
+                        <span class="relative flex h-2 w-2">
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                        </span>
+                        Accepting New Students
+                    </div>
+                    <a href="tel:0400000000" class="flex items-center gap-2 hover:text-brandAmber transition-colors w-fit mb-3">
+                        <i class="fa-solid fa-phone text-brandAmber"></i>
+                        <span>Penrith &amp; Mountains</span>
+                    </a>
+                    <button onclick="openBookingModal('Footer Column CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 py-2.5 rounded-full text-[11px] tracking-widest uppercase flex items-center gap-2">
+                        <span>Book A Lesson</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
             </div>
 
             <div class="pt-6 border-t border-brandDarkLine flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-500">
                 <p>&copy; <span id="year"></span> Mountain Culture Guitar Lessons. Penrith &amp; Blue Mountains, NSW.</p>
-                <p>Powered by <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-300 hover:text-brandAmber transition-colors">JobGen.AI</a></p>
+                <p class="flex items-center gap-3">
+                    <a href="technology.html" class="hover:text-brandAmber transition-colors">Technology Partner</a>
+                    <span class="text-slate-700">&bull;</span>
+                    <span>Powered by <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-300 hover:text-brandAmber transition-colors">JobGen.AI</a></span>
+                </p>
             </div>
         </div>
     </footer>
@@ -923,6 +1063,70 @@
         </div>
     </div>
 
+    <!-- FIND-YOUR-FIT QUIZ: FLOATING TRIGGER -->
+    <button onclick="openQuizModal()" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-2 bg-brandDark text-white border border-brandDarkLine pl-4 pr-5 py-3 rounded-full shadow-xl hover:-translate-y-0.5 hover:shadow-2xl transition-all">
+        <i class="fa-solid fa-wand-magic-sparkles text-brandAmber"></i>
+        <span class="text-xs font-bold">Not sure where to start?</span>
+    </button>
+    <button onclick="openQuizModal()" class="md:hidden fixed bottom-20 right-4 z-40 w-12 h-12 flex items-center justify-center bg-brandDark text-brandAmber border border-brandDarkLine rounded-full shadow-xl" aria-label="Find your fit quiz">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </button>
+
+    <!-- FIND-YOUR-FIT QUIZ MODAL -->
+    <div id="quiz-modal" class="fixed inset-0 z-50 bg-brandDarker/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-white border border-brandBorder w-full max-w-md rounded-3xl shadow-2xl overflow-hidden relative" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+            <div class="bg-brandDark px-6 py-6 flex items-center justify-between">
+                <h3 id="quiz-title" class="text-lg font-black text-white font-display">Find Your Fit</h3>
+                <button onclick="closeQuizModal()" class="text-slate-400 hover:text-white text-xl p-1 transition-colors" aria-label="Close quiz">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6">
+                <!-- Step 1: Style -->
+                <div id="quiz-step-1" class="quiz-step space-y-4">
+                    <p class="text-xs font-bold text-brandMuted uppercase tracking-wider">Step 1 of 2</p>
+                    <p class="text-sm font-bold text-brandCharcoal">Which style interests you most?</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" onclick="selectQuizStyle('Acoustic')" class="bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-5 text-center transition-all">
+                            <i class="fa-solid fa-guitar text-2xl text-brandAmberDeep mb-2"></i>
+                            <p class="font-bold text-brandCharcoal text-sm">Acoustic</p>
+                        </button>
+                        <button type="button" onclick="selectQuizStyle('Electric')" class="bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-5 text-center transition-all">
+                            <i class="fa-solid fa-bolt text-2xl text-brandAmberDeep mb-2"></i>
+                            <p class="font-bold text-brandCharcoal text-sm">Electric</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Plan -->
+                <div id="quiz-step-2" class="quiz-step hidden space-y-4">
+                    <p class="text-xs font-bold text-brandMuted uppercase tracking-wider">Step 2 of 2</p>
+                    <p class="text-sm font-bold text-brandCharcoal">How would you like to get started?</p>
+                    <div class="space-y-3">
+                        <button type="button" onclick="selectQuizPlan('Single Lesson ($35)')" class="w-full bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-4 text-left transition-all flex items-center justify-between">
+                            <span class="font-bold text-brandCharcoal text-sm">Try a single $35 lesson first</span>
+                            <i class="fa-solid fa-arrow-right text-brandAmberDeep"></i>
+                        </button>
+                        <button type="button" onclick="selectQuizPlan('10 Lesson Package ($250)')" class="w-full bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-4 text-left transition-all flex items-center justify-between">
+                            <span class="font-bold text-brandCharcoal text-sm">Commit to the 10-lesson pack (save $100)</span>
+                            <i class="fa-solid fa-arrow-right text-brandAmberDeep"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result -->
+                <div id="quiz-result" class="quiz-step hidden space-y-4 text-center">
+                    <i class="fa-solid fa-circle-check text-4xl text-brandAmberDeep"></i>
+                    <p id="quiz-result-text" class="text-sm text-brandCharcoal font-medium"></p>
+                    <button type="button" onclick="bookFromQuiz()" class="w-full bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-3.5 rounded-xl text-xs tracking-widest uppercase transition-all">
+                        Book This
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- STICKY MOBILE BOOKING BAR -->
     <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-brandDark border-t border-brandDarkLine px-4 py-3 flex items-center gap-3 shadow-[0_-4px_12px_rgba(0,0,0,0.2)]">
         <a href="tel:0400000000" class="flex items-center justify-center w-12 h-12 shrink-0 rounded-full bg-brandDarkCard border border-brandDarkLine text-brandAmber" aria-label="Call Mountain Culture Guitar Lessons">
@@ -966,6 +1170,20 @@
             });
         });
 
+        // Instructor Tabs Switcher
+        function switchInstructorTab(tab) {
+            document.querySelectorAll('.instructor-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.instructor-tab').forEach(btn => {
+                btn.classList.remove('bg-brandAmber', 'text-brandDark');
+                btn.classList.add('bg-brandLight', 'text-brandMuted', 'border', 'border-brandBorder');
+            });
+
+            document.getElementById('instructor-content-' + tab).classList.remove('hidden');
+            const activeBtn = document.getElementById('instructor-tab-' + tab);
+            activeBtn.classList.add('bg-brandAmber', 'text-brandDark');
+            activeBtn.classList.remove('bg-brandLight', 'text-brandMuted', 'border', 'border-brandBorder');
+        }
+
         // Location Tabs Switcher
         function switchTab(tab) {
             document.querySelectorAll('.location-content').forEach(el => el.classList.add('hidden'));
@@ -996,9 +1214,24 @@
         const bookingSuccess = document.getElementById('booking-success');
         let modalTriggerEl = null;
 
-        function getFocusableInModal() {
-            return Array.from(modalDialog.querySelectorAll('button, [href], input, select, textarea'))
+        function getFocusableIn(dialogEl) {
+            return Array.from(dialogEl.querySelectorAll('button, [href], input, select, textarea'))
                 .filter(el => !el.disabled && el.offsetParent !== null);
+        }
+
+        function trapFocus(e, dialogEl) {
+            if (e.key !== 'Tab') return;
+            const focusable = getFocusableIn(dialogEl);
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
         }
 
         function openBookingModal(optionName) {
@@ -1013,7 +1246,7 @@
             bookingSuccess.classList.add('hidden');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            const focusable = getFocusableInModal();
+            const focusable = getFocusableIn(modalDialog);
             if (focusable.length) focusable[0].focus();
         }
 
@@ -1027,7 +1260,7 @@
             event.preventDefault();
             bookingForm.classList.add('hidden');
             bookingSuccess.classList.remove('hidden');
-            const focusable = getFocusableInModal();
+            const focusable = getFocusableIn(modalDialog);
             if (focusable.length) focusable[0].focus();
         }
 
@@ -1035,24 +1268,70 @@
             if (e.target === modal) closeBookingModal();
         });
 
+        // Find-Your-Fit Quiz Modal Management
+        const quizModal = document.getElementById('quiz-modal');
+        const quizDialog = quizModal.querySelector('[role="dialog"]');
+        const quizResultText = document.getElementById('quiz-result-text');
+        let quizTriggerEl = null;
+        let quizAnswers = { style: null, plan: null };
+
+        function showQuizStep(stepId) {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById(stepId).classList.remove('hidden');
+            const focusable = getFocusableIn(quizDialog);
+            if (focusable.length) focusable[0].focus();
+        }
+
+        function openQuizModal() {
+            quizTriggerEl = document.activeElement;
+            quizAnswers = { style: null, plan: null };
+            showQuizStep('quiz-step-1');
+            quizModal.classList.remove('hidden');
+            quizModal.classList.add('flex');
+        }
+
+        function closeQuizModal() {
+            quizModal.classList.add('hidden');
+            quizModal.classList.remove('flex');
+            if (quizTriggerEl) quizTriggerEl.focus();
+        }
+
+        function selectQuizStyle(style) {
+            quizAnswers.style = style;
+            showQuizStep('quiz-step-2');
+        }
+
+        function selectQuizPlan(plan) {
+            quizAnswers.plan = plan;
+            const planLabel = plan.includes('$250')
+                ? 'the 10-Lesson Package ($250, saving $100)'
+                : 'a single $35 trial lesson';
+            quizResultText.innerText = "Based on your answers, we'd recommend starting with " + quizAnswers.style.toLowerCase() + " guitar and booking " + planLabel + ".";
+            showQuizStep('quiz-result');
+        }
+
+        function bookFromQuiz() {
+            const styleLabel = quizAnswers.style || 'Guitar';
+            const planLabel = quizAnswers.plan || '';
+            closeQuizModal();
+            openBookingModal('Quiz: ' + styleLabel + ' / ' + planLabel);
+        }
+
+        quizModal.addEventListener('click', (e) => {
+            if (e.target === quizModal) closeQuizModal();
+        });
+
         document.addEventListener('keydown', (e) => {
-            if (modal.classList.contains('hidden')) return;
+            const bookingOpen = !modal.classList.contains('hidden');
+            const quizOpen = !quizModal.classList.contains('hidden');
+            if (!bookingOpen && !quizOpen) return;
             if (e.key === 'Escape') {
-                closeBookingModal();
+                if (bookingOpen) closeBookingModal();
+                if (quizOpen) closeQuizModal();
                 return;
             }
-            if (e.key !== 'Tab') return;
-            const focusable = getFocusableInModal();
-            if (!focusable.length) return;
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
-                e.preventDefault();
-                last.focus();
-            } else if (!e.shiftKey && document.activeElement === last) {
-                e.preventDefault();
-                first.focus();
-            }
+            if (bookingOpen) trapFocus(e, modalDialog);
+            if (quizOpen) trapFocus(e, quizDialog);
         });
     </script>
 </body>
