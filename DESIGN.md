@@ -167,7 +167,8 @@ Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full`
 - **Featured card:** Thicker amber border + deeper shadow, regardless of light or dark context.
 
 ### Navigation
-- **Style (superseded 2026-10-17):** The header is now a dark glassmorphic bar (`bg-brandDark/80 backdrop-blur-md border-white/10`) at all times, per explicit client direction — superseding the prior "header stays white/translucent" rule. Nav links get an animated amber underline on hover, plus a scroll-spy active state (`.nav-link.active`) driven by an `IntersectionObserver` keyed to each section's id. A compact "Accepting New Students" status pill sits next to the logo on large screens, reusing the hero's honest-pulse dot.
+- **Style (superseded 2026-10-17):** The header is now a dark glassmorphic bar (`bg-brandDark/80 backdrop-blur-md border-white/10`) at all times, per explicit client direction — superseding the prior "header stays white/translucent" rule. Nav links get an animated amber underline on hover, plus a scroll-spy active state (`.nav-link.active`) driven by an `IntersectionObserver` keyed to each section's id.
+- **No status badge in the navbar (2026-10-17, same day):** A compact "Accepting New Students" badge was added next to the logo, then explicitly removed the same day as header clutter. The status badge lives exclusively in the Hero content column now (and separately, unrelated, in the Footer's Book/Availability column) — don't re-add it to the navbar without new client direction.
 
 ### Find Your Fit Quiz (signature component, new 2026-10-17)
 A floating bottom-right widget opening a 2-step modal (style, then plan) that recommends a pricing tier and hands off into the real booking modal with that option pre-selected. Pure client-side logic — no fabricated data or made-up recommendations beyond the user's own two answers.
