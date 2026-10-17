@@ -146,7 +146,7 @@ Mostly flat with real shadows: cards on both dark and light sections use a thin 
 - **Hero ambient accents**: Radial amber/slate glow blobs, gradient-ring badge, sparkle SVGs, inset-highlight CTA — hero only.
 
 ### Named Rules
-**The Hero-Only Glow Rule.** Glow, gradient rings, and sparkle accents are a deliberate, confirmed hero flourish. Every other section stays on flat, neutral elevation (border + shadow only).
+**The Hero-Only Glow Rule.** Glow, gradient rings, and sparkle accents are a deliberate, confirmed hero flourish. Every other section stays on flat, neutral elevation (border + shadow only) — with one confirmed exception: the featured $250 pricing card carries a soft amber glow shadow, requested explicitly across two separate rounds (2026-10-17), the same confirmation pattern that established the hero exception itself.
 
 **The Honest-Pulse Rule.** The hero's status-badge pulse marks a real, currently-true state ("accepting students right now"), never a fabricated live-updating feed. No animation should imply real-time data that isn't actually checked.
 
@@ -167,13 +167,13 @@ Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full`
 - **Featured card:** Thicker amber border + deeper shadow, regardless of light or dark context.
 
 ### Navigation
-- **Style:** The header stays white/translucent at all times (even though the hero beneath it is dark) so it reads consistently whether the page is scrolled to a dark or light section — a deliberate choice to avoid a second "header theme" state.
+- **Style (superseded 2026-10-17):** The header is now a dark glassmorphic bar (`bg-brandDark/80 backdrop-blur-md border-white/10`) at all times, per explicit client direction — superseding the prior "header stays white/translucent" rule. Nav links get an animated amber underline on hover, plus a scroll-spy active state (`.nav-link.active`) driven by an `IntersectionObserver` keyed to each section's id. A compact "Accepting New Students" status pill sits next to the logo on large screens, reusing the hero's honest-pulse dot.
 
 ### Find Your Fit Quiz (signature component, new 2026-10-17)
 A floating bottom-right widget opening a 2-step modal (style, then plan) that recommends a pricing tier and hands off into the real booking modal with that option pre-selected. Pure client-side logic — no fabricated data or made-up recommendations beyond the user's own two answers.
 
-### Genre & Skill Tags (signature component, new 2026-10-17)
-A tag row of styles taught (Acoustic, Electric, Rock, Blues, Pop, Folk, Metal) in the Why Us section. Deliberately generic — no specific song titles, riff names, or learning-outcome timelines, since none have been confirmed with the client.
+### Genre & Skill Cards (signature component, updated 2026-10-17)
+A grid of genre cards (Acoustic, Electric, Rock, Blues, Pop, Folk, Metal) in the Why Us section, each with a one-line generic skill descriptor (e.g. "Power chords & rhythm") and a decorative guitar-pick SVG watermark. Deliberately generic — no specific song titles, riff names, or learning-outcome timelines, since none have been confirmed with the client; this was re-requested with "sample riffs" language in a later round and the boundary was held.
 
 ### Trust Banner (signature component, new)
 A row of pill badges on the dark Locations section stating only confirmed facts (10+ years experience, 5.0★ rating, no locked-in contracts). This component exists specifically to NOT include unconfirmed claims — a Working With Children Check credential was proposed and explicitly declined pending real verification; do not add compliance/safety claims here without the client confirming them as true first.

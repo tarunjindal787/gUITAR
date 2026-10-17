@@ -112,6 +112,12 @@
         .ambient-glow-slate {
             background: radial-gradient(circle, rgba(148,163,184,0.25) 0%, rgba(148,163,184,0.06) 45%, transparent 75%);
         }
+        .nav-link.active {
+            color: #ffffff;
+        }
+        .nav-link.active .nav-underline {
+            transform: scaleX(1);
+        }
     </style>
 </head>
 <body class="bg-brandLight text-brandCharcoal font-sans antialiased selection:bg-brandAmberLight selection:text-brandCharcoal overflow-x-hidden pb-20 md:pb-0">
@@ -124,37 +130,64 @@
         <a href="#pricing" class="hidden sm:inline underline decoration-brandAmber/60 underline-offset-2 hover:decoration-brandAmber transition-colors">Claim $100 Pack Discount &rarr;</a>
     </div>
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brandBorder transition-all">
+    <!-- HEADER / NAVIGATION (DARK GLASSMORPHIC) -->
+    <header class="sticky top-0 z-40 bg-brandDark/80 backdrop-blur-md border-b border-white/10 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-full bg-brandDark flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-mountain-sun text-brandAmber text-xl"></i>
+                <div class="w-11 h-11 rounded-full bg-brandAmber flex items-center justify-center shadow-[0_0_16px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-mountain-sun text-brandDark text-xl"></i>
                 </div>
                 <div>
-                    <span class="block font-black text-xl tracking-wide text-brandCharcoal leading-none font-display">Mountain</span>
-                    <span class="block text-[11px] font-bold tracking-[0.25em] text-brandAmberDeep uppercase leading-tight">Culture Guitar</span>
+                    <span class="block font-black text-xl tracking-wide text-white leading-none font-display">Mountain</span>
+                    <span class="block text-[11px] font-bold tracking-[0.25em] text-brandAmber uppercase leading-tight">Culture Guitar</span>
                 </div>
             </a>
 
+            <!-- Status Badge (desktop only) -->
+            <div class="hidden lg:flex items-center gap-2 bg-white/5 border border-white/10 text-slate-200 text-[10px] font-black tracking-widest uppercase px-3 py-1.5 rounded-full">
+                <span class="relative flex h-2 w-2">
+                    <span class="status-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                </span>
+                Accepting New Students
+            </div>
+
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-4 lg:gap-7 text-xs font-bold tracking-widest uppercase">
-                <a href="#home" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Home</a>
-                <a href="#features" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Why Us</a>
-                <a href="#pricing" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Pricing</a>
-                <a href="#locations" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Locations</a>
-                <a href="#reviews" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Reviews</a>
-                <a href="practice/" class="text-brandMuted hover:text-brandAmberDeep transition-colors">Practice Tools</a>
+                <a href="#home" data-nav-link="home" class="nav-link group relative text-slate-400 hover:text-white transition-colors py-2">
+                    <span>Home</span>
+                    <span class="nav-underline absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#features" data-nav-link="features" class="nav-link group relative text-slate-400 hover:text-white transition-colors py-2">
+                    <span>Why Us</span>
+                    <span class="nav-underline absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#pricing" data-nav-link="pricing" class="nav-link group relative text-slate-400 hover:text-white transition-colors py-2">
+                    <span>Pricing</span>
+                    <span class="nav-underline absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#locations" data-nav-link="locations" class="nav-link group relative text-slate-400 hover:text-white transition-colors py-2">
+                    <span>Locations</span>
+                    <span class="nav-underline absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#reviews" data-nav-link="reviews" class="nav-link group relative text-slate-400 hover:text-white transition-colors py-2">
+                    <span>Reviews</span>
+                    <span class="nav-underline absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+                <a href="practice/" class="nav-link group relative text-slate-400 hover:text-white transition-colors py-2">
+                    <span>Practice Tools</span>
+                    <span class="nav-underline absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
             </nav>
 
             <!-- CTA Button -->
             <div class="hidden md:flex items-center gap-4">
-                <a href="tel:0400000000" class="hidden xl:flex text-brandMuted hover:text-brandCharcoal text-xs font-bold tracking-wider items-center gap-2" aria-label="Call Penrith and Mountains">
-                    <i class="fa-solid fa-phone text-brandAmberDeep"></i>
+                <a href="tel:0400000000" class="hidden xl:flex text-slate-400 hover:text-white text-xs font-bold tracking-wider items-center gap-2 transition-colors" aria-label="Call Penrith and Mountains">
+                    <i class="fa-solid fa-phone text-brandAmber"></i>
                     <span>Penrith &amp; Mountains</span>
                 </a>
-                <button onclick="openBookingModal('General Header CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
+                <button onclick="openBookingModal('General Header CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm hover:shadow-[0_0_24px_rgba(245,158,11,0.5)] transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
                     <span>Book A Lesson</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
@@ -162,22 +195,22 @@
 
             <!-- Mobile Menu Toggle -->
             <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-brandCharcoal p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="mobile-menu-btn" class="text-white p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fa-solid fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brandBorder px-4 pt-3 pb-6 space-y-3">
-            <a href="#home" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Home</a>
-            <a href="#features" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Why Us</a>
-            <a href="#pricing" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Pricing</a>
-            <a href="#locations" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Locations</a>
-            <a href="#reviews" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Reviews</a>
-            <a href="practice/" class="mobile-link block py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">Practice Tools</a>
-            <a href="tel:0400000000" class="mobile-link flex items-center gap-2 py-2 text-sm font-bold tracking-wider text-brandCharcoal hover:text-brandAmberDeep">
-                <i class="fa-solid fa-phone text-brandAmberDeep"></i>
+        <div id="mobile-menu" class="hidden md:hidden bg-brandDark border-b border-white/10 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">Home</a>
+            <a href="#features" class="mobile-link block py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">Why Us</a>
+            <a href="#pricing" class="mobile-link block py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">Pricing</a>
+            <a href="#locations" class="mobile-link block py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">Locations</a>
+            <a href="#reviews" class="mobile-link block py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">Reviews</a>
+            <a href="practice/" class="mobile-link block py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">Practice Tools</a>
+            <a href="tel:0400000000" class="mobile-link flex items-center gap-2 py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">
+                <i class="fa-solid fa-phone text-brandAmber"></i>
                 <span>Penrith &amp; Mountains</span>
             </a>
             <button onclick="openBookingModal('Mobile Menu CTA')" class="w-full mt-4 bg-brandAmber text-brandDark font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs">
@@ -474,29 +507,50 @@
 
             <!-- Genre & Skill tags -->
             <div class="mt-12 text-center">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Styles &amp; Genres We Teach</p>
-                <div class="flex flex-wrap justify-center gap-2.5">
-                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
-                        <i class="fa-solid fa-guitar text-brandAmber group-hover:scale-110 transition-transform"></i> Acoustic
-                    </span>
-                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
-                        <i class="fa-solid fa-bolt text-brandAmber group-hover:scale-110 transition-transform"></i> Electric
-                    </span>
-                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
-                        <i class="fa-solid fa-fire text-brandAmber group-hover:scale-110 transition-transform"></i> Rock
-                    </span>
-                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
-                        <i class="fa-solid fa-record-vinyl text-brandAmber group-hover:scale-110 transition-transform"></i> Blues
-                    </span>
-                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
-                        <i class="fa-solid fa-star text-brandAmber group-hover:scale-110 transition-transform"></i> Pop
-                    </span>
-                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
-                        <i class="fa-solid fa-leaf text-brandAmber group-hover:scale-110 transition-transform"></i> Folk
-                    </span>
-                    <span class="group inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber text-slate-200 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:-translate-y-0.5">
-                        <i class="fa-solid fa-skull text-brandAmber group-hover:scale-110 transition-transform"></i> Metal
-                    </span>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Styles &amp; Genres We Teach</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+                    <div class="group relative bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        <svg aria-hidden="true" class="absolute -right-3 -bottom-3 w-14 h-14 text-white/5 group-hover:text-brandAmber/10 transition-colors" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5 0 0 7 0 15c0 9 5 17 12 17s12-8 12-17C24 7 19 0 12 0z"/></svg>
+                        <i class="fa-solid fa-guitar text-xl text-brandAmber mb-2 relative"></i>
+                        <p class="font-bold text-white text-xs relative">Acoustic</p>
+                        <p class="text-[10px] text-slate-400 mt-1 relative">Fingerpicking &amp; strumming</p>
+                    </div>
+                    <div class="group relative bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        <svg aria-hidden="true" class="absolute -right-3 -bottom-3 w-14 h-14 text-white/5 group-hover:text-brandAmber/10 transition-colors" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5 0 0 7 0 15c0 9 5 17 12 17s12-8 12-17C24 7 19 0 12 0z"/></svg>
+                        <i class="fa-solid fa-bolt text-xl text-brandAmber mb-2 relative"></i>
+                        <p class="font-bold text-white text-xs relative">Electric</p>
+                        <p class="text-[10px] text-slate-400 mt-1 relative">Riffs, scales &amp; tone</p>
+                    </div>
+                    <div class="group relative bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        <svg aria-hidden="true" class="absolute -right-3 -bottom-3 w-14 h-14 text-white/5 group-hover:text-brandAmber/10 transition-colors" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5 0 0 7 0 15c0 9 5 17 12 17s12-8 12-17C24 7 19 0 12 0z"/></svg>
+                        <i class="fa-solid fa-fire text-xl text-brandAmber mb-2 relative"></i>
+                        <p class="font-bold text-white text-xs relative">Rock</p>
+                        <p class="text-[10px] text-slate-400 mt-1 relative">Power chords &amp; rhythm</p>
+                    </div>
+                    <div class="group relative bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        <svg aria-hidden="true" class="absolute -right-3 -bottom-3 w-14 h-14 text-white/5 group-hover:text-brandAmber/10 transition-colors" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5 0 0 7 0 15c0 9 5 17 12 17s12-8 12-17C24 7 19 0 12 0z"/></svg>
+                        <i class="fa-solid fa-record-vinyl text-xl text-brandAmber mb-2 relative"></i>
+                        <p class="font-bold text-white text-xs relative">Blues</p>
+                        <p class="text-[10px] text-slate-400 mt-1 relative">12-bar progressions &amp; bends</p>
+                    </div>
+                    <div class="group relative bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        <svg aria-hidden="true" class="absolute -right-3 -bottom-3 w-14 h-14 text-white/5 group-hover:text-brandAmber/10 transition-colors" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5 0 0 7 0 15c0 9 5 17 12 17s12-8 12-17C24 7 19 0 12 0z"/></svg>
+                        <i class="fa-solid fa-star text-xl text-brandAmber mb-2 relative"></i>
+                        <p class="font-bold text-white text-xs relative">Pop</p>
+                        <p class="text-[10px] text-slate-400 mt-1 relative">Chord progressions &amp; feel</p>
+                    </div>
+                    <div class="group relative bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        <svg aria-hidden="true" class="absolute -right-3 -bottom-3 w-14 h-14 text-white/5 group-hover:text-brandAmber/10 transition-colors" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5 0 0 7 0 15c0 9 5 17 12 17s12-8 12-17C24 7 19 0 12 0z"/></svg>
+                        <i class="fa-solid fa-leaf text-xl text-brandAmber mb-2 relative"></i>
+                        <p class="font-bold text-white text-xs relative">Folk</p>
+                        <p class="text-[10px] text-slate-400 mt-1 relative">Fingerstyle &amp; open tunings</p>
+                    </div>
+                    <div class="group relative bg-brandDarkCard border border-brandDarkLine hover:border-brandAmber rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        <svg aria-hidden="true" class="absolute -right-3 -bottom-3 w-14 h-14 text-white/5 group-hover:text-brandAmber/10 transition-colors" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5 0 0 7 0 15c0 9 5 17 12 17s12-8 12-17C24 7 19 0 12 0z"/></svg>
+                        <i class="fa-solid fa-skull text-xl text-brandAmber mb-2 relative"></i>
+                        <p class="font-bold text-white text-xs relative">Metal</p>
+                        <p class="text-[10px] text-slate-400 mt-1 relative">Palm muting &amp; picking speed</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -555,8 +609,8 @@
                     </button>
                 </div>
 
-                <!-- Card 2: 10 Lesson Package ($250 - HIGHLIGHTED) -->
-                <div class="bg-brandCard text-brandCharcoal rounded-3xl p-8 sm:p-10 shadow-2xl border-4 border-brandAmber relative flex flex-col justify-between lg:scale-105 z-10 hover:lg:scale-[1.07] transition-transform">
+                <!-- Card 2: 10 Lesson Package ($250 - HIGHLIGHTED, confirmed glow exception) -->
+                <div class="bg-brandCard text-brandCharcoal rounded-3xl p-8 sm:p-10 shadow-[0_0_45px_-10px_rgba(245,158,11,0.45)] border-4 border-brandAmber relative flex flex-col justify-between lg:scale-105 z-10 hover:lg:scale-[1.07] transition-transform">
 
                     <!-- Value Badge -->
                     <div class="absolute -top-4 right-6 bg-brandAmber text-brandDark font-black px-4 py-1.5 rounded-full text-[11px] uppercase tracking-widest shadow-lg">
@@ -1169,6 +1223,25 @@
                 mobileBtn.setAttribute('aria-expanded', 'false');
             });
         });
+
+        // Active nav-link indicator (scroll-spy)
+        const navLinks = document.querySelectorAll('.nav-link[data-nav-link]');
+        const spySections = Array.from(navLinks)
+            .map(link => document.getElementById(link.dataset.navLink))
+            .filter(Boolean);
+
+        if ('IntersectionObserver' in window && spySections.length) {
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.dataset.navLink === entry.target.id);
+                    });
+                });
+            }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+            spySections.forEach(section => navObserver.observe(section));
+        }
 
         // Instructor Tabs Switcher
         function switchInstructorTab(tab) {
