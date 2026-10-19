@@ -31,6 +31,8 @@
                         brandAmber: '#f59e0b',
                         brandAmberDeep: '#d97706',
                         brandAmberLight: '#fde68a',
+                        heroAccent: '#ff6b35',
+                        heroAccentDeep: '#e8541d',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -59,16 +61,16 @@
             content: "";
             position: absolute;
             inset: -2px -12px;
-            background: #f59e0b;
+            background: #ff6b35;
             z-index: -1;
             transform: rotate(-1.5deg);
             border-radius: 6px;
             clip-path: polygon(0% 15%, 100% 0%, 98% 85%, 2% 100%);
         }
         @keyframes heroCtaPulse {
-            0% { box-shadow: 0 0 0 0 rgba(245,158,11,0.45); }
-            70% { box-shadow: 0 0 0 14px rgba(245,158,11,0); }
-            100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+            0% { box-shadow: 0 0 0 0 rgba(255,107,53,0.45); }
+            70% { box-shadow: 0 0 0 14px rgba(255,107,53,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
         }
         .hero-cta-pulse {
             animation: heroCtaPulse 1.6s ease-out 0.5s 1;
@@ -87,7 +89,7 @@
             .sparkle-accent { animation: none; opacity: 0.6; }
         }
         .ambient-glow-amber {
-            background: radial-gradient(circle, rgba(245,158,11,0.35) 0%, rgba(245,158,11,0.08) 45%, transparent 75%);
+            background: radial-gradient(circle, rgba(255,107,53,0.35) 0%, rgba(255,107,53,0.08) 45%, transparent 75%);
         }
         .ambient-glow-slate {
             background: radial-gradient(circle, rgba(148,163,184,0.25) 0%, rgba(148,163,184,0.06) 45%, transparent 75%);
@@ -197,7 +199,7 @@
         <div class="hidden sm:flex absolute bottom-10 right-10 lg:right-24 items-center gap-4 opacity-60 pointer-events-none" aria-hidden="true">
             <div class="w-16 h-16 rounded-full bg-brandDarkLine/60"></div>
             <div class="w-16 h-px bg-white/20"></div>
-            <div class="w-3 h-3 rounded-full bg-brandAmber"></div>
+            <div class="w-3 h-3 rounded-full bg-heroAccent"></div>
         </div>
         <!-- Ambient amber backlight behind the headline -->
         <div class="ambient-glow-amber hidden lg:block absolute top-1/2 left-[42%] -translate-y-1/2 w-[36rem] h-[36rem] blur-3xl pointer-events-none" aria-hidden="true"></div>
@@ -210,16 +212,16 @@
                 <div class="lg:col-span-5 relative order-1">
                     <div class="relative mx-auto max-w-sm lg:max-w-none aspect-[4/5]">
                         <div class="absolute -inset-6 sm:-inset-10 bg-brandDarkCard rounded-[3rem] border border-brandDarkLine"></div>
-                        <div class="absolute -top-6 -left-6 w-56 h-56 sm:w-64 sm:h-64 bg-brandAmber/20 rounded-full"></div>
+                        <div class="absolute -top-6 -left-6 w-56 h-56 sm:w-64 sm:h-64 bg-heroAccent/20 rounded-full"></div>
                         <div class="absolute bottom-0 right-2 w-48 h-48 sm:w-56 sm:h-56 bg-brandDarkLine/40 rounded-full"></div>
-                        <div class="absolute bottom-10 -right-6 w-16 h-16 bg-brandAmber/30 rounded-full hidden sm:block"></div>
+                        <div class="absolute bottom-10 -right-6 w-16 h-16 bg-heroAccent/30 rounded-full hidden sm:block"></div>
 
-                        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-full transition-all duration-300 hover:-translate-y-2 hover:rotate-1 hover:shadow-[0_35px_60px_-15px_rgba(245,158,11,0.35)]">
+                        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-full transition-all duration-300 hover:-translate-y-2 hover:rotate-1 hover:shadow-[0_35px_60px_-15px_rgba(255,107,53,0.35)]">
                             <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor playing an acoustic guitar" class="w-full h-full object-cover object-top">
                         </div>
 
                         <!-- Sparkle accents (hand-drawn SVG, not emoji, so they stay crisp at any size) -->
-                        <svg aria-hidden="true" class="sparkle-accent absolute -top-3 right-10 w-6 h-6 text-brandAmber hidden sm:block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
+                        <svg aria-hidden="true" class="sparkle-accent absolute -top-3 right-10 w-6 h-6 text-heroAccent hidden sm:block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
                         <svg aria-hidden="true" class="sparkle-accent absolute top-1/3 -left-4 w-4 h-4 text-brandMutedLight hidden sm:block" style="animation-delay: 1.1s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
 
                         <!-- Decorative chord tag -->
@@ -233,38 +235,38 @@
                 <div class="lg:col-span-7 order-2 lg:pl-6">
 
                     <h1 class="relative font-display text-balance text-4xl sm:text-6xl lg:text-[4.5rem] uppercase leading-[0.95] tracking-tight text-white">
-                        <svg aria-hidden="true" class="sparkle-accent absolute -top-4 left-[38%] w-5 h-5 text-brandAmber hidden sm:block" style="animation-delay: 0.5s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
+                        <svg aria-hidden="true" class="sparkle-accent absolute -top-4 left-[38%] w-5 h-5 text-heroAccent hidden sm:block" style="animation-delay: 0.5s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.2 7.8L22 10l-7.8 2.2L12 20l-2.2-7.8L2 10l7.8-2.2z"/></svg>
                         <span class="font-light text-slate-300">Turn</span> <span class="brush-highlight text-brandDark font-brush font-bold px-2 text-5xl sm:text-7xl lg:text-8xl normal-case">Music</span>
-                        <br><span class="font-light text-slate-300">Into A</span> <span class="font-black text-brandAmber">Lifelong Skill</span>
+                        <br><span class="font-light text-slate-300">Into A</span> <span class="font-black text-heroAccent">Lifelong Skill</span>
                     </h1>
 
                     <p class="mt-6 text-sm sm:text-lg text-slate-300 max-w-xl leading-relaxed">
-                        Learn the practical, song-first way &mdash; beginner-friendly guitar lessons for all ages across Penrith &amp; the Blue Mountains.
+                        Practical, song-first guitar lessons across Penrith &amp; the Blue Mountains.
                     </p>
 
                     <!-- Feature pills: exactly three core trust signals, no overlap with the stats below -->
                     <div class="mt-5 flex flex-wrap items-center gap-2.5">
                         <span class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-xs sm:text-sm font-bold px-4 py-2 rounded-full">
-                            <i class="fa-solid fa-circle-check text-brandAmber"></i> Ages 6 to 80+
+                            <i class="fa-solid fa-circle-check text-heroAccent"></i> Ages 6 to 80+
                         </span>
                         <span class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-xs sm:text-sm font-bold px-4 py-2 rounded-full">
-                            <i class="fa-solid fa-handshake text-brandAmber"></i> No Lock-In Contracts
+                            <i class="fa-solid fa-handshake text-heroAccent"></i> No Lock-In Contracts
                         </span>
                         <span class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-xs sm:text-sm font-bold px-4 py-2 rounded-full">
-                            <i class="fa-solid fa-star text-brandAmber"></i> 5-Star Rated
+                            <i class="fa-solid fa-star text-heroAccent"></i> 5-Star Rated
                         </span>
                     </div>
 
                     <!-- Primary conversion action: the one unmistakable CTA in this section -->
                     <div class="mt-8 flex flex-col items-center sm:items-start gap-3">
-                        <button onclick="openBookingModal('Hero Trial Lesson ($35)')" class="hero-cta-pulse bg-gradient-to-br from-brandAmber to-brandAmberDeep hover:from-brandAmberDeep hover:to-brandAmber text-brandDark font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_25px_-8px_rgba(245,158,11,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brandDark w-full sm:w-auto">
-                            <span>Book Your $35 Trial Lesson</span>
+                        <button onclick="openBookingModal('Hero Trial Lesson ($35)')" class="hero-cta-pulse bg-gradient-to-br from-heroAccent to-heroAccentDeep hover:from-heroAccentDeep hover:to-heroAccent text-brandDark font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_25px_-8px_rgba(255,107,53,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brandDark w-full sm:w-auto">
+                            <span>Book $35 Trial Lesson</span>
                             <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </button>
-                        <p class="text-[0.85rem] text-slate-400/80 font-semibold">Takes under 60 seconds &bull; No credit card required &bull; Cancel anytime</p>
-                        <a href="#pricing" class="group relative inline-block text-xs font-bold text-slate-400 hover:text-brandAmber transition-colors">
+                        <p class="text-[0.85rem] text-slate-400/80 font-semibold">60-sec booking &bull; No credit card &bull; Cancel anytime</p>
+                        <a href="#pricing" class="group relative inline-block text-xs font-bold text-slate-400 hover:text-heroAccent transition-colors">
                             <span>Or save $100 with a 10-lesson pack &darr;</span>
-                            <span class="absolute left-0 -bottom-0.5 h-px w-full bg-brandAmber scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                            <span class="absolute left-0 -bottom-0.5 h-px w-full bg-heroAccent scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
                     </div>
 
@@ -273,21 +275,21 @@
                          and has been removed; those facts still live here and in the pills above) -->
                     <div class="mt-12 flex flex-wrap items-center gap-3">
                         <div class="flex items-center gap-3 bg-brandDarkCard border border-brandDarkLine rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAmber/15 text-brandAmber"><i class="fa-solid fa-users text-sm"></i></span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-heroAccent/15 text-heroAccent"><i class="fa-solid fa-users text-sm"></i></span>
                             <div>
                                 <p class="text-lg font-black leading-none text-white font-display">100+</p>
                                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Happy Students</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 bg-brandDarkCard border border-brandDarkLine rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAmber/15 text-brandAmber"><i class="fa-solid fa-award text-sm"></i></span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-heroAccent/15 text-heroAccent"><i class="fa-solid fa-award text-sm"></i></span>
                             <div>
                                 <p class="text-lg font-black leading-none text-white font-display">10+ Yrs</p>
                                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Teaching Exp.</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 bg-brandDarkCard border border-brandDarkLine rounded-2xl px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAmber/15 text-brandAmber"><i class="fa-solid fa-star text-sm"></i></span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-heroAccent/15 text-heroAccent"><i class="fa-solid fa-star text-sm"></i></span>
                             <div>
                                 <p class="text-lg font-black leading-none text-white font-display">5.0 &#9733;</p>
                                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Student Rating</p>
@@ -301,7 +303,7 @@
     </section>
 
     <!-- SECTION: ABOUT YOUR INSTRUCTOR (LIGHT) -->
-    <!-- Structural only: name and bio copy are placeholders pending real content from the client. -->
+    <!-- No real instructor name supplied yet -- heading stays generic ("Meet Your Instructor") until one is. -->
     <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-5 gap-10 items-start bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
@@ -320,10 +322,7 @@
                     <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Who We Are</span>
                     <h2 class="text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Meet Your Instructor</h2>
                     <p class="mt-4 text-sm text-brandCharcoal leading-relaxed">
-                        Over 10 years of teaching guitar across Penrith and the Blue Mountains has shaped a simple philosophy: students stay motivated by playing real songs, not grinding through theory they'll forget. Every lesson plan is built around what a student actually wants to play &mdash; Acoustic, Electric, Rock, Blues, Pop, Folk or Metal &mdash; with a structured, patient approach that works whether you're six years old and holding a guitar for the first time, or sixty and finally getting around to it.
-                    </p>
-                    <p class="mt-3 text-sm text-brandCharcoal leading-relaxed">
-                        Each student gets a learning plan shaped to their pace and goals, not a fixed syllabus everyone follows regardless of fit &mdash; an approach that's worked for more than 100 students across the Penrith studio and the Blue Mountains mobile service.
+                        10+ years teaching guitar across Penrith and the Blue Mountains. Learn what you love &mdash; Acoustic, Electric, Rock, Blues, Pop, Folk, or Metal &mdash; with tailored 1-on-1 coaching built for all ages.
                     </p>
 
                     <!-- Tabs -->
@@ -339,9 +338,9 @@
                     <!-- Tab 1: Philosophy & Method -->
                     <div id="instructor-content-philosophy" class="instructor-content">
                         <ul class="space-y-2 text-sm text-brandCharcoal font-medium">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Practical, song-first playing from the very first session &mdash; not rigid theory drilling</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>A clear, personalized progression roadmap from absolute beginner to advanced player</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Focused 1-on-1 tuition, or group sessions for friends learning together</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Song-First Approach:</strong> Play real music from session one, not boring theory drills.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Custom Roadmap:</strong> Personalized lessons adapted to your goals and pace.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Flexible Options:</strong> Private 1-on-1 or group sessions for friends.</span></li>
                         </ul>
                     </div>
 
@@ -392,7 +391,7 @@
                         </div>
                         <h3 class="text-xl font-extrabold text-white mb-2 font-display">Beginner to Advanced</h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            A clear, stress-free progression roadmap adapted for absolute beginners up to experienced performers refining their skills.
+                            Clear, stress-free progression from beginner to performer.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-brandDarkLine text-xs font-bold text-brandAmber flex items-center gap-2">
@@ -409,7 +408,7 @@
                         </div>
                         <h3 class="text-xl font-extrabold text-white mb-2 font-display">Individual &amp; Group</h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Pick focused 1-on-1 private tuition or bring a friend for engaging group sessions designed to build team musicality.
+                            Focused 1-on-1 or collaborative group sessions.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-brandDarkLine text-xs font-bold text-white flex items-center gap-2">
@@ -426,7 +425,7 @@
                         </div>
                         <h3 class="text-xl font-extrabold text-white mb-2 font-display">Learn Fav Songs</h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Learn through the music you love! We breakdown Rock, Blues, Pop, Folk, and Metal songs into easy step-by-step riffs.
+                            Step-by-step riffs for Rock, Blues, Pop, Folk &amp; Metal.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-brandDarkLine text-xs font-bold text-brandAmber flex items-center gap-2">
@@ -443,7 +442,7 @@
                         </div>
                         <h3 class="text-xl font-extrabold text-white mb-2 font-display">Build Skills &amp; Confidence</h3>
                         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Develop solid picking habits, rhythm timing, fretboard knowledge, and real stage readiness with supportive coaching.
+                            Solid technique, timing, and fretboard mastery.
                         </p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-brandDarkLine text-xs font-bold text-white flex items-center gap-2">
@@ -557,13 +556,12 @@
                             Casual Option
                         </div>
                         <h3 class="text-3xl font-black tracking-tight text-brandCharcoal font-display">$35 / Half Hour</h3>
-                        <p class="text-brandMuted text-xs sm:text-sm mt-1">Single 30-minute private 1-on-1 lesson session.</p>
+                        <p class="text-brandMuted text-xs sm:text-sm mt-1">Flexible 1-on-1 private lesson. Pay as you go.</p>
 
                         <div class="my-8 flex items-baseline">
                             <span class="text-6xl sm:text-7xl font-black tracking-tight text-brandCharcoal font-display">$35</span>
                             <span class="text-brandMuted font-bold ml-2 text-sm uppercase">/ 30 min lesson</span>
                         </div>
-                        <p class="-mt-6 mb-2 text-xs font-bold text-brandMuted">That's $35 per lesson, every time.</p>
 
                         <ul class="space-y-3.5 border-t border-brandBorder pt-6 text-xs sm:text-sm font-bold text-brandCharcoal">
                             <li class="flex items-center gap-3">
@@ -604,13 +602,12 @@
                             Best Value Bundle
                         </div>
                         <h3 class="text-3xl font-black tracking-tight text-brandCharcoal font-display">$250 Package</h3>
-                        <p class="text-brandMuted text-xs sm:text-sm mt-1">10 lessons package (30 minutes each).</p>
+                        <p class="text-brandMuted text-xs sm:text-sm mt-1">Guaranteed weekly slot + free video recaps.</p>
 
                         <div class="my-8 flex items-baseline">
                             <span class="text-6xl sm:text-7xl font-black tracking-tight text-brandAmberDeep font-display">$250</span>
                             <span class="text-brandMuted font-bold ml-2 text-sm uppercase">/ for 10 lessons</span>
                         </div>
-                        <p class="-mt-6 mb-2 text-xs font-black text-brandAmberDeep">Just $25 per lesson &mdash; save $10 every single time.</p>
 
                         <ul class="space-y-3.5 border-t border-brandBorder pt-6 text-xs sm:text-sm font-semibold text-brandCharcoal">
                             <li class="flex items-center gap-3">
@@ -929,10 +926,7 @@
     <!-- FOOTER (DARK) -->
     <footer class="bg-brandDarker text-slate-400 py-14 border-t border-brandDarkLine text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-slate-400 leading-relaxed max-w-4xl mb-10 text-xs">
-                Searching for guitar lessons in Penrith or the Blue Mountains? Mountain Culture Guitar Lessons runs a dedicated teaching studio in Penrith, serving Emu Plains, Jamisontown, Cranebrook, Glenmore Park and St Marys, plus mobile in-home lessons across the Blue Mountains corridor from Glenbrook through to Springwood. Every lesson is 1-on-1, built around the songs a student actually wants to play &mdash; Acoustic, Electric, Rock, Blues, Pop, Folk or Metal &mdash; with free interactive fretboard practice tools included, and over 100 local students taught so far.
-            </p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+            <div class="grid sm:grid-cols-3 gap-10 mb-10">
 
                 <!-- Col 1: Brand & Mission -->
                 <div>
@@ -943,7 +937,7 @@
                         <span class="text-white font-extrabold tracking-wider">Mountain Culture Guitar Lessons</span>
                     </div>
                     <p class="text-slate-400 leading-relaxed">
-                        Local, personal guitar tuition across Penrith &amp; the Blue Mountains &mdash; practical playing from day one, no lock-in contracts.
+                        Practical 1-on-1 guitar lessons across Penrith &amp; the Blue Mountains.
                     </p>
                     <div class="flex gap-4 text-base mt-4">
                         <a href="#" class="hover:text-brandAmber transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -957,51 +951,26 @@
                     <p class="text-white font-bold uppercase tracking-wider text-[11px] mb-4">Quick Links</p>
                     <nav class="flex flex-col gap-2.5 text-slate-400">
                         <a href="#home" class="hover:text-brandAmber transition-colors w-fit">Home</a>
-                        <a href="#instructor" class="hover:text-brandAmber transition-colors w-fit">Who We Are</a>
                         <a href="#pricing" class="hover:text-brandAmber transition-colors w-fit">Pricing</a>
                         <a href="practice/" class="hover:text-brandAmber transition-colors w-fit">Practice Tools</a>
                         <a href="#faq" class="hover:text-brandAmber transition-colors w-fit">FAQ</a>
                     </nav>
                 </div>
 
-                <!-- Col 3: Studio Locations & Coverage -->
+                <!-- Col 3: Studio Locations -->
                 <div>
-                    <p class="text-white font-bold uppercase tracking-wider text-[11px] mb-4">Locations &amp; Coverage</p>
+                    <p class="text-white font-bold uppercase tracking-wider text-[11px] mb-4">Locations</p>
                     <nav class="flex flex-col gap-2.5 text-slate-400">
-                        <a href="#locations" class="hover:text-brandAmber transition-colors w-fit">Penrith Dedicated Studio</a>
+                        <a href="#locations" class="hover:text-brandAmber transition-colors w-fit">Penrith Studio</a>
                         <a href="#locations" class="hover:text-brandAmber transition-colors w-fit">Blue Mountains Mobile</a>
-                        <a href="#locations" class="hover:text-brandAmber transition-colors w-fit">View Full Coverage &amp; Map</a>
                     </nav>
-                </div>
-
-                <!-- Col 4: Booking & Availability -->
-                <div>
-                    <p class="text-white font-bold uppercase tracking-wider text-[11px] mb-4">Book A Lesson</p>
-                    <div class="inline-flex items-center gap-2 bg-brandDarkCard border border-brandDarkLine text-slate-200 text-[11px] font-bold px-3 py-1.5 rounded-full mb-4">
-                        <span class="relative flex h-2 w-2">
-                            <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-                        </span>
-                        Accepting New Students
-                    </div>
-                    <a href="tel:0400000000" class="flex items-center gap-2 hover:text-brandAmber transition-colors w-fit mb-3">
-                        <i class="fa-solid fa-phone text-brandAmber"></i>
-                        <span>Penrith &amp; Mountains</span>
-                    </a>
-                    <button onclick="openBookingModal('Footer Column CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 py-2.5 rounded-full text-[11px] tracking-widest uppercase flex items-center gap-2">
-                        <span>Book A Lesson</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
                 </div>
 
             </div>
 
             <div class="pt-6 border-t border-brandDarkLine flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-500">
-                <p>&copy; <span id="year"></span> Mountain Culture Guitar Lessons. Penrith &amp; Blue Mountains, NSW.</p>
-                <p class="flex items-center gap-3">
-                    <a href="technology.html" class="hover:text-brandAmber transition-colors">Technology Partner</a>
-                    <span class="text-slate-700">&bull;</span>
-                    <span>Powered by <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-300 hover:text-brandAmber transition-colors">JobGen.AI</a></span>
-                </p>
+                <p>&copy; <span id="year"></span> Mountain Culture Guitar Lessons.</p>
+                <p>Powered by <a href="https://jobgen.ai" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-300 hover:text-brandAmber transition-colors">JobGen.AI</a></p>
             </div>
         </div>
     </footer>

@@ -15,6 +15,8 @@ colors:
   amber: "#F59E0B"
   amber-deep: "#D97706"
   amber-light: "#FDE68A"
+  hero-accent: "#FF6B35"
+  hero-accent-deep: "#E8541D"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -113,7 +115,9 @@ Two neutral families (dark slate, off-white) plus exactly one accent (amber) tha
 - **Muted / Muted Light**: Secondary text — `#64748B` on light sections, `#94A3B8` (lighter, for sufficient contrast) on dark sections. Never use the light-section muted value on a dark background or vice versa.
 
 ### Named Rules
-**The One-Accent Rule.** Amber is the system's only accent color. It appears on both dark and light sections, which is what makes the alternating rhythm read as one coherent system rather than two different sites stitched together.
+**The One-Accent Rule.** Amber is the system's only accent color for every section except the hero (see the Hero-Accent Exception below). It appears on both dark and light sections, which is what makes the alternating rhythm read as one coherent system rather than two different sites stitched together.
+
+**The Hero-Accent Exception (2026-10-19).** The hero section uses a separate accent token, `heroAccent` (#FF6B35, a vibrant coral/sunset-gold) with `heroAccentDeep` (#E8541D) for hover, instead of the site-wide amber — an explicit, scoped client request, not a full rebrand. It's applied only within `<section id="home">`: the CTA button, the "Music" brush-highlight background, the headline's "Lifelong Skill" text, sparkle SVGs, feature-pill icons, stat-card icon circles, and the hero's ambient glow/pulse CSS (`.brush-highlight::before`, `.ambient-glow-amber`, `heroCtaPulse`). Every other section — Instructor, Features, Pricing, Locations, Footer — keeps the original amber. Contrast verified: coral on dark navy measures 6.3:1, navy text on the coral button measures 6.3:1 (both clear AA); white text on coral only reaches 2.84:1, so button text stays navy, matching the existing amber-button pattern. Do not let the two tokens cross sections without a new, equally explicit request.
 
 ## Typography
 
@@ -168,7 +172,7 @@ Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full`
 
 ### Navigation
 - **Style (superseded 2026-10-17):** The header is now a dark glassmorphic bar (`bg-brandDark/80 backdrop-blur-md border-white/10`) at all times, per explicit client direction — superseding the prior "header stays white/translucent" rule. Nav links get an animated amber underline on hover, plus a scroll-spy active state (`.nav-link.active`) driven by an `IntersectionObserver` keyed to each section's id.
-- **No status badge in the navbar (2026-10-17, same day):** A compact "Accepting New Students" badge was added next to the logo, then explicitly removed the same day as header clutter. The status badge lives exclusively in the Hero content column now (and separately, unrelated, in the Footer's Book/Availability column) — don't re-add it to the navbar without new client direction.
+- **No status badge anywhere on the page (2026-10-17 → 2026-10-19):** A compact "Accepting New Students" badge was added next to the logo, then explicitly removed the same day as header clutter. It briefly lived on in the Hero content column and the Footer's "Booking & Availability" column, but both were removed in later rounds (hero: 2026-10-19 explicit request; footer: the same day, as part of a footer restructure down to 3 columns that dropped the whole "Booking & Availability" column). There is currently no live-status badge on the page at all — don't re-add one without new client direction.
 
 ### Find Your Fit Quiz (signature component, new 2026-10-17)
 A floating bottom-right widget opening a 2-step modal (style, then plan) that recommends a pricing tier and hands off into the real booking modal with that option pre-selected. Pure client-side logic — no fabricated data or made-up recommendations beyond the user's own two answers.
@@ -176,8 +180,8 @@ A floating bottom-right widget opening a 2-step modal (style, then plan) that re
 ### Genre & Skill Cards (signature component, updated 2026-10-17)
 A grid of genre cards (Acoustic, Electric, Rock, Blues, Pop, Folk, Metal) in the Why Us section, each with a one-line generic skill descriptor (e.g. "Power chords & rhythm") and a decorative guitar-pick SVG watermark. Deliberately generic — no specific song titles, riff names, or learning-outcome timelines, since none have been confirmed with the client; this was re-requested with "sample riffs" language in a later round and the boundary was held.
 
-### Trust Banner (signature component, new)
-A row of pill badges on the dark Locations section stating only confirmed facts (10+ years experience, 5.0★ rating, no locked-in contracts). This component exists specifically to NOT include unconfirmed claims — a Working With Children Check credential was proposed and explicitly declined pending real verification; do not add compliance/safety claims here without the client confirming them as true first.
+### Trust Banner (removed 2026-10-19)
+A row of pill badges on the dark Locations section (10+ years experience, 5.0★ rating, no locked-in contracts) was removed as part of a site-wide text-density pass — by the time a visitor reached the Locations section, those same three facts had already been stated in the hero pills, hero stat cards, and the Instructor card's trust bullets. The underlying facts are still correct and still live in those earlier sections; this entry stays here as history so the component isn't re-added as "missing."
 
 ### Interactive Map (signature component, new)
 A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent (it's described via its suburb list instead).
