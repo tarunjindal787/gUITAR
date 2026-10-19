@@ -4,8 +4,9 @@ description: A dark/light alternating editorial landing page for a guitar-lesson
 colors:
   dark: "#0F172A"
   darker: "#020617"
-  dark-card: "#1E293B"
+  dark-card: "#161F2E"
   dark-line: "#334155"
+  dark-card-border: "rgba(255,255,255,0.08)"
   light: "#F8FAFC"
   card-white: "#FFFFFF"
   border-light: "#E2E8F0"
@@ -15,8 +16,8 @@ colors:
   amber: "#F59E0B"
   amber-deep: "#D97706"
   amber-light: "#FDE68A"
-  hero-accent: "#FF6B35"
-  hero-accent-deep: "#E8541D"
+  hero-accent: "#00E5FF"
+  hero-accent-deep: "#00B8CC"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -104,8 +105,9 @@ Two neutral families (dark slate, off-white) plus exactly one accent (amber) tha
 ### Dark Neutrals
 - **Dark** (#0F172A): Hero and pricing section background.
 - **Darker** (#020617): Locations and footer background — the "deepest" sections, reserved for trust/closing moments.
-- **Dark Card** (#1E293B): Card surfaces sitting on dark sections.
-- **Dark Line** (#334155): Borders and dividers on dark sections.
+- **Dark Card** (#161F2E, darkened from #1E293B on 2026-10-19 for more depth against its border): Card surfaces sitting on dark sections.
+- **Dark Line** (#334155): Structural dividers and standalone borders (header bottom edge, section rules) — *not* card borders; see below.
+- **Dark Card Border** (`rgba(255,255,255,0.08)`, added 2026-10-19): Every `bg-brandDarkCard` card's own border is now this semi-transparent white hairline instead of the solid Dark Line color — a "glass edge" that reads as depth rather than a hard rule. Applied via Tailwind's `border-white/[0.08]` on all 24 existing dark-card instances; any new dark card should use the same pairing (`bg-brandDarkCard border border-white/[0.08]`), not `border-brandDarkLine`.
 
 ### Light Neutrals
 - **Light** (#F8FAFC): Features and testimonials section background.
@@ -117,7 +119,7 @@ Two neutral families (dark slate, off-white) plus exactly one accent (amber) tha
 ### Named Rules
 **The One-Accent Rule.** Amber is the system's only accent color for every section except the hero (see the Hero-Accent Exception below). It appears on both dark and light sections, which is what makes the alternating rhythm read as one coherent system rather than two different sites stitched together.
 
-**The Hero-Accent Exception (2026-10-19).** The hero section uses a separate accent token, `heroAccent` (#FF6B35, a vibrant coral/sunset-gold) with `heroAccentDeep` (#E8541D) for hover, instead of the site-wide amber — an explicit, scoped client request, not a full rebrand. It's applied only within `<section id="home">`: the CTA button, the "Music" brush-highlight background, the headline's "Lifelong Skill" text, sparkle SVGs, feature-pill icons, stat-card icon circles, and the hero's ambient glow/pulse CSS (`.brush-highlight::before`, `.ambient-glow-amber`, `heroCtaPulse`). Every other section — Instructor, Features, Pricing, Locations, Footer — keeps the original amber. Contrast verified: coral on dark navy measures 6.3:1, navy text on the coral button measures 6.3:1 (both clear AA); white text on coral only reaches 2.84:1, so button text stays navy, matching the existing amber-button pattern. Do not let the two tokens cross sections without a new, equally explicit request.
+**The Hero-Accent Exception (2026-10-19, revised same day).** The hero section uses a separate accent token, `heroAccent`, instead of the site-wide amber — an explicit, scoped client request, not a full rebrand. It's applied only within `<section id="home">`: the CTA button, the "Music" brush-highlight background, the headline's "Lifelong Skill" text, sparkle SVGs, feature-pill icons, stat-card icon circles, and the hero's ambient glow/pulse CSS (`.brush-highlight::before`, `.ambient-glow-amber`, `heroCtaPulse`). Every other section — Instructor, Features, Pricing, Locations, Footer — keeps the original amber. The token's *value* changed same-day: first coral (#FF6B35/#E8541D), then Electric Cyan (#00E5FF/#00B8CC, deep for hover) per a follow-up client request — only the hex values moved, the hero-only scoping did not. Cyan contrast verified: 11.6:1 on dark navy, 11.6:1 navy-on-cyan-button (both clear AA); white text on cyan only reaches 1.54:1, so button text stays navy, matching the existing amber-button pattern. Do not let the two tokens cross sections without a new, equally explicit request.
 
 ## Typography
 
@@ -152,6 +154,8 @@ Mostly flat with real shadows: cards on both dark and light sections use a thin 
 ### Named Rules
 **The Hero-Only Glow Rule.** Glow, gradient rings, and sparkle accents are a deliberate, confirmed hero flourish. Every other section stays on flat, neutral elevation (border + shadow only) — with one confirmed exception: the featured $250 pricing card carries a soft amber glow shadow, requested explicitly across two separate rounds (2026-10-17), the same confirmation pattern that established the hero exception itself.
 
+This rule governs *persistent, ambient* glow (always-on decoration), not momentary hover feedback. On 2026-10-19 a client request for "slick hover states... subtle glowing shadows" on buttons site-wide was implemented as a brief, interaction-only amber shadow-bloom on `:hover` (every previously-bare primary button: mobile menu CTA, both Locations "Book ... Slot" buttons, the booking-modal success close button, and the sticky mobile bar CTA) — the glow exists only while hovered/active, never at rest, so it doesn't reintroduce ambient glow outside the hero.
+
 **The Honest-Pulse Rule.** The hero's status-badge pulse marks a real, currently-true state ("accepting students right now"), never a fabricated live-updating feed. No animation should imply real-time data that isn't actually checked.
 
 ## Shapes
@@ -159,6 +163,9 @@ Mostly flat with real shadows: cards on both dark and light sections use a thin 
 Generous rounding — `rounded-2xl`/`rounded-3xl` on cards, fully `rounded-full` pills and buttons. Borders are thin (1px) on both dark and light cards; a featured element gets a thicker (2-4px) amber border instead of a heavier shadow.
 
 ## Components
+
+### Floating Glass Elements (2026-10-19)
+The header and both modals already used `backdrop-blur-md` (Tailwind's 12px blur) over a semi-transparent dark background — true glassmorphism, just not previously named as a pattern. Extended the same treatment to the two other floating/overlay elements that were previously solid: the hero's decorative chord-tag badge (`bg-brandDarkCard/75 backdrop-blur-md border-white/[0.08]`) and the Find-Your-Fit floating quiz trigger (`bg-brandDark/75 backdrop-blur-md border-white/10`, both desktop and mobile variants). Any new floating badge or overlay card should follow this same semi-transparent-dark + blur-md + white-alpha-border recipe rather than a solid card background.
 
 ### Buttons
 - **Primary (action):** Solid amber, dark text — every "Book a Lesson" button, on both dark and light sections.
