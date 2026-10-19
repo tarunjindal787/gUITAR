@@ -111,6 +111,27 @@
 </head>
 <body class="bg-brandLight text-brandCharcoal font-sans antialiased selection:bg-brandAmberLight selection:text-brandCharcoal overflow-x-hidden pb-20 md:pb-0">
 
+    <!-- Hidden SVG defs: a real acoustic-guitar-body silhouette, used as a clip-path on the
+         instructor photo (Meet Your Instructor section). objectBoundingBox units (0-1) so it
+         scales to whatever element references it, regardless of pixel size. -->
+    <svg width="0" height="0" class="absolute" aria-hidden="true">
+        <defs>
+            <clipPath id="guitarBodyClip" clipPathUnits="objectBoundingBox">
+                <path d="M 0.5 0.02
+                         C 0.66 0.02 0.78 0.07 0.82 0.17
+                         C 0.86 0.26 0.81 0.35 0.71 0.40
+                         C 0.84 0.45 1.00 0.55 0.97 0.70
+                         C 0.94 0.86 0.80 0.95 0.64 0.98
+                         C 0.56 0.995 0.44 0.995 0.36 0.98
+                         C 0.20 0.95 0.06 0.86 0.03 0.70
+                         C 0.00 0.55 0.16 0.45 0.29 0.40
+                         C 0.19 0.35 0.14 0.26 0.18 0.17
+                         C 0.22 0.07 0.34 0.02 0.5 0.02 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+
     <!-- TOP ANNOUNCEMENT BAR -->
     <div class="relative z-50 bg-brandDarker text-white font-bold text-xs uppercase tracking-wider py-2 px-4 text-center flex items-center justify-center gap-3 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
         <span class="bg-brandAmber text-brandDark text-[10px] px-2 py-0.5 rounded-full font-black">NEW TERM OPEN</span>
@@ -317,11 +338,17 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-10 items-start bg-brandCard border border-brandBorder rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.06)] p-8 sm:p-12">
                 <div class="lg:col-span-5 relative max-w-xs mx-auto lg:max-w-none lg:mx-0">
-                    <!-- Guitar-pick-shaped frame -->
-                    <div class="relative overflow-hidden shadow-md aspect-[4/5] border-[3px] border-brandAmber shadow-[0_15px_30px_rgba(0,229,255,0.15)] rounded-[60%_40%_50%_50%/40%_50%_60%_50%]">
-                        <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor" class="w-full h-full object-cover object-top">
-                        <!-- Fretboard accent: 6 faint vertical strings over the left edge of the photo -->
-                        <div class="absolute inset-y-0 left-0 w-10 opacity-40 pointer-events-none" aria-hidden="true" style="background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 1px, transparent 6px); background-size: 6px 100%;"></div>
+                    <!-- Guitar-body-silhouette frame: a real acoustic-guitar-body outline (not a generic
+                         blob), via an SVG clip-path. Two stacked layers share the same clip-path: a cyan
+                         fill slightly larger than the photo creates a crisp shape-hugging "border" ring,
+                         since CSS can't stroke an arbitrary clip-path directly. -->
+                    <div class="relative aspect-[4/5] drop-shadow-[0_15px_30px_rgba(0,229,255,0.2)]">
+                        <div class="absolute -inset-[3px] bg-brandAmber" style="clip-path: url(#guitarBodyClip);"></div>
+                        <div class="absolute inset-0 overflow-hidden" style="clip-path: url(#guitarBodyClip);">
+                            <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor" class="w-full h-full object-cover object-top">
+                            <!-- Fretboard accent: 6 faint vertical strings over the left edge of the photo -->
+                            <div class="absolute inset-y-0 left-0 w-10 opacity-40 pointer-events-none" aria-hidden="true" style="background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.8) 1px, transparent 1px, transparent 6px); background-size: 6px 100%;"></div>
+                        </div>
                     </div>
                     <!-- Floating pick-shaped glassmorphism badge -->
                     <div class="absolute -bottom-5 -right-3 sm:-right-5 max-w-[200px] bg-white/90 backdrop-blur-md border border-brandAmber/40 rounded-2xl px-4 py-3 shadow-lg">
