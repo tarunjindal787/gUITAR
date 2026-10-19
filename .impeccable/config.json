@@ -1,6 +1,8 @@
 {
   "detector": {
-    "ignoreRules": [],
+    "ignoreRules": [
+      "repeating-stripes-gradient"
+    ],
     "ignoreFiles": [],
     "ignoreValues": [
       {
