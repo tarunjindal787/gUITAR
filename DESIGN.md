@@ -206,6 +206,9 @@ Previously a custom `<div>`/`<button>` pattern driven by a click-listener JS loo
 ### Footer CTA banner (removed 2026-10-19)
 A full-width dark banner section ("Start playing guitar this week!" + a "Book Your Lesson Now" button) that sat between Reviews/FAQ and the Footer was removed as a duplicate conversion ask — the hero, pricing cards, header CTA, and sticky mobile bar already provide ample booking access without a fourth full section dedicated to the same single action.
 
+### Style-Interest Checkboxes (new 2026-10-19, inspired by a client-supplied reference article)
+The booking form's old free-text "Preferred Day / Time & Music Style" field was split in two: a dedicated "Styles You're Interested In" checkbox group (Acoustic/Electric/Rock/Blues/Pop/Folk/Metal, rendered as pill chips) and a separate, now-optional "Preferred Day / Time" text field. Checked state is pure CSS via `:has()` (`.style-check-label:has(.style-check:checked)`) — no JS needed; the underlying `<input type="checkbox">` is visually hidden (`sr-only`) but fully keyboard- and screen-reader-accessible, with its own focus-visible ring on the label. `:has()` has broad modern-browser support; on an unsupported browser the checkboxes still work, they just don't visually highlight when checked (graceful degradation, not a functional break).
+
 ### Interactive Map (signature component, new)
 A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent (it's described via its suburb list instead).
 

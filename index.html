@@ -101,6 +101,16 @@
         .ambient-glow-slate {
             background: radial-gradient(circle, rgba(148,163,184,0.25) 0%, rgba(148,163,184,0.06) 45%, transparent 75%);
         }
+        /* Style-interest checkbox chips (booking form): checked state via :has(), no JS needed */
+        .style-check-label:has(.style-check:checked) {
+            background-color: #00E5FF;
+            border-color: #00E5FF;
+            color: #0D131D;
+        }
+        .style-check-label:has(.style-check:focus-visible) {
+            outline: 2px solid #00E5FF;
+            outline-offset: 2px;
+        }
         .nav-link.active {
             color: #ffffff;
         }
@@ -421,6 +431,16 @@
                             <span>See full studio &amp; suburb coverage</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
+                    </div>
+
+                    <!-- Structural placeholder: no real demo clip exists yet. Shows honestly as
+                         "coming soon" rather than a fake/empty-feeling media player. -->
+                    <div class="mt-6 flex items-center gap-3 bg-brandLight border border-dashed border-brandBorder rounded-xl px-4 py-3">
+                        <span class="w-9 h-9 shrink-0 rounded-full bg-brandAmberLight/60 flex items-center justify-center"><i class="fa-solid fa-music text-brandCharcoal text-sm"></i></span>
+                        <div>
+                            <p class="text-xs font-bold text-brandCharcoal">Hear Mountain Culture Play</p>
+                            <p class="text-[11px] text-brandMuted">A short demo video is coming soon.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1040,8 +1060,35 @@
                 </div>
 
                 <div>
-                    <label for="field-notes" class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Day / Time &amp; Music Style</label>
-                    <textarea id="field-notes" rows="2" placeholder="e.g. Tuesday afternoons, interested in learning Acoustic Folk/Rock..." class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs"></textarea>
+                    <p class="block text-xs font-bold text-brandMuted uppercase mb-2">Styles You're Interested In</p>
+                    <div class="flex flex-wrap gap-2" role="group" aria-label="Styles you're interested in">
+                        <label class="style-check-label flex items-center gap-1.5 bg-brandLight border border-brandBorder rounded-full px-3 py-1.5 text-xs font-bold text-brandMuted cursor-pointer transition-colors">
+                            <input type="checkbox" name="styles" value="Acoustic" class="style-check sr-only"> Acoustic
+                        </label>
+                        <label class="style-check-label flex items-center gap-1.5 bg-brandLight border border-brandBorder rounded-full px-3 py-1.5 text-xs font-bold text-brandMuted cursor-pointer transition-colors">
+                            <input type="checkbox" name="styles" value="Electric" class="style-check sr-only"> Electric
+                        </label>
+                        <label class="style-check-label flex items-center gap-1.5 bg-brandLight border border-brandBorder rounded-full px-3 py-1.5 text-xs font-bold text-brandMuted cursor-pointer transition-colors">
+                            <input type="checkbox" name="styles" value="Rock" class="style-check sr-only"> Rock
+                        </label>
+                        <label class="style-check-label flex items-center gap-1.5 bg-brandLight border border-brandBorder rounded-full px-3 py-1.5 text-xs font-bold text-brandMuted cursor-pointer transition-colors">
+                            <input type="checkbox" name="styles" value="Blues" class="style-check sr-only"> Blues
+                        </label>
+                        <label class="style-check-label flex items-center gap-1.5 bg-brandLight border border-brandBorder rounded-full px-3 py-1.5 text-xs font-bold text-brandMuted cursor-pointer transition-colors">
+                            <input type="checkbox" name="styles" value="Pop" class="style-check sr-only"> Pop
+                        </label>
+                        <label class="style-check-label flex items-center gap-1.5 bg-brandLight border border-brandBorder rounded-full px-3 py-1.5 text-xs font-bold text-brandMuted cursor-pointer transition-colors">
+                            <input type="checkbox" name="styles" value="Folk" class="style-check sr-only"> Folk
+                        </label>
+                        <label class="style-check-label flex items-center gap-1.5 bg-brandLight border border-brandBorder rounded-full px-3 py-1.5 text-xs font-bold text-brandMuted cursor-pointer transition-colors">
+                            <input type="checkbox" name="styles" value="Metal" class="style-check sr-only"> Metal
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="field-notes" class="block text-xs font-bold text-brandMuted uppercase mb-2">Preferred Day / Time (optional)</label>
+                    <textarea id="field-notes" rows="2" placeholder="e.g. Tuesday afternoons work best for us..." class="w-full bg-brandLight border border-brandBorder rounded-xl px-4 py-4 text-brandCharcoal focus:outline-none focus:border-brandAmber focus:ring-2 focus:ring-brandAmber/20 transition-shadow text-xs"></textarea>
                 </div>
 
                 <button type="submit" class="w-full bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-4 rounded-xl transition-all duration-150 text-xs tracking-widest uppercase shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandDark focus-visible:ring-offset-2 mt-2">
