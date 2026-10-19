@@ -18,7 +18,7 @@
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#0f172a',
+                        brandDark: '#0d131d',
                         brandDarker: '#020617',
                         brandDarkCard: '#161f2e',
                         brandDarkLine: '#334155',
@@ -28,11 +28,11 @@
                         brandCharcoal: '#0f172a',
                         brandMuted: '#64748b',
                         brandMutedLight: '#94a3b8',
-                        brandAmber: '#f59e0b',
-                        brandAmberDeep: '#d97706',
-                        brandAmberLight: '#fde68a',
+                        brandAmber: '#00e5ff',
+                        brandAmberDeep: '#00b3cc',
+                        brandAmberLight: '#99f0ff',
                         heroAccent: '#00e5ff',
-                        heroAccentDeep: '#00b8cc',
+                        heroAccentDeep: '#00b3cc',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -45,7 +45,7 @@
     </script>
     <style>
         a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-            outline: 2px solid #f59e0b;
+            outline: 2px solid #00e5ff;
             outline-offset: 2px;
             border-radius: 4px;
         }
@@ -117,7 +117,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-full bg-brandAmber flex items-center justify-center shadow-[0_0_16px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform">
+                <div class="w-11 h-11 rounded-full bg-brandAmber flex items-center justify-center shadow-[0_0_16px_rgba(0,229,255,0.4)] group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-mountain-sun text-brandDark text-xl"></i>
                 </div>
                 <div>
@@ -160,7 +160,7 @@
                     <i class="fa-solid fa-phone text-brandAmber"></i>
                     <span>Penrith &amp; Mountains</span>
                 </a>
-                <button onclick="openBookingModal('General Header CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm hover:shadow-[0_0_24px_rgba(245,158,11,0.5)] transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
+                <button onclick="openBookingModal('General Header CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm hover:shadow-[0_0_24px_rgba(0,229,255,0.5)] transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
                     <span>Book A Lesson</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
@@ -186,7 +186,7 @@
                 <i class="fa-solid fa-phone text-brandAmber"></i>
                 <span>Penrith &amp; Mountains</span>
             </a>
-            <button onclick="openBookingModal('Mobile Menu CTA')" class="w-full mt-4 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs transition-all duration-200 hover:shadow-[0_10px_24px_-8px_rgba(245,158,11,0.5)]">
+            <button onclick="openBookingModal('Mobile Menu CTA')" class="w-full mt-4 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs transition-all duration-200 hover:shadow-[0_10px_24px_-8px_rgba(0,229,255,0.5)]">
                 <span>Book A Lesson Now</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -590,7 +590,7 @@
                 </div>
 
                 <!-- Card 2: 10 Lesson Package ($250 - HIGHLIGHTED, confirmed glow exception) -->
-                <div class="bg-brandCard text-brandCharcoal rounded-3xl p-8 sm:p-10 shadow-[0_0_45px_-10px_rgba(245,158,11,0.45)] border-4 border-brandAmber relative flex flex-col justify-between lg:scale-105 z-10 hover:lg:scale-[1.07] transition-transform">
+                <div class="bg-brandCard text-brandCharcoal rounded-3xl p-8 sm:p-10 shadow-[0_0_45px_-10px_rgba(0,229,255,0.45)] border-4 border-brandAmber relative flex flex-col justify-between lg:scale-105 z-10 hover:lg:scale-[1.07] transition-transform">
 
                     <!-- Value Badge -->
                     <div class="absolute -top-4 right-6 bg-brandAmber text-brandDark font-black px-4 py-1.5 rounded-full text-[11px] uppercase tracking-widest shadow-lg">
@@ -681,7 +681,7 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <button onclick="openBookingModal('Penrith Studio')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(245,158,11,0.5)]">
+                        <button onclick="openBookingModal('Penrith Studio')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(0,229,255,0.5)]">
                             Book Penrith Studio Slot
                         </button>
                     </div>
@@ -714,7 +714,7 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandAmber"></i> Flexible timing for school-age students</li>
                     </ul>
                     <div class="pt-4">
-                        <button onclick="openBookingModal('Blue Mountains')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(245,158,11,0.5)]">
+                        <button onclick="openBookingModal('Blue Mountains')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(0,229,255,0.5)]">
                             Book Mountains Slot
                         </button>
                     </div>
@@ -1043,7 +1043,7 @@
                 </div>
                 <h4 class="text-2xl font-black text-brandCharcoal font-display">Lesson Request Submitted!</h4>
                 <p class="text-brandMuted text-xs sm:text-sm">Thank you! We will contact you via phone or email within 24 hours to confirm your starting date.</p>
-                <button onclick="closeBookingModal()" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all duration-200 hover:shadow-[0_10px_24px_-8px_rgba(245,158,11,0.5)]">
+                <button onclick="closeBookingModal()" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all duration-200 hover:shadow-[0_10px_24px_-8px_rgba(0,229,255,0.5)]">
                     Close Window
                 </button>
             </div>
@@ -1052,11 +1052,11 @@
     </div>
 
     <!-- FIND-YOUR-FIT QUIZ: FLOATING TRIGGER -->
-    <button onclick="openQuizModal()" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-2 bg-brandDark/75 backdrop-blur-md text-white border border-white/10 pl-4 pr-5 py-3 rounded-full shadow-xl hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-8px_rgba(245,158,11,0.45)] transition-all">
+    <button onclick="openQuizModal()" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-2 bg-brandDark/75 backdrop-blur-md text-white border border-white/10 pl-4 pr-5 py-3 rounded-full shadow-xl hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-8px_rgba(0,229,255,0.45)] transition-all">
         <i class="fa-solid fa-wand-magic-sparkles text-brandAmber"></i>
         <span class="text-xs font-bold">Not sure where to start?</span>
     </button>
-    <button onclick="openQuizModal()" class="md:hidden fixed bottom-20 right-4 z-40 w-12 h-12 flex items-center justify-center bg-brandDark/75 backdrop-blur-md text-brandAmber border border-white/10 rounded-full shadow-xl hover:shadow-[0_12px_28px_-8px_rgba(245,158,11,0.45)] transition-all" aria-label="Find your fit quiz">
+    <button onclick="openQuizModal()" class="md:hidden fixed bottom-20 right-4 z-40 w-12 h-12 flex items-center justify-center bg-brandDark/75 backdrop-blur-md text-brandAmber border border-white/10 rounded-full shadow-xl hover:shadow-[0_12px_28px_-8px_rgba(0,229,255,0.45)] transition-all" aria-label="Find your fit quiz">
         <i class="fa-solid fa-wand-magic-sparkles"></i>
     </button>
 
