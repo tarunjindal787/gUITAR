@@ -309,66 +309,86 @@
         </div>
     </section>
 
-    <!-- SECTION: ABOUT YOUR INSTRUCTOR (LIGHT) -->
+    <!-- SECTION: ABOUT YOUR INSTRUCTOR (DARK -- confirmed explicit exception to strict
+         alternation, 2026-10-19: this section was light; the client asked for this exact
+         dark glassmorphism treatment by name. Puts 3 dark sections in a row at the top
+         (Hero/Instructor/Features) before the first light section (Pricing). See DESIGN.md. -->
     <!-- No real instructor name supplied yet -- heading stays generic ("Meet Your Instructor") until one is. -->
-    <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder scroll-mt-20">
+    <section id="instructor" class="py-20 bg-brandDark border-t border-brandDarkLine scroll-mt-20">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-5 gap-10 items-start bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
-                <div class="md:col-span-2">
-                    <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/5] max-w-xs mx-auto md:mx-0">
+            <div class="grid lg:grid-cols-12 gap-10 items-start bg-brandDarkCard border border-white/[0.08] rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.35)] p-8 sm:p-12">
+                <div class="lg:col-span-5 relative max-w-xs mx-auto lg:max-w-none lg:mx-0">
+                    <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/5] border border-white/10">
                         <img src="instructor-photo.jpg" alt="Mountain Culture Guitar instructor" class="w-full h-full object-cover object-top">
                     </div>
-                    <ul class="mt-4 space-y-2 text-sm text-brandCharcoal font-medium max-w-xs mx-auto md:mx-0">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>10+ Years Teaching Experience &mdash; 100+ Local Students Taught</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Flexible Scheduling &mdash; Studio (Penrith) or Mobile In-Home (Blue Mountains)</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Customized Learning Plans &mdash; Paced to the Student, Not a Fixed Syllabus</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>No Lock-In Contracts &mdash; Pay As You Go</span></li>
-                    </ul>
+                    <!-- Floating glassmorphism stat badge -->
+                    <div class="absolute -bottom-5 -right-3 sm:-right-5 max-w-[200px] bg-brandDarkCard/85 backdrop-blur-md border border-brandAmber/30 rounded-xl px-4 py-3 shadow-lg">
+                        <div class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-guitar text-brandAmber"></i>
+                            <p class="text-white text-xs font-bold leading-snug">10+ Years Taught &bull; 100+ Local Students</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:col-span-3">
-                    <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Who We Are</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Meet Your Instructor</h2>
-                    <p class="mt-4 text-sm text-brandCharcoal leading-relaxed">
-                        10+ years teaching guitar across Penrith and the Blue Mountains. Learn what you love &mdash; Acoustic, Electric, Rock, Blues, Pop, Folk, or Metal &mdash; with tailored 1-on-1 coaching built for all ages.
+                <div class="lg:col-span-7 mt-10 lg:mt-0">
+                    <span class="inline-block bg-brandAmber text-brandDark font-black tracking-widest text-[11px] uppercase px-3 py-1 rounded-full">Who We Are</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3 font-display tracking-tight">Meet Your Instructor</h2>
+                    <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                        Personalized 1-on-1 guitar coaching across Penrith and the Blue Mountains. Learn what you love &mdash; Acoustic, Electric, Rock, Blues, Pop, Folk, or Metal &mdash; at your own pace.
                     </p>
 
                     <!-- Tabs -->
                     <div class="flex gap-2 mt-6 mb-5">
-                        <button type="button" onclick="switchInstructorTab('philosophy')" id="instructor-tab-philosophy" class="instructor-tab bg-brandAmber text-brandDark font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-all">
-                            Philosophy &amp; Method
+                        <button type="button" onclick="switchInstructorTab('philosophy')" id="instructor-tab-philosophy" class="instructor-tab bg-brandAmber text-brandDark font-semibold px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-guitar text-[11px]" aria-hidden="true"></i> Philosophy &amp; Method
                         </button>
-                        <button type="button" onclick="switchInstructorTab('coverage')" id="instructor-tab-coverage" class="instructor-tab bg-brandLight text-brandMuted border border-brandBorder font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider hover:text-brandCharcoal transition-all">
-                            Local Coverage
+                        <button type="button" onclick="switchInstructorTab('coverage')" id="instructor-tab-coverage" class="instructor-tab bg-white/[0.05] text-slate-400 font-semibold px-4 py-2 rounded-full text-xs uppercase tracking-wider hover:text-white transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-[11px]" aria-hidden="true"></i> Local Coverage
                         </button>
                     </div>
 
                     <!-- Tab 1: Philosophy & Method -->
-                    <div id="instructor-content-philosophy" class="instructor-content">
-                        <ul class="space-y-2 text-sm text-brandCharcoal font-medium">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Song-First Approach:</strong> Play real music from session one, not boring theory drills.</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Custom Roadmap:</strong> Personalized lessons adapted to your goals and pace.</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Flexible Options:</strong> Private 1-on-1 or group sessions for friends.</span></li>
-                        </ul>
+                    <div id="instructor-content-philosophy" class="instructor-content space-y-3">
+                        <div class="bg-brandDark border border-white/[0.08] rounded-xl p-4 flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brandAmber mt-0.5"></i>
+                            <div>
+                                <p class="font-bold text-white text-sm">Song-First Approach</p>
+                                <p class="text-slate-400 text-xs mt-0.5">Play real music from session one &mdash; no boring theory drills.</p>
+                            </div>
+                        </div>
+                        <div class="bg-brandDark border border-white/[0.08] rounded-xl p-4 flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brandAmber mt-0.5"></i>
+                            <div>
+                                <p class="font-bold text-white text-sm">Custom Roadmap</p>
+                                <p class="text-slate-400 text-xs mt-0.5">Personalized lessons adapted to your goals and favorite genres (Acoustic, Electric, Rock, Blues, Pop).</p>
+                            </div>
+                        </div>
+                        <div class="bg-brandDark border border-white/[0.08] rounded-xl p-4 flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brandAmber mt-0.5"></i>
+                            <div>
+                                <p class="font-bold text-white text-sm">Flexible Options</p>
+                                <p class="text-slate-400 text-xs mt-0.5">Private 1-on-1 studio sessions in Penrith or in-home mobile lessons in the Blue Mountains.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Tab 2: Local Coverage -->
                     <div id="instructor-content-coverage" class="instructor-content hidden">
-                        <p class="text-xs font-bold text-brandMuted uppercase tracking-wider mb-2">Regions</p>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Regions</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-brandAmberLight/40 text-brandAmberDeep text-xs font-bold px-3 py-1 rounded-full">Penrith Studio</span>
-                            <span class="bg-brandAmberLight/40 text-brandAmberDeep text-xs font-bold px-3 py-1 rounded-full">Blue Mountains Mobile</span>
+                            <span class="bg-brandAmber/15 text-brandAmber text-xs font-bold px-3 py-1 rounded-full">Penrith Studio</span>
+                            <span class="bg-brandAmber/15 text-brandAmber text-xs font-bold px-3 py-1 rounded-full">Blue Mountains Mobile</span>
                         </div>
-                        <p class="text-xs font-bold text-brandMuted uppercase tracking-wider mb-2">Styles Taught</p>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Styles Taught</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Acoustic</span>
-                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Electric</span>
-                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Rock</span>
-                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Blues</span>
-                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Pop</span>
-                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Folk</span>
-                            <span class="bg-brandLight border border-brandBorder text-brandCharcoal text-xs font-bold px-3 py-1 rounded-full">Metal</span>
+                            <span class="bg-white/[0.05] border border-white/[0.08] text-slate-200 text-xs font-bold px-3 py-1 rounded-full">Acoustic</span>
+                            <span class="bg-white/[0.05] border border-white/[0.08] text-slate-200 text-xs font-bold px-3 py-1 rounded-full">Electric</span>
+                            <span class="bg-white/[0.05] border border-white/[0.08] text-slate-200 text-xs font-bold px-3 py-1 rounded-full">Rock</span>
+                            <span class="bg-white/[0.05] border border-white/[0.08] text-slate-200 text-xs font-bold px-3 py-1 rounded-full">Blues</span>
+                            <span class="bg-white/[0.05] border border-white/[0.08] text-slate-200 text-xs font-bold px-3 py-1 rounded-full">Pop</span>
+                            <span class="bg-white/[0.05] border border-white/[0.08] text-slate-200 text-xs font-bold px-3 py-1 rounded-full">Folk</span>
+                            <span class="bg-white/[0.05] border border-white/[0.08] text-slate-200 text-xs font-bold px-3 py-1 rounded-full">Metal</span>
                         </div>
-                        <a href="#locations" class="inline-flex items-center gap-2 text-xs font-bold text-brandAmberDeep hover:text-brandAmber transition-colors">
+                        <a href="#locations" class="inline-flex items-center gap-2 text-xs font-bold text-brandAmber hover:text-brandAmberDeep transition-colors">
                             <span>See full studio &amp; suburb coverage</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
@@ -1120,13 +1140,13 @@
             document.querySelectorAll('.instructor-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.instructor-tab').forEach(btn => {
                 btn.classList.remove('bg-brandAmber', 'text-brandDark');
-                btn.classList.add('bg-brandLight', 'text-brandMuted', 'border', 'border-brandBorder');
+                btn.classList.add('bg-white/[0.05]', 'text-slate-400');
             });
 
             document.getElementById('instructor-content-' + tab).classList.remove('hidden');
             const activeBtn = document.getElementById('instructor-tab-' + tab);
             activeBtn.classList.add('bg-brandAmber', 'text-brandDark');
-            activeBtn.classList.remove('bg-brandLight', 'text-brandMuted', 'border', 'border-brandBorder');
+            activeBtn.classList.remove('bg-white/[0.05]', 'text-slate-400');
         }
 
         // Location Tabs Switcher
