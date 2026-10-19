@@ -179,8 +179,8 @@ The header and both modals already used `backdrop-blur-md` (Tailwind's 12px blur
 - **Style (superseded 2026-10-17):** The header is now a dark glassmorphic bar (`bg-brandDark/80 backdrop-blur-md border-white/10`) at all times, per explicit client direction — superseding the prior "header stays white/translucent" rule. Nav links get an animated cyan underline on hover, plus a scroll-spy active state (`.nav-link.active`) driven by an `IntersectionObserver` keyed to each section's id.
 - **No status badge anywhere on the page (2026-10-17 → 2026-10-19):** A compact "Accepting New Students" badge was added next to the logo, then explicitly removed the same day as header clutter. It briefly lived on in the Hero content column and the Footer's "Booking & Availability" column, but both were removed in later rounds (hero: 2026-10-19 explicit request; footer: the same day, as part of a footer restructure down to 3 columns that dropped the whole "Booking & Availability" column). There is currently no live-status badge on the page at all — don't re-add one without new client direction.
 
-### Find Your Fit Quiz (signature component, new 2026-10-17)
-A floating bottom-right widget opening a 2-step modal (style, then plan) that recommends a pricing tier and hands off into the real booking modal with that option pre-selected. Pure client-side logic — no fabricated data or made-up recommendations beyond the user's own two answers.
+### Find Your Fit Quiz (new 2026-10-17, simplified to one screen 2026-10-19)
+A floating bottom-right widget opening a modal that hands off into the real booking modal with a plan pre-selected. Originally a 2-step sequence (style screen, then a separate plan screen, then a result screen) — collapsed to a single screen on 2026-10-19 so there's no step-transition to get stuck on: style selection is an optional preference (just highlights the chosen button, doesn't advance anything), and picking a plan closes the quiz and opens the booking modal immediately, carrying whatever style was picked (or "Guitar" if none was). Pure client-side logic — no fabricated data or made-up recommendations.
 
 ### Genre & Skill Cards (signature component, updated 2026-10-17)
 A grid of genre cards (Acoustic, Electric, Rock, Blues, Pop, Folk, Metal) in the Why Us section, each with a one-line generic skill descriptor (e.g. "Power chords & rhythm") and a decorative guitar-pick SVG watermark. Deliberately generic — no specific song titles, riff names, or learning-outcome timelines, since none have been confirmed with the client; this was re-requested with "sample riffs" language in a later round and the boundary was held.
@@ -190,6 +190,12 @@ A 3-column highlight-card grid (Dedicated Instructor, Custom-Paced, Free Learnin
 
 ### Trust Banner (removed 2026-10-19)
 A row of pill badges on the dark Locations section (10+ years experience, 5.0★ rating, no locked-in contracts) was removed as part of a site-wide text-density pass — by the time a visitor reached the Locations section, those same three facts had already been stated in the hero pills, hero stat cards, and the Instructor card's trust bullets. The underlying facts are still correct and still live in those earlier sections; this entry stays here as history so the component isn't re-added as "missing."
+
+### FAQ Accordion (converted to native `<details>`/`<summary>`, 2026-10-19)
+Previously a custom `<div>`/`<button>` pattern driven by a click-listener JS loop toggling a `.hidden` class and `aria-expanded`. Converted to native `<details>`/`<summary>` per explicit request for a more robust, inherently accessible pattern — no JS required for the open/close behavior itself (removed the old "FAQ Accordion" script block entirely). The chevron icon still rotates via Tailwind's `group-open:rotate-180` on the `<details class="group">` wrapper; the default disclosure marker is hidden via `list-none [&::-webkit-details-marker]:hidden` on the `<summary>`.
+
+### Footer CTA banner (removed 2026-10-19)
+A full-width dark banner section ("Start playing guitar this week!" + a "Book Your Lesson Now" button) that sat between Reviews/FAQ and the Footer was removed as a duplicate conversion ask — the hero, pricing cards, header CTA, and sticky mobile bar already provide ample booking access without a fourth full section dedicated to the same single action.
 
 ### Interactive Map (signature component, new)
 A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent (it's described via its suburb list instead).

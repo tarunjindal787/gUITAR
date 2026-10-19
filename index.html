@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mountain Culture Guitar Lessons | Penrith & Blue Mountains</title>
+    <title>Mountain Culture Guitar Lessons | Penrith &amp; Blue Mountains</title>
+    <meta name="description" content="1-on-1 guitar lessons in Penrith and mobile in-home lessons across the Blue Mountains. $35 trial lesson, no lock-in contracts, free interactive practice tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mountain Culture Guitar Lessons | Penrith &amp; Blue Mountains">
+    <meta property="og:description" content="1-on-1 guitar lessons in Penrith and mobile in-home lessons across the Blue Mountains. $35 trial lesson, no lock-in contracts, free interactive practice tools.">
+    <meta property="og:image" content="instructor-photo.jpg">
+    <!-- Favicon: a type-based monogram (no real logo file supplied yet) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D131D'/%3E%3Cpath d='M12 44 L26 20 L34 34 L40 24 L52 44 Z' fill='%2300E5FF'/%3E%3C/svg%3E">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -116,7 +123,7 @@
     <header class="sticky top-0 z-40 bg-brandDark/80 backdrop-blur-md border-b border-white/10 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
+            <a href="#home" class="flex items-center gap-3 group">
                 <div class="w-11 h-11 rounded-full bg-brandAmber flex items-center justify-center shadow-[0_0_16px_rgba(0,229,255,0.4)] group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-mountain-sun text-brandDark text-xl"></i>
                 </div>
@@ -156,9 +163,9 @@
 
             <!-- CTA Button -->
             <div class="hidden md:flex items-center gap-4">
-                <a href="tel:0400000000" class="hidden xl:flex text-slate-400 hover:text-white text-xs font-bold tracking-wider items-center gap-2 transition-colors" aria-label="Call Penrith and Mountains">
+                <a href="tel:0400000000" class="hidden xl:flex text-slate-400 hover:text-white text-xs font-bold tracking-wider items-center gap-2 transition-colors" aria-label="Call Mountain Culture Guitar Lessons">
                     <i class="fa-solid fa-phone text-brandAmber"></i>
-                    <span>Penrith &amp; Mountains</span>
+                    <span>0400 000 000</span>
                 </a>
                 <button onclick="openBookingModal('General Header CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm hover:shadow-[0_0_24px_rgba(0,229,255,0.5)] transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
                     <span>Book A Lesson</span>
@@ -184,7 +191,7 @@
             <a href="practice/" class="mobile-link block py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">Practice Tools</a>
             <a href="tel:0400000000" class="mobile-link flex items-center gap-2 py-2 text-sm font-bold tracking-wider text-slate-200 hover:text-brandAmber">
                 <i class="fa-solid fa-phone text-brandAmber"></i>
-                <span>Penrith &amp; Mountains</span>
+                <span>0400 000 000</span>
             </a>
             <button onclick="openBookingModal('Mobile Menu CTA')" class="w-full mt-4 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs transition-all duration-200 hover:shadow-[0_10px_24px_-8px_rgba(0,229,255,0.5)]">
                 <span>Book A Lesson Now</span>
@@ -194,7 +201,7 @@
     </header>
 
     <!-- SECTION 1: HERO (DARK) -->
-    <section id="home" class="relative overflow-hidden bg-brandDark">
+    <section id="home" class="relative overflow-hidden bg-brandDark scroll-mt-20">
         <div class="absolute top-16 right-10 sm:right-24 w-24 h-20 dot-grid-accent opacity-30 pointer-events-none" aria-hidden="true"></div>
         <div class="hidden sm:flex absolute bottom-10 right-10 lg:right-24 items-center gap-4 opacity-60 pointer-events-none" aria-hidden="true">
             <div class="w-16 h-16 rounded-full bg-brandDarkLine/60"></div>
@@ -304,7 +311,7 @@
 
     <!-- SECTION: ABOUT YOUR INSTRUCTOR (LIGHT) -->
     <!-- No real instructor name supplied yet -- heading stays generic ("Meet Your Instructor") until one is. -->
-    <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder">
+    <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder scroll-mt-20">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-5 gap-10 items-start bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
                 <div class="md:col-span-2">
@@ -372,7 +379,7 @@
     </section>
 
     <!-- SECTION 2: FEATURES GRID SECTION (DARK) -->
-    <section id="features" class="py-20 bg-brandDark border-t border-brandDarkLine relative">
+    <section id="features" class="py-20 bg-brandDark border-t border-brandDarkLine relative scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -527,7 +534,7 @@
     </section>
 
     <!-- SECTION 3: PRICING SECTION (LIGHT) -->
-    <section id="pricing" class="py-20 bg-brandLight border-t border-brandBorder relative">
+    <section id="pricing" class="py-20 bg-brandLight border-t border-brandBorder relative scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -625,7 +632,7 @@
     </section>
 
     <!-- SECTION 4: LOCATIONS & INTERACTIVE MAP (DARK / HIGH-TRUST) -->
-    <section id="locations" class="py-20 bg-brandDarker">
+    <section id="locations" class="py-20 bg-brandDarker scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-10">
@@ -671,7 +678,7 @@
                 <div class="rounded-2xl overflow-hidden border border-brandDarkLine min-h-[280px]">
                     <iframe
                         title="Map of Penrith, NSW"
-                        src="https://www.google.com/maps?q=Penrith+NSW+Australia&output=embed"
+                        src="https://www.google.com/maps?q=Penrith+NSW+Australia&amp;output=embed"
                         class="w-full h-full min-h-[280px]"
                         style="border:0;"
                         loading="lazy"
@@ -712,7 +719,7 @@
     </section>
 
     <!-- SECTION: PRACTICE TOOLS TEASER (LIGHT) -->
-    <section id="practice-tools" class="py-20 bg-brandLight border-t border-brandBorder">
+    <section id="practice-tools" class="py-20 bg-brandLight border-t border-brandBorder scroll-mt-20">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-10 items-center bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
                 <div>
@@ -744,7 +751,7 @@
     </section>
 
     <!-- SECTION 5: STUDENT REVIEWS (DARK) -->
-    <section id="reviews" class="py-20 bg-brandDarker overflow-hidden">
+    <section id="reviews" class="py-20 bg-brandDarker overflow-hidden scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -824,7 +831,7 @@
     </section>
 
     <!-- SECTION: FAQ (LIGHT) -->
-    <section id="faq" class="py-20 bg-brandLight border-t border-brandBorder">
+    <section id="faq" class="py-20 bg-brandLight border-t border-brandBorder scroll-mt-20">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Common Questions</span>
@@ -832,68 +839,55 @@
             </div>
 
             <div class="space-y-3" id="faq-accordion">
-                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
-                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60" aria-expanded="false">
+                <details class="group faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <summary class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                         <span class="font-bold text-brandCharcoal text-sm sm:text-base">What ages do you teach?</span>
-                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                    </summary>
+                    <div class="px-6 pb-5 text-sm text-brandMuted leading-relaxed">
                         All ages, from absolute beginners to experienced players refining their skills &mdash; students range from age 6 to 80+.
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
-                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60" aria-expanded="false">
+                <details class="group faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <summary class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                         <span class="font-bold text-brandCharcoal text-sm sm:text-base">Do I need my own guitar?</span>
-                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                    </summary>
+                    <div class="px-6 pb-5 text-sm text-brandMuted leading-relaxed">
                         The Penrith studio is equipped with acoustic and electric guitars you can use during lessons, or bring your own. For mobile in-home lessons in the Blue Mountains, please have a guitar available.
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
-                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60" aria-expanded="false">
+                <details class="group faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <summary class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                         <span class="font-bold text-brandCharcoal text-sm sm:text-base">Is there a lock-in contract?</span>
-                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                    </summary>
+                    <div class="px-6 pb-5 text-sm text-brandMuted leading-relaxed">
                         No. Book single $35 lessons week-to-week with no commitment, or choose the 10-lesson package ($250, saving $100) if you'd like a guaranteed recurring timeslot.
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
-                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60" aria-expanded="false">
+                <details class="group faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <summary class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                         <span class="font-bold text-brandCharcoal text-sm sm:text-base">How do mobile home lessons in the Blue Mountains work?</span>
-                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                    </summary>
+                    <div class="px-6 pb-5 text-sm text-brandMuted leading-relaxed">
                         Lessons travel up the mountain corridor from Glenbrook through to Katoomba and Blackheath, with in-home lesson options available by request alongside flexible timing for school-age students.
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
-                    <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60" aria-expanded="false">
+                <details class="group faq-item bg-brandCard border border-brandBorder rounded-2xl overflow-hidden">
+                    <summary class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brandLight/60 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                         <span class="font-bold text-brandCharcoal text-sm sm:text-base">What's the difference between a single lesson and the 10-lesson package?</span>
-                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform" aria-hidden="true"></i>
-                    </button>
-                    <div class="faq-panel hidden px-6 pb-5 text-sm text-brandMuted leading-relaxed">
+                        <i class="fa-solid fa-chevron-down text-brandAmberDeep transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                    </summary>
+                    <div class="px-6 pb-5 text-sm text-brandMuted leading-relaxed">
                         A single 30-minute lesson is $35, booked week-to-week. The 10-lesson package is $250 total ($25/lesson, saving $100) and includes a guaranteed recurring weekly timeslot and a structured 10-week roadmap.
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER CTA (DARK) -->
-    <section class="py-16 bg-gradient-to-r from-brandDark to-brandDarker text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-5xl font-black font-display tracking-tight">Start playing guitar this week!</h2>
-            <p class="mt-2 text-base sm:text-lg font-bold text-slate-300">Spots are limited for the current term across Penrith &amp; Blue Mountains.</p>
-            <div class="mt-8 flex justify-center">
-                <button onclick="openBookingModal('Footer Banner CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-10 py-4 rounded-full text-xs tracking-widest uppercase shadow-2xl transition-all transform hover:scale-105">
-                    Book Your Lesson Now
-                </button>
+                </details>
             </div>
         </div>
     </section>
@@ -914,11 +908,6 @@
                     <p class="text-slate-400 leading-relaxed">
                         Practical 1-on-1 guitar lessons across Penrith &amp; the Blue Mountains.
                     </p>
-                    <div class="flex gap-4 text-base mt-4">
-                        <a href="#" class="hover:text-brandAmber transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="hover:text-brandAmber transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-brandAmber transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
                 </div>
 
                 <!-- Col 2: Quick Navigation -->
@@ -1045,27 +1034,23 @@
                 </button>
             </div>
 
-            <div class="p-6">
-                <!-- Step 1: Style -->
-                <div id="quiz-step-1" class="quiz-step space-y-4">
-                    <p class="text-xs font-bold text-brandMuted uppercase tracking-wider">Step 1 of 2</p>
-                    <p class="text-sm font-bold text-brandCharcoal">Which style interests you most?</p>
+            <div class="p-6 space-y-5">
+                <!-- Single screen: style is an optional preference, plan selection books directly -->
+                <div>
+                    <p class="text-sm font-bold text-brandCharcoal mb-3">Which style interests you? <span class="font-normal text-brandMuted">(optional)</span></p>
                     <div class="grid grid-cols-2 gap-3">
-                        <button type="button" onclick="selectQuizStyle('Acoustic')" class="bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-5 text-center transition-all">
+                        <button type="button" id="quiz-style-acoustic" onclick="selectQuizStyle('Acoustic')" class="quiz-style-btn bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-5 text-center transition-all" aria-pressed="false">
                             <i class="fa-solid fa-guitar text-2xl text-brandAmberDeep mb-2"></i>
                             <p class="font-bold text-brandCharcoal text-sm">Acoustic</p>
                         </button>
-                        <button type="button" onclick="selectQuizStyle('Electric')" class="bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-5 text-center transition-all">
+                        <button type="button" id="quiz-style-electric" onclick="selectQuizStyle('Electric')" class="quiz-style-btn bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-5 text-center transition-all" aria-pressed="false">
                             <i class="fa-solid fa-bolt text-2xl text-brandAmberDeep mb-2"></i>
                             <p class="font-bold text-brandCharcoal text-sm">Electric</p>
                         </button>
                     </div>
                 </div>
-
-                <!-- Step 2: Plan -->
-                <div id="quiz-step-2" class="quiz-step hidden space-y-4">
-                    <p class="text-xs font-bold text-brandMuted uppercase tracking-wider">Step 2 of 2</p>
-                    <p class="text-sm font-bold text-brandCharcoal">How would you like to get started?</p>
+                <div>
+                    <p class="text-sm font-bold text-brandCharcoal mb-3">How would you like to get started?</p>
                     <div class="space-y-3">
                         <button type="button" onclick="selectQuizPlan('Single Lesson ($35)')" class="w-full bg-brandLight hover:bg-brandAmberLight/40 border border-brandBorder hover:border-brandAmber rounded-2xl p-4 text-left transition-all flex items-center justify-between">
                             <span class="font-bold text-brandCharcoal text-sm">Try a single $35 lesson first</span>
@@ -1076,15 +1061,6 @@
                             <i class="fa-solid fa-arrow-right text-brandAmberDeep"></i>
                         </button>
                     </div>
-                </div>
-
-                <!-- Result -->
-                <div id="quiz-result" class="quiz-step hidden space-y-4 text-center">
-                    <i class="fa-solid fa-circle-check text-4xl text-brandAmberDeep"></i>
-                    <p id="quiz-result-text" class="text-sm text-brandCharcoal font-medium"></p>
-                    <button type="button" onclick="bookFromQuiz()" class="w-full bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-3.5 rounded-xl text-xs tracking-widest uppercase transition-all">
-                        Book This
-                    </button>
                 </div>
             </div>
         </div>
@@ -1104,19 +1080,6 @@
     <!-- JAVASCRIPT -->
     <script>
         document.getElementById('year').innerText = new Date().getFullYear();
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-trigger').forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const item = trigger.closest('.faq-item');
-                const panel = item.querySelector('.faq-panel');
-                const icon = trigger.querySelector('i');
-                const isOpen = !panel.classList.contains('hidden');
-                panel.classList.toggle('hidden', isOpen);
-                trigger.setAttribute('aria-expanded', String(!isOpen));
-                icon.classList.toggle('rotate-180', !isOpen);
-            });
-        });
 
         // Mobile Menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -1250,26 +1213,28 @@
             if (e.target === modal) closeBookingModal();
         });
 
-        // Find-Your-Fit Quiz Modal Management
+        // Find-Your-Fit Quiz Modal Management (single screen: style is an optional
+        // preference, picking a plan books directly -- no multi-step sequence to get stuck on)
         const quizModal = document.getElementById('quiz-modal');
         const quizDialog = quizModal.querySelector('[role="dialog"]');
-        const quizResultText = document.getElementById('quiz-result-text');
         let quizTriggerEl = null;
-        let quizAnswers = { style: null, plan: null };
+        let quizStyle = null;
 
-        function showQuizStep(stepId) {
-            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
-            document.getElementById(stepId).classList.remove('hidden');
-            const focusable = getFocusableIn(quizDialog);
-            if (focusable.length) focusable[0].focus();
+        function resetQuizStyleButtons() {
+            document.querySelectorAll('.quiz-style-btn').forEach(btn => {
+                btn.classList.remove('border-brandAmber', 'bg-brandAmberLight/40');
+                btn.setAttribute('aria-pressed', 'false');
+            });
         }
 
         function openQuizModal() {
             quizTriggerEl = document.activeElement;
-            quizAnswers = { style: null, plan: null };
-            showQuizStep('quiz-step-1');
+            quizStyle = null;
+            resetQuizStyleButtons();
             quizModal.classList.remove('hidden');
             quizModal.classList.add('flex');
+            const focusable = getFocusableIn(quizDialog);
+            if (focusable.length) focusable[0].focus();
         }
 
         function closeQuizModal() {
@@ -1279,24 +1244,17 @@
         }
 
         function selectQuizStyle(style) {
-            quizAnswers.style = style;
-            showQuizStep('quiz-step-2');
+            quizStyle = style;
+            resetQuizStyleButtons();
+            const btn = document.getElementById('quiz-style-' + style.toLowerCase());
+            btn.classList.add('border-brandAmber', 'bg-brandAmberLight/40');
+            btn.setAttribute('aria-pressed', 'true');
         }
 
         function selectQuizPlan(plan) {
-            quizAnswers.plan = plan;
-            const planLabel = plan.includes('$250')
-                ? 'the 10-Lesson Package ($250, saving $100)'
-                : 'a single $35 trial lesson';
-            quizResultText.innerText = "Based on your answers, we'd recommend starting with " + quizAnswers.style.toLowerCase() + " guitar and booking " + planLabel + ".";
-            showQuizStep('quiz-result');
-        }
-
-        function bookFromQuiz() {
-            const styleLabel = quizAnswers.style || 'Guitar';
-            const planLabel = quizAnswers.plan || '';
+            const styleLabel = quizStyle || 'Guitar';
             closeQuizModal();
-            openBookingModal('Quiz: ' + styleLabel + ' / ' + planLabel);
+            openBookingModal('Quiz: ' + styleLabel + ' / ' + plan);
         }
 
         quizModal.addEventListener('click', (e) => {
