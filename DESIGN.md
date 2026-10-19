@@ -185,6 +185,9 @@ A floating bottom-right widget opening a 2-step modal (style, then plan) that re
 ### Genre & Skill Cards (signature component, updated 2026-10-17)
 A grid of genre cards (Acoustic, Electric, Rock, Blues, Pop, Folk, Metal) in the Why Us section, each with a one-line generic skill descriptor (e.g. "Power chords & rhythm") and a decorative guitar-pick SVG watermark. Deliberately generic — no specific song titles, riff names, or learning-outcome timelines, since none have been confirmed with the client; this was re-requested with "sample riffs" language in a later round and the boundary was held.
 
+### Why Mountain Culture Cards (replaced a comparison table, 2026-10-19)
+A 3-column highlight-card grid (Dedicated Instructor, Custom-Paced, Free Learning Tools) in the Features section. Replaces an earlier 3-row "Mountain Culture vs. Big Franchise Schools" comparison table — same underlying claims, condensed from a table to three one-line cards as part of a text-density pass.
+
 ### Trust Banner (removed 2026-10-19)
 A row of pill badges on the dark Locations section (10+ years experience, 5.0★ rating, no locked-in contracts) was removed as part of a site-wide text-density pass — by the time a visitor reached the Locations section, those same three facts had already been stated in the hero pills, hero stat cards, and the Instructor card's trust bullets. The underlying facts are still correct and still live in those earlier sections; this entry stays here as history so the component isn't re-added as "missing."
 
