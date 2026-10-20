@@ -356,41 +356,71 @@
 
 
     <!-- SECTION: ABOUT YOUR INSTRUCTOR (LIGHT) -->
-    <!-- Instructor name confirmed real: "Dan". Fully reverted to pre-redesign structure 2026-10-20 per client request. -->
-    <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder scroll-mt-20">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-5 gap-10 items-start bg-brandCard border border-brandBorder rounded-3xl shadow-sm p-8 sm:p-12">
+    <!-- Instructor name confirmed real: "Dan". Redesigned 2026-10-20 per explicit
+         client request -- same copy, same light section / single cyan accent /
+         dark-light alternation rules as the rest of the page; does not reintroduce
+         the earlier retired dark/clip-path redesign arc documented above this note. -->
+    <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder scroll-mt-20 relative overflow-hidden">
+        <div class="ambient-glow-amber hidden lg:block absolute top-0 left-0 w-[30rem] h-[30rem] opacity-30 blur-3xl pointer-events-none -translate-x-1/3 -translate-y-1/3" aria-hidden="true"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid md:grid-cols-5 gap-12 items-start">
+
+                <!-- Photo column -->
                 <div class="md:col-span-2">
-                    <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/5] max-w-xs mx-auto md:mx-0">
-                        <img src="instructor-photo.jpg" alt="Dan, Mountain Culture Guitar instructor" width="620" height="860" class="w-full h-full object-cover object-top" loading="lazy">
+                    <div class="relative max-w-xs mx-auto md:mx-0">
+                        <div class="absolute -top-4 -right-4 w-full h-full rounded-[2rem] bg-brandAmberLight/50 -z-10 hidden sm:block" aria-hidden="true"></div>
+                        <div class="relative rounded-[2rem] overflow-hidden shadow-xl aspect-[4/5] border-4 border-brandCard transition-transform duration-300 hover:-translate-y-1">
+                            <img src="instructor-photo.jpg" alt="Dan, Mountain Culture Guitar instructor" width="620" height="860" class="w-full h-full object-cover object-top" loading="lazy">
+                        </div>
                     </div>
-                    <ul class="mt-4 space-y-2 text-sm text-brandCharcoal font-medium max-w-xs mx-auto md:mx-0">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>10+ Years Teaching Experience &mdash; 100+ Local Students Taught</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Flexible Scheduling &mdash; Studio (Penrith) or Mobile In-Home (Blue Mountains)</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>Customized Learning Plans &mdash; Paced to the Student, Not a Fixed Syllabus</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span>No Lock-In Contracts &mdash; Pay As You Go</span></li>
-                    </ul>
+                    <div class="grid grid-cols-2 gap-3 mt-6 max-w-xs mx-auto md:mx-0">
+                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
+                            <i class="fa-solid fa-circle-check text-brandAmberDeep"></i>
+                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">10+ Years Teaching Experience</p>
+                            <p class="text-[11px] text-brandMuted leading-tight">100+ Local Students Taught</p>
+                        </div>
+                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
+                            <i class="fa-solid fa-circle-check text-brandAmberDeep"></i>
+                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">Flexible Scheduling</p>
+                            <p class="text-[11px] text-brandMuted leading-tight">Studio (Penrith) or Mobile In-Home (Blue Mountains)</p>
+                        </div>
+                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
+                            <i class="fa-solid fa-circle-check text-brandAmberDeep"></i>
+                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">Customized Learning Plans</p>
+                            <p class="text-[11px] text-brandMuted leading-tight">Paced to the Student, Not a Fixed Syllabus</p>
+                        </div>
+                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
+                            <i class="fa-solid fa-circle-check text-brandAmberDeep"></i>
+                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">No Lock-In Contracts</p>
+                            <p class="text-[11px] text-brandMuted leading-tight">Pay As You Go</p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Content column -->
                 <div class="md:col-span-3">
                     <span class="text-brandAmberDeep font-black tracking-widest text-xs uppercase">Who We Are</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">Meet Dan</h2>
-                    <p class="mt-4 text-sm text-brandCharcoal leading-relaxed">
+                    <h2 class="relative inline-block text-2xl sm:text-3xl font-black text-brandCharcoal mt-2 font-display tracking-tight">
+                        Meet Dan
+                        <span class="absolute left-0 -bottom-1 h-1 w-12 bg-brandAmber rounded-full" aria-hidden="true"></span>
+                    </h2>
+                    <p class="mt-5 text-sm text-brandCharcoal leading-relaxed">
                         10+ years teaching guitar across Penrith and the Blue Mountains. Learn what you love &mdash; Acoustic, Electric, Rock, Blues, Pop, Folk, or Metal &mdash; with tailored 1-on-1 coaching built for all ages.
                     </p>
 
                     <!-- Tabs -->
-                    <div class="flex gap-2 mt-6 mb-5" role="tablist" aria-label="Instructor details">
-                        <button type="button" onclick="switchInstructorTab('philosophy')" id="instructor-tab-philosophy" role="tab" aria-selected="true" aria-controls="instructor-content-philosophy" class="instructor-tab bg-brandAmber text-brandDark font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-all">
+                    <div class="flex gap-2 mt-6 mb-4" role="tablist" aria-label="Instructor details">
+                        <button type="button" onclick="switchInstructorTab('philosophy')" id="instructor-tab-philosophy" role="tab" aria-selected="true" aria-controls="instructor-content-philosophy" class="instructor-tab bg-gradient-to-br from-brandAmber to-brandAmberDeep text-brandDark shadow-sm font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-all">
                             Philosophy & Method
                         </button>
-                        <button type="button" onclick="switchInstructorTab('coverage')" id="instructor-tab-coverage" role="tab" aria-selected="false" aria-controls="instructor-content-coverage" class="instructor-tab bg-brandLight text-brandMuted border border-brandBorder font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider hover:text-brandCharcoal transition-all">
+                        <button type="button" onclick="switchInstructorTab('coverage')" id="instructor-tab-coverage" role="tab" aria-selected="false" aria-controls="instructor-content-coverage" class="instructor-tab bg-brandCard text-brandMuted border border-brandBorder font-bold px-4 py-2 rounded-full text-xs uppercase tracking-wider hover:text-brandCharcoal transition-all">
                             Local Coverage
                         </button>
                     </div>
 
                     <!-- Tab 1: Philosophy & Method -->
-                    <div id="instructor-content-philosophy" role="tabpanel" aria-labelledby="instructor-tab-philosophy" class="instructor-content">
-                        <ul class="space-y-2 text-sm text-brandCharcoal font-medium">
+                    <div id="instructor-content-philosophy" role="tabpanel" aria-labelledby="instructor-tab-philosophy" class="instructor-content bg-brandCard border border-brandBorder rounded-2xl p-5">
+                        <ul class="space-y-3 text-sm text-brandCharcoal font-medium">
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Song-First Approach:</strong> Play real music from session one, not boring theory drills.</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Custom Roadmap:</strong> Personalized lessons adapted to your goals and pace.</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberDeep mt-0.5"></i> <span><strong>Flexible Options:</strong> Private 1-on-1 or group sessions for friends.</span></li>
@@ -398,7 +428,7 @@
                     </div>
 
                     <!-- Tab 2: Local Coverage -->
-                    <div id="instructor-content-coverage" role="tabpanel" aria-labelledby="instructor-tab-coverage" class="instructor-content hidden">
+                    <div id="instructor-content-coverage" role="tabpanel" aria-labelledby="instructor-tab-coverage" class="instructor-content hidden bg-brandCard border border-brandBorder rounded-2xl p-5">
                         <p class="text-xs font-bold text-brandMuted uppercase tracking-wider mb-2">Regions</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-brandAmberLight/40 text-brandAmberDeep text-xs font-bold px-3 py-1 rounded-full">Penrith Studio</span>
@@ -1224,15 +1254,15 @@
         function switchInstructorTab(tab) {
             document.querySelectorAll('.instructor-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.instructor-tab').forEach(btn => {
-                btn.classList.remove('bg-brandAmber', 'text-brandDark');
-                btn.classList.add('bg-brandLight', 'text-brandMuted', 'border', 'border-brandBorder');
+                btn.classList.remove('bg-gradient-to-br', 'from-brandAmber', 'to-brandAmberDeep', 'text-brandDark', 'shadow-sm');
+                btn.classList.add('bg-brandCard', 'text-brandMuted', 'border', 'border-brandBorder');
                 btn.setAttribute('aria-selected', 'false');
             });
 
             document.getElementById('instructor-content-' + tab).classList.remove('hidden');
             const activeBtn = document.getElementById('instructor-tab-' + tab);
-            activeBtn.classList.add('bg-brandAmber', 'text-brandDark');
-            activeBtn.classList.remove('bg-brandLight', 'text-brandMuted', 'border', 'border-brandBorder');
+            activeBtn.classList.add('bg-gradient-to-br', 'from-brandAmber', 'to-brandAmberDeep', 'text-brandDark', 'shadow-sm');
+            activeBtn.classList.remove('bg-brandCard', 'text-brandMuted', 'border', 'border-brandBorder');
             activeBtn.setAttribute('aria-selected', 'true');
         }
 
