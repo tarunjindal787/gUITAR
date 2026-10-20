@@ -219,7 +219,10 @@ A full-width dark banner section ("Start playing guitar this week!" + a "Book Yo
 The booking form's old free-text "Preferred Day / Time & Music Style" field was split in two: a dedicated "Styles You're Interested In" checkbox group (Acoustic/Electric/Rock/Blues/Pop/Folk/Metal, rendered as pill chips) and a separate, now-optional "Preferred Day / Time" text field. Checked state is pure CSS via `:has()` (`.style-check-label:has(.style-check:checked)`) — no JS needed; the underlying `<input type="checkbox">` is visually hidden (`sr-only`) but fully keyboard- and screen-reader-accessible, with its own focus-visible ring on the label. `:has()` has broad modern-browser support; on an unsupported browser the checkboxes still work, they just don't visually highlight when checked (graceful degradation, not a functional break).
 
 ### Interactive Map (signature component, new)
-A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent (it's described via its suburb list instead).
+A Google Maps iframe embed (no API key required) centered on "Penrith NSW Australia" — the area with a real, confirmed dedicated studio. The Blue Mountains service area does not get its own map pin, since there is no fixed studio address there to honestly represent (it's described via its suburb list instead). Updated 2026-10-20: the embed's container now also carries `aspect-video` (on top of the existing `min-h-[280px]`) so it's a guaranteed fixed-ratio box, not just a min-height one.
+
+### Instructor & Location Tabs — ARIA (added 2026-10-20)
+Both tab widgets (Instructor "Philosophy & Method"/"Local Coverage", Locations "Penrith"/"Blue Mountains") previously had no tab-pattern ARIA at all — just styled buttons with `onclick`. Added `role="tablist"` on the button row, `role="tab"` + `aria-selected` + `aria-controls` on each button, and `role="tabpanel"` + `aria-labelledby` on each content panel. `switchInstructorTab()`/`switchTab()` now toggle `aria-selected` alongside the existing class swaps — keep these in sync if either tab's markup changes again.
 
 ## Do's and Don'ts
 
