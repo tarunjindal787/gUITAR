@@ -2,10 +2,10 @@
 name: Mountain Culture Guitar Lessons
 description: A dark/light alternating editorial landing page for a guitar-lesson business, built for trust and clarity.
 colors:
-  dark: "#0D131D"
-  darker: "#020617"
-  dark-card: "#161F2E"
-  dark-line: "#334155"
+  dark: "#0B132B"
+  darker: "#070D1C"
+  dark-card: "#141F3D"
+  dark-line: "#2A3B63"
   dark-card-border: "rgba(255,255,255,0.08)"
   light: "#F8FAFC"
   card-white: "#FFFFFF"
@@ -13,11 +13,10 @@ colors:
   charcoal: "#0F172A"
   muted: "#64748B"
   muted-light: "#94A3B8"
-  accent: "#00E5FF"
-  accent-deep: "#00B3CC"
-  accent-light: "#99F0FF"
-  hero-midnight: "#0B132B"
-  hero-gold: "#FFD100"
+  accent: "#FFD100"
+  accent-deep: "#A67C00"
+  accent-text: "#8C6900"
+  accent-light: "#FFF3C4"
   hero-glow: "#FFE600"
   hero-teal: "#0E4749"
 typography:
@@ -88,30 +87,40 @@ components:
 
 *(Third identity, replacing "The Botanical Studio" (cream/sage/mauve/slate) on 2026-10-16. The dark/light alternating structure has held since then; the accent hue itself changed on 2026-10-19 — see "The accent's history" below. The prior light identity is retired; treat it as evidence, not lineage.)*
 
-The page alternates dark and light sections like a studio at night: the hero and pricing sections go dark-slate with a single high-contrast electric-cyan accent doing all the signaling, while "Why Us," Locations, and testimonials stay crisp and bright for readability and relief. The rhythm itself communicates something: dark sections hold the decisions that matter most (the offer, the price), light sections hold the proof and explanation — Locations moved to light on 2026-10-16 per explicit client request, since the map and trust banner read as proof, not decision. Trust is built through specificity — a real map, real stats, real testimonials — not through decoration.
+The page alternates dark and light sections like a studio at night: the hero and pricing sections go deep-midnight-blue with a single high-contrast gold accent doing all the signaling, while "Why Us," Locations, and testimonials stay crisp and bright for readability and relief. The rhythm itself communicates something: dark sections hold the decisions that matter most (the offer, the price), light sections hold the proof and explanation — Locations moved to light on 2026-10-16 per explicit client request, since the map and trust banner read as proof, not decision. Trust is built through specificity — a real map, real stats, real testimonials — not through decoration.
 
-**The accent's history (all 2026-10-19, same day):** the accent started as site-wide amber (#F59E0B). A client request introduced a separate hero-only coral (#FF6B35), then revised that same hero-only token to Electric Cyan (#00E5FF) a few rounds later. A follow-up request then clarified the client actually wanted cyan **everywhere**, flagging specific non-hero elements (the top announcement bar, the header CTA) still showing the old amber as a defect. At that point the distinction was retired: `brandAmber` itself now equals Electric Cyan, so every section uses the same one accent again — there is no remaining hero-only exception. `heroAccent` still exists as an alias of the same value, kept only so the hero's own class names don't need touching again; don't let the two tokens diverge without an equally explicit request.
+**The accent's history:** amber (#F59E0B) → hero-only coral (#FF6B35) → hero-only Electric Cyan (#00E5FF) → site-wide Electric Cyan (all 2026-10-19) → **site-wide Gold + Midnight Blue (2026-10-21)**, this round's explicit client request to extend the hero's new gold/navy banner treatment to the whole site, not just the hero. `brandAmber` has gone from amber-named-but-literally-cyan to finally meaning an actual amber/gold again. See "Site-Wide Rebrand" below for the full color-role breakdown and the contrast work behind it.
 
 **Key Characteristics:**
 - Strict section-level alternation (restored 2026-10-16; briefly broken and restored again, same day, 2026-10-19): Hero (dark) → About Your Instructor (light) → Why Us/Features (dark) → Pricing (light) → Locations (dark, high-trust) → Practice Tools teaser (light) → Reviews (dark) → FAQ (light) → Footer (dark, fixed closing anchor). On 2026-10-19 the Instructor section was moved to a dark glassmorphism treatment by explicit request, then reverted back to light later the same day by an equally explicit follow-up request — see "Instructor Card" below for what survived the round trip. The alternation is intact again as of this note. (The separate "Footer CTA" banner this note used to describe was removed entirely 2026-10-19 as duplicate clutter — see Buttons/Components history.)
-- One accent color (Electric Cyan) carries every call-to-action and highlight across both dark and light sections — never diluted with a second competing hue
+- One accent color family (Gold, as of 2026-10-21 — previously Electric Cyan) carries every call-to-action and highlight across both dark and light sections — never diluted with a second *interactive* competing hue (the hero headline's extra "Lifelong" glow-yellow and teal brush-stroke are a documented typographic-only exception, not interactive elements)
 - Dark sections use `brandDarkCard` surfaces with a semi-transparent white-alpha border, never pure black-on-black
 - Light sections use true white cards on an off-white (`#F8FAFC`) ground with a visible but quiet `#E2E8F0` border
-- Hero carries a small set of confirmed, deliberate glow/motion accents (ambient cyan backlight, sparkle flourishes, a gradient CTA with an inset highlight) — see Elevation & Depth. (The hero's status badge, mentioned in earlier revisions of this doc, no longer exists — removed 2026-10-19, see Navigation below.)
+- Hero carries a small set of confirmed, deliberate glow/motion accents (ambient gold backlight, sparkle flourishes, a gradient CTA with an inset highlight) — see Elevation & Depth. (The hero's status badge, mentioned in earlier revisions of this doc, no longer exists — removed 2026-10-19, see Navigation below.)
 
 ## Colors
 
-Two neutral families (dark slate, off-white) plus exactly one accent (Electric Cyan) that never competes with a second hue for attention.
+Two neutral families (midnight-blue, off-white) plus one gold accent family (three roles, see below) that never competes with a second *interactive* hue for attention.
 
-### Primary Accent
-- **Electric Cyan** (#00E5FF, deep #00B3CC, light tint #99F0FF): Every CTA, every highlighted price, every "this is the one" signal, on both dark and light backgrounds. This is a deliberate one-accent system — resist adding a second accent hue. Contrast verified: 11.6:1 cyan-on-dark-navy, 11.6:1 navy-on-cyan-button (both clear AA). White text on cyan only reaches 1.54:1 — every cyan button uses dark navy text, never white.
+### Site-Wide Rebrand (2026-10-21): Gold + Midnight Blue
+Explicit client request to take the hero banner's gold/navy treatment (shipped earlier the same day, originally scoped to the hero only) and apply it everywhere. This is the third full accent change this project has been through (see "The accent's history" above) and the first time `brandAmber` has actually meant amber.
+
+**Why three gold tokens, not one:** bright gold text/icons on a white background fails AA badly (`#FFD100` on white measures 1.46:1), the same trap this project already hit and fixed once with cyan (see the Instructor Card contrast correction below) — so the single old `brandAmber`/`brandAmberDeep` pair couldn't just be hex-swapped 1:1 without reintroducing that exact bug at a much larger scale. Each token now has one job, each contrast-checked against both page backgrounds it actually appears on:
+- **`brandAmber` (#FFD100, bright):** background fills with dark navy text on top (buttons, badges, active tab pills), and decorative fills/icons/borders on **dark** backgrounds only — 12.6:1 there. Never used as standalone text/icon color on a light background.
+- **`brandAmberDeep` (#A67C00, medium):** the hover-darken state of amber backgrounds (navy text on it still measures 4.8:1), and the one color used for borders, focus rings, and the global `:focus-visible` outline — chosen specifically because it clears the 3:1 non-text threshold on *both* white (3.8:1) and navy (4.8:1), so one border color works everywhere without a light/dark split.
+- **`brandAmberText` (#8C6900, muted, new token):** standalone text and icon color wherever gold appears on a **light** background (section eyebrows, FAQ chevrons, checkmark bullets, coverage pills, the "$250" price) — 5.1:1 on white, comfortably past AA. Replaces every prior light-background use of `brandAmberDeep`-as-text, which was actually failing contrast even before this round (cyan `#00B3CC` on white measured 2.52:1 — an existing, unnoticed gap this rebrand also fixed).
+- **`brandAmberLight` (#FFF3C4):** pale gold tint for badge/pill backgrounds on light sections (was a pale cyan tint, `#99F0FF`).
+
+**Dark neutrals moved to match the hero's Midnight Blue** (`brandDark` #0D131D → #0B132B, `brandDarker` #020617 → #070D1C, `brandDarkCard` #161F2E → #141F3D, `brandDarkLine` #334155 → #2A3B63) so every dark section — not just the hero — now reads as the same blue family. All dark-section text colors (white, slate-200/300/400) were re-verified against the new, slightly different navy values; all still clear 6:1+.
+
+`heroAccent`/`heroAccentDeep` are now literal aliases of `brandAmber`/`brandAmberDeep` (same values) rather than a separate cyan pair — keep them in sync if either changes. `heroGold`/`heroGlow`/`heroTeal` remain hero-headline-only tokens for "Music" and "Lifelong" (see Hero Banner Redesign below); don't reuse `heroGlow`/`heroTeal` elsewhere without an equally explicit request.
 
 ### Dark Neutrals
-- **Dark** (#0D131D): Hero and pricing section background.
-- **Darker** (#020617): Locations and footer background — the "deepest" sections, reserved for trust/closing moments.
-- **Dark Card** (#161F2E, darkened from #1E293B on 2026-10-19 for more depth against its border): Card surfaces sitting on dark sections.
-- **Dark Line** (#334155): Structural dividers and standalone borders (header bottom edge, section rules) — *not* card borders; see below.
-- **Dark Card Border** (`rgba(255,255,255,0.08)`, added 2026-10-19): Every `bg-brandDarkCard` card's own border is now this semi-transparent white hairline instead of the solid Dark Line color — a "glass edge" that reads as depth rather than a hard rule. Applied via Tailwind's `border-white/[0.08]` on all 24 existing dark-card instances; any new dark card should use the same pairing (`bg-brandDarkCard border border-white/[0.08]`), not `border-brandDarkLine`.
+- **Dark** (#0B132B): Hero and pricing section background.
+- **Darker** (#070D1C): Locations and footer background — the "deepest" sections, reserved for trust/closing moments.
+- **Dark Card** (#141F3D): Card surfaces sitting on dark sections.
+- **Dark Line** (#2A3B63): Structural dividers and standalone borders (header bottom edge, section rules) — *not* card borders; see below.
+- **Dark Card Border** (`rgba(255,255,255,0.08)`, added 2026-10-19): Every `bg-brandDarkCard` card's own border is this semi-transparent white hairline instead of a solid Dark Line color — a "glass edge" that reads as depth rather than a hard rule. Applied via Tailwind's `border-white/[0.08]`; any new dark card should use the same pairing (`bg-brandDarkCard border border-white/[0.08]`), not `border-brandDarkLine`.
 
 ### Light Neutrals
 - **Light** (#F8FAFC): Features and testimonials section background.
@@ -121,7 +130,7 @@ Two neutral families (dark slate, off-white) plus exactly one accent (Electric C
 - **Muted / Muted Light**: Secondary text — `#64748B` on light sections, `#94A3B8` (lighter, for sufficient contrast) on dark sections. Never use the light-section muted value on a dark background or vice versa.
 
 ### Named Rules
-**The One-Accent Rule.** Electric Cyan is the system's only accent color, uniformly across every section. It appears on both dark and light sections, which is what makes the alternating rhythm read as one coherent system rather than two different sites stitched together. (This rule briefly had a hero-only exception on 2026-10-19 — see "The accent's history" in the Overview — superseded the same day when the client clarified the intent was a full accent change, not a hero-only one.)
+**The One-Accent Rule.** Gold (as of 2026-10-21 — see Site-Wide Rebrand above) is the system's only *interactive* accent color, uniformly across every section. It appears on both dark and light sections, which is what makes the alternating rhythm read as one coherent system rather than two different sites stitched together. The hero headline's "Lifelong" glow-yellow and "Music" teal brush-stroke are decorative/typographic, not interactive, and stay scoped to that one headline.
 
 ## Typography
 
@@ -181,6 +190,8 @@ The "Meet Your Instructor" card went through a full redesign arc on 2026-10-19 �
 
 **Lighter redesign, 2026-10-20 (same day, explicit new request):** A second, smaller redesign — explicitly requested again after the full revert above, so not a reintroduction of the retired arc (no dark background, no clip-path/guitar-silhouette photo mask, no fretboard overlay). Kept the section light and on the single cyan accent. Changes: a soft `ambient-glow-amber` blob behind the photo (reusing the hero's existing glow utility rather than inventing a new one) and an offset `brandAmberLight` card-shadow block behind the photo frame; the 4-item quick-facts list became a 2x2 grid of small stat cards (`bg-brandCard border rounded-2xl`), each splitting the existing em-dash-joined phrase across a bold line and a muted line instead of one flat bullet; the "Meet Dan" heading got a small cyan underline accent; the active tab pill switched from flat `bg-brandAmber` to the gradient+shadow treatment used on primary buttons elsewhere (`switchInstructorTab()` was updated to toggle the new class set — keep it in sync if this markup changes again); and both tab panels are now wrapped in a bordered card instead of sitting bare. No copy was added, removed, or reworded — this is a layout/visual pass only.
 
+**Real photo swap, 2026-10-21:** The client supplied a genuine photo (`dan-photo.jpg`, a real WhatsApp-shared photo — filename, lighting, and setting are all consistent with an authentic photograph, not AI-generated — see this project's established standard for distinguishing the two) showing Dan playing acoustic guitar outdoors with the Blue Mountains escarpment visible behind him. It replaces the original cropped-flyer photo (`instructor-photo.jpg`, which stays in use in the Hero section — only the Instructor section's photo changed). The new photo is landscape (1024x572, ~16:9) rather than the original's portrait crop, so the frame changed from `aspect-[4/5]` to `aspect-video` and widened from `max-w-xs` to `max-w-sm` to avoid an awkward crop. Alt text was updated to describe what's actually visible in this photo (acoustic guitar, outdoor setting, Blue Mountains backdrop) rather than reused verbatim from the old portrait.
+
 **Reference-image note (2026-10-19, kept for history):** The client pointed to a real Taylor Guitars print campaign ("Step forward. Music is waiting.") as a style reference and asked to "take one photo from this" for use in this section. Declined to extract and republish any of that campaign's photography — it's bespoke, copyrighted photography shot for a different real company's ad campaign, not stock, and using it here would also misrepresent who the actual instructor is.
 
 **A contrast correction made during this round, worth remembering:** the client's spec called for cyan text/icons directly on light backgrounds (cyan badge text, cyan tab-active text on white, cyan "dark cyan" pill text, cyan feature-card icons) in several places. Measured: the site's cyan family (`#00E5FF`/`#00B3CC`) only reaches ~2.4–2.5:1 against white/off-white — it fails even the 3:1 floor for meaningful icons, let alone 4.5:1 for text. Cyan only works as a *background fill with dark text on top* (tab pills, badges) or as *foreground on a dark surface* (verified 11+:1 elsewhere in this file) — never as standalone colored text/icons on a light surface. Every instance in this card uses `brandCharcoal` text/icons instead, with cyan reserved for background tints (`brandAmberLight`), borders, and the active-tab fill.
@@ -189,9 +200,9 @@ The "Meet Your Instructor" card went through a full redesign arc on 2026-10-19 �
 The header and both modals already used `backdrop-blur-md` (Tailwind's 12px blur) over a semi-transparent dark background — true glassmorphism, just not previously named as a pattern. Extended the same treatment to the two other floating/overlay elements that were previously solid: the hero's decorative chord-tag badge (`bg-brandDarkCard/75 backdrop-blur-md border-white/[0.08]`) and the Find-Your-Fit floating quiz trigger (`bg-brandDark/75 backdrop-blur-md border-white/10`, both desktop and mobile variants). Any new floating badge or overlay card should follow this same semi-transparent-dark + blur-md + white-alpha-border recipe rather than a solid card background.
 
 ### Buttons
-- **Primary (action):** Solid Electric Cyan, dark navy text — every "Book a Lesson" button, on both dark and light sections.
+- **Primary (action):** Solid Gold (`brandAmber`), dark navy text — every "Book a Lesson" button, on both dark and light sections.
 - **Secondary (on dark):** `bg-white/10` with a `brandDarkLine` border, white text — the casual-tier button on the dark pricing section.
-- **Hover / Focus:** A -2px lift plus a slightly deeper shade; focus-visible gets a visible ring (cyan on dark backgrounds, with an explicit ring-offset color so it's never invisible against the page).
+- **Hover / Focus:** A -2px lift plus a slightly deeper shade (`brandAmberDeep`); focus-visible gets a visible ring (gold on dark backgrounds, with an explicit ring-offset color so it's never invisible against the page).
 
 ### Cards
 - **Light section cards:** White background, `border-light` border, charcoal text.
@@ -233,17 +244,19 @@ Both tab widgets (Instructor "Philosophy & Method"/"Local Coverage", Locations "
 ## Do's and Don'ts
 
 ### Do:
-- Do keep Electric Cyan as the site's only *interactive* accent color (every CTA, link, focus ring, and icon that implies "click this") — the hero headline's gold/glow/teal treatment (see Hero Banner Redesign below) is a typographic exception, not a second interactive color.
+- Do keep Gold as the site's only *interactive* accent color (every CTA, link, focus ring, and icon that implies "click this") — the hero headline's extra glow-yellow/teal treatment (see Hero Banner Redesign below) is a typographic exception, not a second interactive color.
+- Do keep the three-gold-token split (`brandAmber` bright / `brandAmberDeep` medium / `brandAmberText` muted) rather than collapsing back to two — it's what keeps gold text readable on light backgrounds (see Site-Wide Rebrand above).
 - Do keep the dark/light alternation strict and literal — it's the structural idea of this redesign.
 - Do keep the hero's glow/pulse/sparkle accents bounded to the hero; don't let them creep into other sections.
 - Do state only confirmed facts in the trust banner; treat any new compliance/certification claim as requiring explicit client confirmation before publishing.
 - Do keep the map embed scoped to the area with a real studio; don't fabricate a pin for a service area that doesn't have one.
 
 ### Don't:
-- Don't add a second *interactive* accent hue competing with Electric Cyan (buttons, links, focus states). Decorative/typographic color, as used once in the hero headline, is a separate, explicitly-approved exception — don't extend it to new sections without an equally explicit request.
+- Don't add a second *interactive* accent hue competing with Gold (buttons, links, focus states). Decorative/typographic color, as used once in the hero headline, is a separate, explicitly-approved exception — don't extend it to new sections without an equally explicit request.
+- Don't use `brandAmber` (bright gold) as standalone text or icon color on a light background — it fails AA badly (1.46:1 on white). Use `brandAmberText` there instead.
 - Don't soften the hard cut between dark and light sections with a gradient transition — that's a different system, not a refinement of this one.
 - Don't stack two bordered/backgrounded containers inside each other for ordinary content.
 - Don't animate a status indicator to suggest a live, continuously-updating feed when the underlying fact is just true/false.
 
-### Hero Banner Redesign (2026-10-21)
-Explicit client brief specified a "Deep Midnight Blue" (`#0B132B`) hero background (previously flat `brandDark`/`#0D131D` — close family, now hero-specific via an inline radial gradient from `#132044` through `#0B132B` to `#070D1C`, plus a masked hairline grid-line overlay and a warm ambient glow, replacing the cyan one that used to sit behind the headline) and, most notably, **two new non-interactive accent colors scoped to the headline only**: `hero-gold` (`#FFD100`, "Music," brush-script, with a dark-teal `hero-teal` brush-stroke highlight behind it, swapped in for the old cyan highlight) and `hero-glow` (`#FFE600`, "Lifelong," heavy sans, with a warm `text-shadow` glow). "Turn," "Into A," and "Skill" stayed off-white (`brandLight`) and were bolded (previously `font-light`, which the brief called for as bold). Both new yellows were contrast-checked against the new midnight background: `#FFD100` measures ~12.6:1 and `#FFE600` ~14.5:1 — both comfortably exceed AA. **This is a deliberate, approved departure from the site's prior single-accent-color rule, scoped specifically to this headline's expressive/emotional typography** — the CTA button, trust-badge icons, focus rings, and every other interactive element on the page stayed cyan, preserving cyan's role as the one color that means "click this." Do not extend the gold/glow/teal palette to other sections without an equally explicit new request.
+### Hero Banner Redesign (2026-10-21, superseded same day by the Site-Wide Rebrand above)
+Explicit client brief specified a "Deep Midnight Blue" (`#0B132B`) hero background (previously flat `brandDark`/`#0D131D` — now hero-specific via an inline radial gradient from `#132044` through `#0B132B` to `#070D1C`, plus a masked hairline grid-line overlay and a warm ambient glow, replacing the cyan one that used to sit behind the headline) and **two new accent colors scoped to the headline only**: `hero-gold` (`#FFD100`, "Music," brush-script, with a dark-teal `hero-teal` brush-stroke highlight behind it, swapped in for the old cyan highlight) and `hero-glow` (`#FFE600`, "Lifelong," heavy sans, with a warm `text-shadow` glow). "Turn," "Into A," and "Skill" stayed off-white (`brandLight`) and were bolded (previously `font-light`, which the brief called for as bold). Both new yellows were contrast-checked against the new midnight background: `#FFD100` measures ~12.6:1 and `#FFE600` ~14.5:1 — both comfortably exceed AA. At the time, this was written up as a scoped exception to the site's single-cyan-accent rule — **later the same day the client asked for gold + blue everywhere**, which the Site-Wide Rebrand entry above covers. `hero-gold` and `brandAmber` are now the same value; `hero-glow`/`hero-teal` remain the only colors still exclusive to this headline (the "Lifelong" glow and the "Music" brush-stroke), since nothing else on the page needs that extra-bright emphasis.
