@@ -138,15 +138,51 @@
             text-shadow: 0 0 18px rgba(255,230,0,0.55), 0 0 42px rgba(255,230,0,0.25);
         }
         @keyframes heroCtaPulse {
-            0% { box-shadow: 0 0 0 0 rgba(255,209,0,0.45); }
-            70% { box-shadow: 0 0 0 14px rgba(255,209,0,0); }
-            100% { box-shadow: 0 0 0 0 rgba(255,209,0,0); }
+            0% { box-shadow: 0 0 0 0 rgba(245,158,11,0.45); }
+            70% { box-shadow: 0 0 0 14px rgba(245,158,11,0); }
+            100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
         }
         .hero-cta-pulse {
             animation: heroCtaPulse 1.6s ease-out 0.5s 1;
         }
         @media (prefers-reduced-motion: reduce) {
             .hero-cta-pulse { animation: none; }
+        }
+        /* Two-tone button hierarchy (2026-10-21): blue = standard action,
+           amber/gold = the single highest-value action per section. Explicit
+           client spec -- see DESIGN.md "Button Hierarchy" for which buttons
+           get which treatment and why. */
+        .btn-blue, .btn-yellow, .btn-ghost-blue {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+        .btn-blue {
+            background: linear-gradient(135deg, #2563EB 0%, #0284C7 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.35);
+        }
+        .btn-blue:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.45);
+        }
+        .btn-yellow {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: #0F172A;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
+        }
+        .btn-yellow:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.45);
+        }
+        .btn-ghost-blue {
+            background: transparent;
+            border: 1px solid rgba(14, 165, 233, 0.4);
+        }
+        .btn-ghost-blue:hover {
+            background: linear-gradient(135deg, #2563EB 0%, #0284C7 100%);
+            border-color: transparent;
+            color: #FFFFFF;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.45);
         }
         @keyframes sparkleTwinkle {
             0%, 100% { opacity: 0.25; transform: scale(0.85) rotate(0deg); }
@@ -190,7 +226,7 @@
         <span class="bg-brandAmber text-brandDark text-[10px] px-2 py-0.5 rounded-full font-black">NEW TERM OPEN</span>
         <span>New term enrolment is open.</span>
         <span class="hidden sm:inline h-3 w-px bg-white/30" aria-hidden="true"></span>
-        <a href="#pricing" class="hidden sm:inline underline decoration-brandAmber/60 underline-offset-2 hover:decoration-brandAmber transition-colors">Save $100 on the 10-lesson pack &rarr;</a>
+        <a href="#pricing" class="btn-ghost-blue hidden sm:inline-flex items-center text-white px-3 py-1 rounded-full">Save $100 on the 10-lesson pack &rarr;</a>
     </div>
 
     <!-- HEADER / NAVIGATION (DARK GLASSMORPHIC) -->
@@ -241,7 +277,7 @@
                     <i class="fa-solid fa-phone text-brandAmber"></i>
                     <span data-phone-display>0403 556 541</span>
                 </a>
-                <button onclick="openBookingModal('General Header CTA')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-5 lg:px-6 py-2.5 rounded-full shadow-sm hover:shadow-[0_0_24px_rgba(255,209,0,0.5)] transform hover:-translate-y-0.5 transition-all text-xs tracking-wider uppercase flex items-center gap-2">
+                <button onclick="openBookingModal('General Header CTA')" class="btn-blue font-black px-5 lg:px-6 py-2.5 rounded-full text-xs tracking-wider uppercase flex items-center gap-2">
                     <span>Book A Lesson</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
@@ -267,7 +303,7 @@
                 <i class="fa-solid fa-phone text-brandAmber"></i>
                 <span data-phone-display>0403 556 541</span>
             </a>
-            <button onclick="openBookingModal('Mobile Menu CTA')" class="w-full mt-4 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs transition-all duration-200 hover:shadow-[0_10px_24px_-8px_rgba(255,209,0,0.5)]">
+            <button onclick="openBookingModal('Mobile Menu CTA')" class="btn-blue w-full mt-4 font-black py-3 rounded-full flex items-center justify-center gap-2 uppercase tracking-wider text-xs">
                 <span>Book A Lesson Now</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -341,7 +377,7 @@
 
                     <!-- Primary conversion action: the one unmistakable CTA in this section -->
                     <div class="mt-8 flex flex-col items-center sm:items-start gap-3">
-                        <button onclick="openBookingModal('$35 Lesson')" class="hero-cta-pulse bg-gradient-to-br from-heroAccent to-heroAccentDeep hover:from-heroAccentDeep hover:to-heroAccent text-brandDark font-black px-9 py-4 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_25px_-8px_rgba(255,209,0,0.6)] transition-all duration-200 text-sm tracking-widest uppercase flex items-center justify-center gap-3 group hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brandDark w-full sm:w-auto">
+                        <button onclick="openBookingModal('$35 Lesson')" class="hero-cta-pulse btn-yellow px-9 py-4 rounded-full text-sm tracking-widest uppercase font-black flex items-center justify-center gap-3 group active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brandDark w-full sm:w-auto">
                             <span>Book $35 Lesson</span>
                             <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </button>
@@ -682,7 +718,7 @@
                         </ul>
                     </div>
 
-                    <button onclick="openBookingModal('$35 Lesson')" class="mt-8 w-full bg-brandLight hover:bg-brandBorder/60 border border-brandBorder text-brandCharcoal font-black py-4 rounded-2xl shadow-sm transition-all text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+                    <button onclick="openBookingModal('$35 Lesson')" class="btn-blue mt-8 w-full font-black py-4 rounded-2xl text-xs tracking-widest uppercase flex items-center justify-center gap-2">
                         <span>Book $35 Lesson</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -724,7 +760,7 @@
                         </ul>
                     </div>
 
-                    <button onclick="openBookingModal('10 Lesson Package ($250)')" class="hero-cta-pulse mt-8 w-full bg-gradient-to-br from-brandAmber to-brandAmberDeep hover:from-brandAmberDeep hover:to-brandAmber text-brandDark font-black py-4 rounded-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_25px_-8px_rgba(255,209,0,0.6)] transition-all duration-200 text-xs tracking-widest uppercase flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandDark focus-visible:ring-offset-2">
+                    <button onclick="openBookingModal('10 Lesson Package ($250)')" class="hero-cta-pulse btn-yellow mt-8 w-full py-4 rounded-2xl font-black text-xs tracking-widest uppercase flex items-center justify-center gap-2 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandDark focus-visible:ring-offset-2">
                         <span>Claim $250 Package</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -773,7 +809,7 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <button onclick="openBookingModal('Penrith Studio')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(255,209,0,0.5)]">
+                        <button onclick="openBookingModal('Penrith Studio')" class="btn-ghost-blue text-white font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase">
                             Book Penrith Studio Slot
                         </button>
                     </div>
@@ -799,7 +835,7 @@
                     <h3 class="text-3xl font-black text-white font-display">Blue Mountains Region</h3>
                     <p class="text-slate-300 text-sm font-semibold">In-home coaching across Penrith & the Blue Mountains.</p>
                     <div class="pt-4">
-                        <button onclick="openBookingModal('Blue Mountains')" class="bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(255,209,0,0.5)]">
+                        <button onclick="openBookingModal('Blue Mountains')" class="btn-ghost-blue text-white font-black px-6 py-3 rounded-full text-xs tracking-wider uppercase">
                             Book Mountains Slot
                         </button>
                     </div>
@@ -839,7 +875,7 @@
                             <i class="fa-solid fa-video text-brandAmberText"></i> Video Recaps With 10-Lesson Pack
                         </span>
                     </div>
-                    <a href="practice/" class="mt-6 inline-flex items-center gap-2 bg-brandAmber hover:bg-brandAmberDeep text-brandDark font-black px-6 py-3 rounded-full text-xs tracking-widest uppercase transition-all">
+                    <a href="practice/" class="btn-ghost-blue mt-6 inline-flex items-center gap-2 text-brandCharcoal font-black px-6 py-3 rounded-full text-xs tracking-widest uppercase">
                         <span>Try Practice Tools</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
