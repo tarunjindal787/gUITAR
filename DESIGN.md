@@ -16,6 +16,10 @@ colors:
   accent: "#00E5FF"
   accent-deep: "#00B3CC"
   accent-light: "#99F0FF"
+  hero-midnight: "#0B132B"
+  hero-gold: "#FFD100"
+  hero-glow: "#FFE600"
+  hero-teal: "#0E4749"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -229,14 +233,17 @@ Both tab widgets (Instructor "Philosophy & Method"/"Local Coverage", Locations "
 ## Do's and Don'ts
 
 ### Do:
-- Do keep Electric Cyan as the system's only accent color across every section.
+- Do keep Electric Cyan as the site's only *interactive* accent color (every CTA, link, focus ring, and icon that implies "click this") — the hero headline's gold/glow/teal treatment (see Hero Banner Redesign below) is a typographic exception, not a second interactive color.
 - Do keep the dark/light alternation strict and literal — it's the structural idea of this redesign.
 - Do keep the hero's glow/pulse/sparkle accents bounded to the hero; don't let them creep into other sections.
 - Do state only confirmed facts in the trust banner; treat any new compliance/certification claim as requiring explicit client confirmation before publishing.
 - Do keep the map embed scoped to the area with a real studio; don't fabricate a pin for a service area that doesn't have one.
 
 ### Don't:
-- Don't add a second accent hue competing with Electric Cyan.
+- Don't add a second *interactive* accent hue competing with Electric Cyan (buttons, links, focus states). Decorative/typographic color, as used once in the hero headline, is a separate, explicitly-approved exception — don't extend it to new sections without an equally explicit request.
 - Don't soften the hard cut between dark and light sections with a gradient transition — that's a different system, not a refinement of this one.
 - Don't stack two bordered/backgrounded containers inside each other for ordinary content.
 - Don't animate a status indicator to suggest a live, continuously-updating feed when the underlying fact is just true/false.
+
+### Hero Banner Redesign (2026-10-21)
+Explicit client brief specified a "Deep Midnight Blue" (`#0B132B`) hero background (previously flat `brandDark`/`#0D131D` — close family, now hero-specific via an inline radial gradient from `#132044` through `#0B132B` to `#070D1C`, plus a masked hairline grid-line overlay and a warm ambient glow, replacing the cyan one that used to sit behind the headline) and, most notably, **two new non-interactive accent colors scoped to the headline only**: `hero-gold` (`#FFD100`, "Music," brush-script, with a dark-teal `hero-teal` brush-stroke highlight behind it, swapped in for the old cyan highlight) and `hero-glow` (`#FFE600`, "Lifelong," heavy sans, with a warm `text-shadow` glow). "Turn," "Into A," and "Skill" stayed off-white (`brandLight`) and were bolded (previously `font-light`, which the brief called for as bold). Both new yellows were contrast-checked against the new midnight background: `#FFD100` measures ~12.6:1 and `#FFE600` ~14.5:1 — both comfortably exceed AA. **This is a deliberate, approved departure from the site's prior single-accent-color rule, scoped specifically to this headline's expressive/emotional typography** — the CTA button, trust-badge icons, focus rings, and every other interactive element on the page stayed cyan, preserving cyan's role as the one color that means "click this." Do not extend the gold/glow/teal palette to other sections without an equally explicit new request.
