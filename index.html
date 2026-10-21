@@ -386,44 +386,40 @@
 
 
     <!-- SECTION: ABOUT YOUR INSTRUCTOR (LIGHT) -->
-    <!-- Instructor name confirmed real: "Dan". Redesigned 2026-10-20 per explicit
-         client request -- same copy, same light section / single cyan accent /
-         dark-light alternation rules as the rest of the page; does not reintroduce
-         the earlier retired dark/clip-path redesign arc documented above this note. -->
+    <!-- Instructor name confirmed real: "Dan". Redesigned 2026-10-21 per explicit
+         client request -- large top photo banner, condensed quick-facts and
+         Philosophy bullets (text trimmed, nothing reworded or fabricated), same
+         light section / single gold accent / dark-light alternation rules as the
+         rest of the page; does not reintroduce the earlier retired dark/clip-path
+         redesign arc documented above this note. -->
     <section id="instructor" class="py-20 bg-brandLight border-t border-brandBorder scroll-mt-20 relative overflow-hidden">
         <div class="ambient-glow-amber hidden lg:block absolute top-0 left-0 w-[30rem] h-[30rem] opacity-30 blur-3xl pointer-events-none -translate-x-1/3 -translate-y-1/3" aria-hidden="true"></div>
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid md:grid-cols-5 gap-12 items-start">
 
-                <!-- Photo column -->
-                <div class="md:col-span-2">
-                    <div class="relative max-w-sm mx-auto md:mx-0">
-                        <div class="absolute -top-4 -right-4 w-full h-full rounded-[2rem] bg-brandAmberLight/50 -z-10 hidden sm:block" aria-hidden="true"></div>
-                        <div class="relative rounded-[2rem] overflow-hidden shadow-xl aspect-video border-4 border-brandCard transition-transform duration-300 hover:-translate-y-1">
-                            <img src="dan-photo.jpg" alt="Dan, Mountain Culture Guitar instructor, playing acoustic guitar with the Blue Mountains in the background" width="1024" height="572" class="w-full h-full object-cover" loading="lazy">
-                        </div>
+            <!-- Large photo banner: Dan is the section's focal point -->
+            <div class="relative rounded-[1.75rem] overflow-hidden shadow-2xl aspect-[16/9] sm:aspect-[2/1] border-4 border-brandCard transition-transform duration-300 hover:-translate-y-1">
+                <img src="dan-photo.jpg" alt="Dan, Mountain Culture Guitar instructor, playing acoustic guitar with the Blue Mountains in the background" width="1024" height="572" class="w-full h-full object-cover" loading="lazy">
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-10 items-start mt-10">
+
+                <!-- Quick facts column -->
+                <div class="md:col-span-2 grid grid-cols-2 gap-3">
+                    <div class="bg-brandCard border border-brandBorder rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                        <i class="fa-solid fa-circle-check text-brandAmberText"></i>
+                        <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">10+ Years Teaching Experience</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-3 mt-6 max-w-sm mx-auto md:mx-0">
-                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
-                            <i class="fa-solid fa-circle-check text-brandAmberText"></i>
-                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">10+ Years Teaching Experience</p>
-                            <p class="text-[11px] text-brandMuted leading-tight">100+ Local Students Taught</p>
-                        </div>
-                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
-                            <i class="fa-solid fa-circle-check text-brandAmberText"></i>
-                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">Flexible Scheduling</p>
-                            <p class="text-[11px] text-brandMuted leading-tight">Studio (Penrith) or Mobile In-Home (Blue Mountains)</p>
-                        </div>
-                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
-                            <i class="fa-solid fa-circle-check text-brandAmberText"></i>
-                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">Customized Learning Plans</p>
-                            <p class="text-[11px] text-brandMuted leading-tight">Paced to the Student, Not a Fixed Syllabus</p>
-                        </div>
-                        <div class="bg-brandCard border border-brandBorder rounded-2xl p-3 text-center">
-                            <i class="fa-solid fa-circle-check text-brandAmberText"></i>
-                            <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">No Lock-In Contracts</p>
-                            <p class="text-[11px] text-brandMuted leading-tight">Pay As You Go</p>
-                        </div>
+                    <div class="bg-brandCard border border-brandBorder rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                        <i class="fa-solid fa-circle-check text-brandAmberText"></i>
+                        <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">Flexible Scheduling</p>
+                    </div>
+                    <div class="bg-brandCard border border-brandBorder rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                        <i class="fa-solid fa-circle-check text-brandAmberText"></i>
+                        <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">Customized Learning Plans</p>
+                    </div>
+                    <div class="bg-brandCard border border-brandBorder rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                        <i class="fa-solid fa-circle-check text-brandAmberText"></i>
+                        <p class="text-xs font-black text-brandCharcoal mt-1 leading-tight">No Lock-In Contracts</p>
                     </div>
                 </div>
 
@@ -450,10 +446,10 @@
 
                     <!-- Tab 1: Philosophy & Method -->
                     <div id="instructor-content-philosophy" role="tabpanel" aria-labelledby="instructor-tab-philosophy" class="instructor-content bg-brandCard border border-brandBorder rounded-2xl p-5">
-                        <ul class="space-y-3 text-sm text-brandCharcoal font-medium">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberText mt-0.5"></i> <span><strong>Song-First Approach:</strong> Play real music from session one, not boring theory drills.</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberText mt-0.5"></i> <span><strong>Custom Roadmap:</strong> Personalized lessons adapted to your goals and pace.</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandAmberText mt-0.5"></i> <span><strong>Flexible Options:</strong> Private 1-on-1 or group sessions for friends.</span></li>
+                        <ul class="space-y-3 text-sm text-brandCharcoal font-bold">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberText"></i> <span>Song-First Approach</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberText"></i> <span>Custom Roadmap</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandAmberText"></i> <span>Flexible Options</span></li>
                         </ul>
                     </div>
 
